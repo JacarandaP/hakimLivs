@@ -17,7 +17,21 @@
     </div>
     <div id="container">
 
+<template id="product-card-template">
+        <div class="card d-inline-block" style="width: 18em;">
+            <img class="card-img-top product-image" src="" alt="Product">
+            <div class="card-body">
+              <h5 class="card-title product-title">Card title</h5>
+              <p class="card-text product-description">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class=" card-footer product-price"></p>
+              <p class=" card-text product-category"></p>
+              <a href="#" class="btn btn-primary" data-productId="">BUY</a>
+            </div>
+          </div>
+        </template>
+
     </div>
+
     <div id="footer">
 
     </div>
@@ -28,6 +42,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     
-              
+    
+    <!--script to show products-->
+    <script src="js/showProducts.js"></script>
+              <script>
+                  getProducts(renderProducts,$('#container'))
+
+              </script>
 </body>
 </html>
