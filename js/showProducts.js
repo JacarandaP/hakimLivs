@@ -22,7 +22,7 @@ function getCategories(render,appendTo){
 /**
  * 
  * @param {the category string} category 
- * @param {the elemet to append the list} appendTo 
+ * @param {the element to append the list} appendTo 
  */
 function renderCategories(category,appendTo){
     let categoryItem='<li><a href="" class="btn btn-primary">'+category+'</a></li>'
