@@ -5,6 +5,10 @@ let saveProductsLocalStorages;
 let getProductsLocalStorages;
 
 
+
+function getCategories(render,appendTo){
+
+}
 /**
  * 
  * gets products from api, saves as Json to local storage and renders them
