@@ -12,13 +12,15 @@
   </head>
   <body>
     <div id="top-meny"></div>
-    <div id="sidebar">
+    <div id="base-container" class="row">
+    <div id="sidebar" class="col-4">
         <div id="category-list">
+
 
         </div>
 
     </div>
-    <div id="container">
+    <div id="container" class="col">
         <div id="offering-container">
             <img src="https://dummyimage.com/1280x720/d61c54/fff&text=offer!" class="img-fluid">
         </div>
@@ -42,6 +44,8 @@
 
     </div>
 
+</div>
+
     <div id="footer"></div>
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
@@ -54,12 +58,8 @@
     <!--script to show products-->
     <script src="js/showProducts.js"></script>
     <script>
-<<<<<<< HEAD
       getProducts(renderProducts, $("#container"))
         getCategories(renderCategories, $("#category-list"))
-=======
-      getProducts(renderProducts, $("#container"));
->>>>>>> huvudSida
     </script>
   </body>
 </html>
