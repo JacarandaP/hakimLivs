@@ -2,10 +2,8 @@
 const productsAPI='https://webacademy.se/fakestore/'
 let renderProducts;
 let saveProductsLocalStorages;
-let getProductsLocalStorages;
+let loadProductsLocalStorage = [];
 var categories=new Array();
-
-
 
 
 /**
@@ -25,7 +23,7 @@ function getCategories(render,appendTo){
  * @param {the element to append the list} appendTo 
  */
 function renderCategories(category,appendTo){
-    let categoryItem='<li><a href="" class="btn btn-primary">'+category+'</a></li>'
+    let categoryItem="<div class='input-group'><li id='categories'><button id='category' data-name='"+category+"' class='category input-group-addon btn btn-primary'>"+category+"</button></li></div>"
     appendTo.append(categoryItem)
 }
 
@@ -68,3 +66,29 @@ fetch(productsAPI)
 saveProductsLocalStorages=(product)=>{
     localStorage.setItem('PRODUCTS',JSON.stringify(product))
 }
+
+/**
+ * function to load the products
+ */
+
+loadProductsLocalStorage = JSON.parse(localStorage.getItem('PRODUCTS'));
+
+/**
+ * Function to render the products by selected category
+ * @param {The selected category} category 
+ */
+
+function getProductsByCategory(render,appendTo, category){   
+    loadProductsLocalStorage.forEach((product)=>{
+        if(product.category === category){
+            render(product.title,product.description,product.image,product.price,product.category, appendTo)
+        }
+    })
+}
+
+$('#category-list').on('click', '.category',(function(){
+let categoryName = $(this).data('name');
+$('#cards div').remove();
+getProductsByCategory(renderProducts, $("#container"), categoryName)
+}))
+
