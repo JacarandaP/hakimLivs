@@ -1,0 +1,96 @@
+[
+    {
+        "name": "Elisa",
+        "lastname": "Oortwijn",
+        "email": "elisa.oortwijn@example.com",
+        "telephone": "(585)-101-0279",
+        "address": "Callistusplein 5734",
+        "postort": "Espel",
+        "postnummer": 93406,
+        "password": "scully"
+    },
+    {
+    "name": "Amanda",
+    "lastname": "Saksa",
+    "email": "amanda.saksa@example.com",
+    "telephone": "06-109-891",
+    "address": "Hämeentie 8817",
+    "postort": "Kesälahti",
+    "postnummer": 10899,
+    "password": "vampires"
+    },
+    {
+    "name": "Batur",
+    "lastname": "Duygulu",
+    "email": "batur.duygulu@example.com",
+    "telephone": "(421)-375-9848",
+    "address": "Fatih Sultan Mehmet Cd 9035",
+    "postort": "Artvin",
+    "postnummer": 59396,
+    "password": "wayne1"
+    },
+    {
+    "name": "Venla",
+    "lastname": "Latvala",
+    "email": "venla.latvala@example.com",
+    "telephone": "02-126-086",
+    "address": "Fredrikinkatu 4929",
+    "postort": "Kärkölä",
+    "postnummer": 23078,
+    "password": "cement"
+    },
+    {
+    "name": "Louis",
+    "lastname": "Folkers",
+    "email": "louis.folkers@example.com",
+    "telephone": "(114)-341-2117",
+    "address": "Bisschop Zwijsenplein 8721",
+    "postort": "Woerdense Verlaat",
+    "postnummer": 49478,
+    "password": "europe"
+    },
+    {
+    "name": "Nathan",
+    "lastname": "Sanchez",
+    "email": "nathan.sanchez@example.com",
+    "telephone": "02-80-51-23-87",
+    "address": "Avenue Debrousse 2553",
+    "postort": "Perpignan",
+    "postnummer": 70339,
+    "password": "porkchop"
+    },
+    {
+    "name": "Marita",
+    "lastname": "Cornelius",
+    "email": "marita.cornelius@example.com",
+    "telephone": "0072-0054914",
+    "address": "Amselweg 7052",
+    "postort": "Gräfenthal",
+    "postnummer": 93542,
+    "password": "gabriela"
+    },
+    {
+    "name": "Hilla",
+    "lastname": "Saksa",
+    "email": "hilla.saksa@example.com",
+    "telephone": "03-390-694",
+    "address": "Hämeentie 970",
+    "postort": "Raisio",
+    "postnummer": 33063,
+    "password": "beef"
+    },
+    {
+    "name": "Salvador",
+    "lastname": "Rhodes",
+    "email": "salvador.rhodes@example.com",
+    "telephone": "01791 134219",
+    "address": "High Street 8571",
+    "postort": "Wolverhampton",
+    "postnummer": "MX5 0ZR",
+    "password": "kasper"
+}
+   
+    
+    
+    
+]
