@@ -1,13 +1,18 @@
 
-const productsAPI='https://webacademy.se/fakestore/'
+//some variables
+const productsAPI='./mockupdata/products.json'
+//function to render products
 let renderProducts;
+//fuctio to save products
 let saveProductsLocalStorages;
+//function to get products (TODO!!!)
 let getProductsLocalStorages;
 var categories=new Array();
 
 
 
 
+<<<<<<< HEAD
 /**
  * gets categories from database,saves them in categories and renders them
  */
@@ -19,6 +24,8 @@ function getCategories(render,appendTo){
         render(category,appendTo)
     }))
 }
+=======
+>>>>>>> huvudSida
 /**
  * 
  * @param {the category string} category 
@@ -41,7 +48,7 @@ fetch(productsAPI)
 .then((json)=>{
     saveProductsLocalStorages(json);
     json.forEach((product)=>{
-        render(product.title,product.description,product.image,product.price,product.category, appendTo)
+        render(product, appendTo)
     
     }
     )
@@ -51,14 +58,14 @@ fetch(productsAPI)
 /**
  * to render a product card based on a template written in the index.html
  */
- renderProducts=(title,description,image,price,category,appendTo)=>{
+ renderProducts=(product,appendTo)=>{
     let template=$('#product-card-template').contents().clone()
-    template.find('.product-title').text(title)
-    template.find('.product-description').text(description)
-    template.find('.product-image').attr('src', image)
-    template.find('.product-price').text(price)
-    template.find('.product-category').text(category)
-    template.find('.card').attr('data-category',category)
+    template.find('.product-title').text(product.title)
+    template.find('.product-description').text(product.description)
+    template.find('.product-image').attr('src', product.image)
+    template.find('.product-price').text(product.price)
+    template.find('.product-category').text(product.category)
+    template.find('.card').attr('data-category',product.category)
     appendTo.append(template);
 
 }
