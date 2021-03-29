@@ -1,6 +1,6 @@
 
 //some variables
-const productsAPI='https://webacademy.se/fakestore/'
+const productsAPI='./mockupdata/products.json'
 //function to render products
 let renderProducts;
 //fuctio to save products
