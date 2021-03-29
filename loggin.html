@@ -5,17 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
+    <style>
+
+    .container{
+    width: 100%;
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+        input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #a0abeb;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+    </style>
 </head>
 <body>
     <div id="top-meny">
 
+       
     </div>
     <div id="sidebar">
 
     </div>
-    <div id="container">
+    <div id="container" class="container">
+
+        <h3 style="text-align: center">Logga in</h3>
+
+        <label for="username" >Användarenamn(din e-mail)</label>
+        <input id="usernameEmail" type="email" placeholder="Skriv in registrerad e-mail" required>
+        <label for="password" >Password</label>
+        <input id="password" type="password" placeholder="Skriv in lösenord" required>
+        <button type="submit">Login</button>
 
     </div>
     <div id="footer">
