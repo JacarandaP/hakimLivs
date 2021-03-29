@@ -28,7 +28,7 @@ var categories=new Array();
  * @param {the element to append the list} appendTo 
  */
 function renderCategories(category,appendTo){
-    let categoryItem='<li  <a href="" >'+category+'</a></li>'
+    let categoryItem='<li>  <a href="" >'+category+'</a></li>'
     appendTo.append(categoryItem)
 }
 
