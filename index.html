@@ -18,32 +18,36 @@
         </div>
 
     </div>
-    <div id="container">
+    <div id="container" class="container">
         <div id="offering-container">
             <img src="https://dummyimage.com/1280x720/d61c54/fff&text=offer!" class="img-fluid">
         </div>
       <div id="products" class="container">
-        <template id="product-card-template">
-          <div id="cards" class="card d-inline-block">
-          <div class="card d-inline-block" style="width: 20em">
-            <img class="card-img-top product-image" src="" alt="Product" />
-            <div class="card-body">
-              <h5 class="card-title product-title">Card title</h5>
-              <p class="card-text product-description">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <p class="card-footer product-price"></p>
-              <p class="card-text product-category"></p>
-              <a href="#" class="btn btn-primary" data-productId="">BUY</a>
-            </div>
-          </div>
-        </div>
-        </template>
+      
       </div>
     </div>
 
     <div id="footer"></div>
+     <!-- template to render products cards-->
+    <template id="product-card-template">
+    
+      <div class="card d-inline-block" style="width: 20em">
+        <img class="card-img-top product-image" src="" alt="Product" />
+        <div class="card-body">
+          <h5 class="card-title product-title">Card title</h5>
+          <p class="card-text product-description">
+            Some quick example text to build on the card title and make up
+            the bulk of the card's content.
+          </p>
+          <p class="card-footer product-price"></p>
+          <p class="card-text product-category"></p>
+          <a href="#" class="btn btn-primary" data-productId="">BUY</a>
+        </div>
+      </div>
+  
+    </template>
+<!--end of template-->
+
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -55,7 +59,7 @@
     <!--script to show products-->
     <script src="js/showProducts.js"></script>
     <script>
-      getProducts(renderProducts, $("#container"))
+      getProducts(renderProducts, $("#products"))
         getCategories(renderCategories, $("#category-list"))
     </script>
   </body>

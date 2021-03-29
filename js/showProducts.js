@@ -88,7 +88,8 @@ function getProductsByCategory(render,appendTo, category){
 
 $('#category-list').on('click', '.category',(function(){
 let categoryName = $(this).data('name');
-$('#cards div').remove();
-getProductsByCategory(renderProducts, $("#container"), categoryName)
+//$('#cards div').remove(); //
+$('#products').empty()
+getProductsByCategory(renderProducts, $("#products"), categoryName)
 }))
 
