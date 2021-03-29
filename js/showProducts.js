@@ -1,4 +1,4 @@
-
+//
 //some variables
 const productsAPI='./mockupdata/products.json'
 //function to render products
