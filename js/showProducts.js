@@ -9,7 +9,17 @@ let saveProductsLocalStorages;
 let getProductsLocalStorages;
 var categories=new Array();
 
-
+/**
+ * gets categories from database,saves them in categories and renders them
+ */
+ function getCategories(render,appendTo){
+    fetch('https://fakestoreapi.com/products/categories')
+    .then(res=>res.json())
+    .then(json=>json.forEach((category)=>{
+        categories.push(category);
+        render(category,appendTo)
+    }))
+}
 
 
 /**
