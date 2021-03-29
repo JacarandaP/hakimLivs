@@ -12,20 +12,6 @@ var categories=new Array();
 
 
 
-<<<<<<< HEAD
-/**
- * gets categories from database,saves them in categories and renders them
- */
-function getCategories(render,appendTo){
-    fetch('https://fakestoreapi.com/products/categories')
-    .then(res=>res.json())
-    .then(json=>json.forEach((category)=>{
-        categories.push(category);
-        render(category,appendTo)
-    }))
-}
-=======
->>>>>>> huvudSida
 /**
  * 
  * @param {the category string} category 
@@ -35,6 +21,7 @@ function renderCategories(category,appendTo){
     let categoryItem='<li><a href="" class="btn btn-primary">'+category+'</a></li>'
     appendTo.append(categoryItem)
 }
+
 
 /**
  * 
