@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <!--Historik av beställningar
+Kontaktuppgifter
+Förnamn
+Efternamn
+E-post
+Tel nr
+Adress
+Postort
+Postnummer
+Knapp för att redigera kontaktuppgifter-->
+    <div id="top-meny">
+<nav class="navbar navbar-nav">
+
+</nav>
+    </div>
+    <div id="sidebar">
+
+    </div>
+    <div id="container" class="container">
+        <div id="show-data">
+        <h3>MY PROFILE</h3>
+        <div class="row">
+            <div class="col mt-b">Name</div>
+            <div id="user-name" class="col">"fake name"</div>
+            <div class="col">Last name</div>
+            <div id="user-last-name" class="col">"fake last name"</div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">Phone number</div>
+            <div id="user-phone-number" class="col">"fake phone"</div>
+            <div class="col">Address</div>
+            <div id="user-address" class="col">"fake address"</div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">City</div>
+            <div id="user-city" class="col">"fake city"</div>
+            <div class="col">Zip</div>
+            <div id="user-zip" class="col">"fake zip"</div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <button id="edit-profile" class="btn btn-primary">edit</button>
+            </div>
+        </div>
+</div>
+<div id="update-data">
+        <form id="user-update-form">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">First name</label>
+      <input type="text" class="form-control-plaintext" id="validationDefault01" placeholder="First name" value="Mark" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Last name</label>
+      <input type="text" class="form-control-plaintext" id="validationDefault02" placeholder="Last name" value="Otto" required>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="validationDefault02">Phone number</label>
+        <input type="text" class="form-control-plaintext" id="validationDefault02" placeholder="Last name" value="123456789" required>
+      </div>
+   
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3 ">
+      <label for="validationDefault03">City</label>
+      <input type="text" class="form-control-plaintext" id="validationDefault03" placeholder="City" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationDefault04">Address</label>
+      <input type="text" class="form-control-plaintext" id="validationDefault04" placeholder="Address" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationDefault05">Zip</label>
+      <input type="text" class="form-control-plaintext" id="validationDefault05" placeholder="Zip" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+      <label class="form-check-label" for="invalidCheck2">
+        Agree to terms and conditions
+      </label>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Update Changes</button>
+</form>
+
+    </div>
+</div>
+    <div id="footer">
+
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/profile.js"></script>
+    <script>
+saveProfile()
+loadProfile()
+
+    </script>          
+</body>
+</html>
