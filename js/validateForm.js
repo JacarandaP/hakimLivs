@@ -1,12 +1,20 @@
 $(document).ready(function(){
 
 
-    jQuery.validator.addMethod("specialChrs", function (element, value) {
-        return new RegExp('^[A-Za-zÀ-ž\u0370-\u03FF\u0400-\u04FF]+$').test(value)
-    }), 
+    jQuery.validator.addMethod("specialChrs", function (value, element) {
+        return new RegExp('^[A-Za-zÀ-žÅÄÖåäö ]+$').test(value)
+    }, "Ej godkända tecken."
+    ),
 
+    jQuery.validator.addMethod("numeralsAndSpecialChars", function (value, element) {
+        return new RegExp('^[A-Za-z0-9À-žÅÄÖåäö ]+$').test(value)
+    }, "Ej godkända tecken."
+    )
     // [A-Za-zÀ-ž\u0370-\u03FF\u0400-\u04FF]
     // [a-zA-Z^\\u0041-\\u007F]
+    //  [a-zA-ZäöåÄÖÅ]
+    // [A-Za-zÀ-ž]
+    // return this.optional(element) || ('^[A-Za-zÀ-ž ]+$').test(value)
 
 
     formValidation();
@@ -19,7 +27,7 @@ $(document).ready(function(){
             rules: {
                     firstName: {
                     required: true,
-                    specialChrs: true
+                    specialChrs: true,
                 },
                 lastName: {
                     required: true,
@@ -36,7 +44,7 @@ $(document).ready(function(){
                 },
                 address: {
                     required: true,
-                    specialChrs: true
+                    numeralsAndSpecialChars: true
                 },
                 city: {
                     required: true,
@@ -64,7 +72,10 @@ $(document).ready(function(){
                 phone: "Var god ange ett giltigt telefonnummer",
                 address: "Var god ange din gata.",
                 city: "Var god ange din postort.",
-                postalCode:  "Var god ange ditt postnummer.",
+                postalCode:  {
+                    required: "Var god ange ditt postnummer.",
+                    number: "Var god ange giltigt postnummer."
+                },
                 password: {
                     required: "Var god ange ett lösenord.",
                     minlength: "Ditt lösenord måste vara minst åtta tecken långt."
