@@ -1,10 +1,10 @@
 {
-    "name": "Elisa",
-    "lastname": "Oortwijn",
+    "name": "Åsa",
+    "lastname": "Kieślowski",
     "email": "elisa.oortwijn@example.com",
     "telephone": "(585)-101-0279",
-    "address": "Callistusplein 5734",
-    "postort": "Espel",
+    "address": "Strömvägen 5734",
+    "postort": "Stockholm",
     "postnummer": 93406,
     "password": "scully"
 }
