@@ -38,7 +38,7 @@ $(document).ready(function(){
                 repeatPassword: {
                     required: true,
                     minlength: 8,
-                    equalTo: "#password"
+                    equalTo: "#passwordBox"
                 }
             }, 
             messages: {
@@ -55,6 +55,7 @@ $(document).ready(function(){
                 },
                 repeatPassword: {
                     required: "Var god upprepa ditt lösenord.",
+                    minlength: "Ditt lösenord måste vara minst åtta tecken långt.",
                     equalTo: "Det här lösenordet måste stämma överens med det du angav ovan."
                 }
             }
