@@ -10,14 +10,15 @@ $(document).ready(function(){
         return new RegExp('^[A-Za-z0-9À-žÅÄÖåäö ]+$').test(value)
     }, "Ej godkända tecken."
     )
-    // [A-Za-zÀ-ž\u0370-\u03FF\u0400-\u04FF]
-    // [a-zA-Z^\\u0041-\\u007F]
-    //  [a-zA-ZäöåÄÖÅ]
-    // [A-Za-zÀ-ž]
-    // return this.optional(element) || ('^[A-Za-zÀ-ž ]+$').test(value)
+
+    let password = $("#passwordBox").val();
+
+        console.log(password);
 
 
     formValidation();
+
+
 
     function formValidation(){
         $('#registerForm').validate({ 
