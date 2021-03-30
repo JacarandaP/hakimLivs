@@ -30,7 +30,7 @@
       >
         Close &times;
       </button>
-      <ul id="category-list" class="list-unstyled components"></ul>
+      <ul id="category-list" class=" list-group components"></ul>
       <a href="#" class="w3-bar-item w3-button">Popular products</a>
       <a href="#" class="w3-bar-item w3-button">New products</a>
     </div>
@@ -55,7 +55,7 @@
               class="img-fluid"
             />
           </div>
-          <div id="products-container" class=""></div>
+          <div id="products" class=""></div>
         </div>
 
         <div id="footer"></div>
@@ -89,9 +89,8 @@
     <script src="js/showProducts.js"></script>
     <script src="js/effects.js"></script>
     <script>
-      getProducts(renderProducts, $("#container"));
-      getCategories(renderCategories, $("#category-list"));
-      
+      getProducts(renderProducts, $("#products"))
+        getCategories(renderCategories, $("#category-list"))
     </script>
   </body>
 </html>
