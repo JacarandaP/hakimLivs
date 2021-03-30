@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+
+    jQuery.validator.addMethod("specialChrs", function (element, value) {
+        return new RegExp('^[A-Za-zÀ-ž\u0370-\u03FF\u0400-\u04FF]+$').test(value)
+    }), 
+
+    // [A-Za-zÀ-ž\u0370-\u03FF\u0400-\u04FF]
+    // [a-zA-Z^\\u0041-\\u007F]
+
+
     formValidation();
 
     function formValidation(){
@@ -8,8 +17,14 @@ $(document).ready(function(){
             submitHandler:()=> { $('#submitForm').attr('disabled',true)},
 
             rules: {
-                firstName: "required",
-                lastName: "required",
+                    firstName: {
+                    required: true,
+                    specialChrs: true
+                },
+                lastName: {
+                    required: true,
+                    specialChrs: true
+                }, 
                 email: {
                     required: true, 
                     email: true
@@ -19,13 +34,18 @@ $(document).ready(function(){
                     number: true,
                     minlength: 9
                 },
-                address: "required",
-                city: "required",
+                address: {
+                    required: true,
+                    specialChrs: true
+                },
+                city: {
+                    required: true,
+                    specialChrs: true
+                },
                 postalCode: {
                     required: true,
                     number: true,
-                    minlength: 5,
-                    maxlength: 6
+                    rangelength: [5,6]
                 },
                 password: {
                     required: true,
