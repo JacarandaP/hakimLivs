@@ -3,13 +3,9 @@ $(document).ready(function(){
     formValidation();
 
     function formValidation(){
-
-
         $('#registerForm').validate({ 
-
             
             submitHandler:()=> { $('#submitForm').attr('disabled',true)},
-
 
             rules: {
                 firstName: "required",
@@ -48,7 +44,7 @@ $(document).ready(function(){
                 phone: "Var god ange ett giltigt telefonnummer",
                 address: "Var god ange din gata.",
                 city: "Var god ange din postort.",
-                postalCode: "Var god ange ditt postnummer.",
+                postalCode:  "Var god ange ditt postnummer.",
                 password: {
                     required: "Var god ange ett lösenord.",
                     minlength: "Ditt lösenord måste vara minst åtta tecken långt."
@@ -63,7 +59,4 @@ $(document).ready(function(){
     
 
     }
-
-
-
 })
