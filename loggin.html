@@ -9,14 +9,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
     <style>
+    .container-error-message {
+    background-color: #fa0c0c;
+    width: 300px;
+    height: 100%;
+    display: grid;
+    margin-right: auto;
+    margin-left: auto;
+    justify-items: center;
+    align-items: center;
+    }
 
     .container{
     width: 100%;
     max-width: 960px;
+    margin-top: 40px;
     margin-right: auto;
     margin-left: auto;
+    padding: 10px 40px 30px;
     }
-        input[type=email], input[type=password] {
+
+    input[type=email], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -34,6 +47,10 @@
     cursor: pointer;
     width: 100%;
   }
+
+  .button-regi {
+    background-color: #fa7979;
+  }
     </style>
 </head>
 <body>
@@ -48,12 +65,18 @@
 
         <h3 style="text-align: center">Logga in</h3>
 
+        <div id="login-error-msg-holder" class="container-error-message">
+          <p id="ErrorMessage">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+        </div>
+
+        <form id="loginForm" >
         <label for="username" >Användarenamn(din e-mail)</label>
         <input id="usernameEmail" type="email" placeholder="Skriv in registrerad e-mail" required>
         <label for="password" >Password</label>
         <input id="password" type="password" placeholder="Skriv in lösenord" required>
-        <button type="submit">Login</button>
-
+        <button type="submit">Logga in</button>
+        <button id="loginBtn"  class="button-regi" type="submit" >Registrera konto</button>
+      </form>
     </div>
     <div id="footer">
 
@@ -64,6 +87,7 @@
     crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <scriptsrc="loggin.js"></script>
     
               
 </body>
