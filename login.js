@@ -47,3 +47,7 @@ loginButton.addEventListener("click", (e) => {
         loginErrorMsg.style.opacity = 1;
     }
 });
+
+function registerPage() {
+    location.href = 'register.html';
+}
