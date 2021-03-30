@@ -1,8 +1,7 @@
-/*
 var array = [];
 var obj = {
-  'useremail': 'test@gmail.com',
-  'password': 'test'
+  useremail: 'test@gmail.com',
+  password: 'test'
 };
 array.push(obj);
 console.log(obj.useremail);
@@ -10,18 +9,15 @@ console.log(obj.password);
 
 //Skapa JSON data genom stringfy()
 var setjson = JSON.stringify(obj);
-localStorage.setItem('useremail', setjson);
-localStorage.setItem('password', setjson);
-
-localStorage.getItem('useremail');
-localStorage.getItem('password');
+localStorage.setItem("userData", setjson);
+console.log(localStorage);
 
 //Konvertera värdet som erhållits i JSON-format till ett objekt som kan användas i JaveScript genom JSON.parse ()
-var getjsonUseremail = localStorage.getItem('useremail');
-var getjsonPassword = localStorage.getItem('password');
-var objUseremail = JSON.parse(getjsonUseremail);
-var objUserPassword = JSON.parse(getjsonPassword);
-*/
+var getjsonUserData = localStorage.getItem("userData");
+var objUserData = JSON.parse(getjsonUserData);
+console.log(objUserData);
+console.log(objUserData.useremail);
+console.log(objUserData.password);
 
 
 //const  loginForm  =  document.getElementById("loginForm");
@@ -36,7 +32,7 @@ loginButton.addEventListener("click", (e) => {
     const valuePass = password.value;
     
 
-    if (valueEmail === "test@gmail.com"  && valuePass === "test") {
+    if (valueEmail === objUserData.useremail  && valuePass === objUserData.password) {
         alert("Din inloggning lyckades");
         //location.reload();
 
