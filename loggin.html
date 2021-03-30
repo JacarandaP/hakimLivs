@@ -9,16 +9,23 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
     <style>
-    .container-error-message {
-    background-color: #fa0c0c;
-    width: 300px;
-    height: 100%;
-    display: grid;
-    margin-right: auto;
-    margin-left: auto;
-    justify-items: center;
-    align-items: center;
-    }
+
+    #error-msg-second-line {
+  display: block;
+   }
+
+   #errorMessage {
+  width: 23%;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8a0000;
+  border: 1px solid #8a0000;
+  background-color: #e58f8f;
+  opacity: 0;/* man kan inte se meddelande*/
+}
 
     .container{
     width: 100%;
@@ -65,8 +72,8 @@
 
         <h3 style="text-align: center">Logga in</h3>
 
-        <div id="login-error-msg-holder" class="container-error-message">
-          <p id="ErrorMessage">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+        <div id="login-error-msg-holder" >
+          <p id="errorMessage">Invalid username <span id="error-msg-second-line">and/or password</span></p>
         </div>
 
         <form id="loginForm" >

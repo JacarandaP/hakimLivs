@@ -28,15 +28,15 @@ var objUserPassword = JSON.parse(getjsonPassword);
 const usernameEmail = document.getElementById("usernameEmail");
 const password = document.getElementById("password");
 const  loginButton  =  document.getElementById("loginBtn");
-const  loginErrorMsg  =  document.getElementById("ErrorMessage");
+const  loginErrorMsg  =  document.getElementById("errorMessage");
 
 loginButton.addEventListener("click", (e) => {
     e.preventDefault();
     const valueEmail =usernameEmail.value;
     const valuePass = password.value;
-    const password = document.getElementById("password").value;
+    
 
-    if (valueEmail === 'test@gmail.com'  && valuePass === 'test') {
+    if (valueEmail === "test@gmail.com"  && valuePass === "test") {
         alert("Din inloggning lyckades");
         //location.reload();
 
@@ -46,4 +46,4 @@ loginButton.addEventListener("click", (e) => {
         //opacity(0) gör elementet transparent->(1)se meddelande
         loginErrorMsg.style.opacity = 1;
     }
-})
+});
