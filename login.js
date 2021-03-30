@@ -38,7 +38,7 @@ loginButton.addEventListener("click", (e) => {
     if (valueEmail === 'test@gmail.com'  && valuePass === 'test') {
         alert("Din inloggning lyckades");
         //location.reload();
-        
+
         // kommer till index sidan 
         location.href='index.html';
     } else {
