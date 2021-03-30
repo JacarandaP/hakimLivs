@@ -92,15 +92,17 @@ function getProductsByCategory(render,appendTo, category){
         
         if(product.category === category){
             render(product,appendTo)
-            
-            //render(product.title,product.description,product.image,product.price,product.category, appendTo)
+          
         }
     })
 }
 
+/**
+ * eventlistener to filter by category
+ */
 $('#category-list').on('click', '.category',(function(){
 let categoryName = $(this).data('name');
-//$('#cards div').remove(); //
+
 $('#products').empty()
 getProductsByCategory(renderProducts, $("#products"), categoryName)
 }))
