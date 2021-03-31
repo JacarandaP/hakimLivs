@@ -51,7 +51,7 @@ function Product(id, title, description, price, category, amount) {
     function getTotalAmountProducts(){
         var totalAmountProducts = 0;
         for(var item in shoppingCart){
-          totalAmountProducts += shoppingCart[item].amount;
+          totalAmountProducts += Number(shoppingCart[item].amount);
         }
         $('#counter').html(totalAmountProducts);
         return totalAmountProducts;
