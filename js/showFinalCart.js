@@ -12,11 +12,11 @@ function renderFinalCart(){
     finalProdCart += "<tr>"
     +"<td>" + finalPrdName + "</td>"
     +"<td>"+ "$" + finalPrdPrice + "</td>"
-    + "<td><div class='input-group'><button class='minus-prd input-group-addon btn btn-primary' data-names='" + finalPrdName + "'>-</button>"
+    + "<td><div class='input-group'><button class='minus-prd input-group-addon btn btn-primary' data-name='" + finalPrdName + "'>-</button>"
     + "<input type='number' class='item-count form-control' data-name='" +  finalPrdName + "' value='" + finalPrdAmount + "'>"
-    + "<button class='plus-prd btn btn-primary input-group-addon' data-names='" +  finalPrdName + "'>+</button></div></td>"
+    + "<button class='plus-prd btn btn-primary input-group-addon' data-name='" +  finalPrdName + "'>+</button></div></td>"
     + "<td>"+ "$" + finalTotalPrice+ "</td>" 
-    + "<td><button class='delete-prd' data-names='" + finalPrdName + "'><img src='images/trash.svg' alt='remove' fill='red'></img></button></td>"
+    + "<td><button class='delete-prd' data-name='" + finalPrdName + "'><img src='images/trash.svg' alt='remove' fill='red'></img></button></td>"
     +  "</tr>";
   }
   
@@ -69,17 +69,17 @@ function renderFinalCart(){
   
   
   $('#finalInfo').on("click", ".minus-prd",(function(){
-    let prdName = $(this).data('names');
+    let prdName = $(this).data('name');
     removeOne(prdName);
   
   }));
   
   $('#finalInfo').on("click", ".plus-prd",(function(){
-    let prdName = $(this).data('names');
+    let prdName = $(this).data('name');
    addOne(prdName);
   }));
   
   $('#finalInfo').on("click", ".delete-prd",(function(){
-    let prdName = $(this).data('names');
+    let prdName = $(this).data('name');
     discard(prdName);
   }))
