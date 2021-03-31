@@ -1,3 +1,13 @@
+.bi{
+ font-size: 25px;
+}
+
+.form-control{
+    min-width: 400px;
+}
+
+
 #sidebar{
     width: 200px;
 }
+
