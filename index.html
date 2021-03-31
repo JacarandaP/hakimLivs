@@ -45,7 +45,14 @@
             &#9776;
           </button>
           <div class="w3-container w-auto">
-            <h1>Hakim Livs</h1>
+            
+            <h1 ul class="nav justify-content-end">
+              <li class="nav-item"><a href="kassa.html" id="showcartbtn" type="button" style="background-color:black" class="btn btn-primary" 
+                 data-bs-target="#cart"><img src="images/cart.svg" alt="cartpic"> <span id="counter" class="total-count"></span></a>
+                  <button id="clear" class="clear-cart btn btn-danger">Empty Cart</button>
+              </li>
+          </ul>Hakim Livs</h1>
+       
           </div>
         </div>
         <div class="w3-container" class="container">
@@ -65,14 +72,14 @@
       <div class="card d-inline-block" style="width: 20em">
         <img class="card-img-top product-image" src="" alt="Product" />
         <div class="card-body">
-          <h5 class="card-title product-title">Card title</h5>
-          <p class="card-text product-description">
+          <h5 class="card-title product-title" >Card title</h5>
+          <p class="card-text product-description" >
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
           <p class="card-footer product-price"></p>
-          <p class="card-text product-category"></p>
-          <a href="#" class="btn btn-primary" data-productId="">BUY</a>
+          <p  class="card-text product-category"></p>
+          <a href="#" id="buy" class="add-to-cart btn btn-primary", onclick="AddProduct(this); getTotalAmountProducts()" >BUY</a>
         </div>
       </div>
     </template>
@@ -88,6 +95,8 @@
     
     <script src="js/showProducts.js"></script>
     <script src="js/effects.js"></script>
+    <script src="js/showCart.js"></script>
+    <script src="js/showFinalCart.js"></script>
     <script>
       getProducts(renderProducts, $("#products"))
         getCategories(renderCategories, $("#category-list"))

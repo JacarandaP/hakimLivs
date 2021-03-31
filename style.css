@@ -1,3 +1,17 @@
 #sidebar{
     width: 200px;
 }
+
+div.finalTable{
+    margin-left:  25%;
+    margin-right: 25%;
+  }
+  
+  #form{
+      margin-left:  25%;
+      margin-right: 25%;
+  }
+  #formdiv {
+      margin-left:  20%;
+      margin-right: 20%;
+  }
