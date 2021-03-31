@@ -5,18 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
+    <style>
+
+    #error-msg-next-line {
+  display: block;
+   }
+
+   #errorMessage {
+  width: 23%;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8a0000;
+  border: 1px solid #8a0000;
+  background-color: #e58f8f;
+  opacity: 0;/* man kan inte se meddelande*/
+}
+
+  #errorMessage {
+    width: 23%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8a0000;
+    border: 1px solid #8a0000;
+    background-color: #e58f8f;
+    opacity: 0;/* man kan inte se meddelande*/
+  }
+
+  #login-error-msg-holder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+    .container{
+    width: 100%;
+    max-width: 960px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px 40px 30px;
+    }
+
+    input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #a0abeb;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .button-regi {
+    background-color: #fa7979;
+  }
+    </style>
 </head>
 <body>
     <div id="top-meny">
 
+       
     </div>
     <div id="sidebar">
 
     </div>
-    <div id="container">
+    <div id="container" class="container">
 
+        <h3 style="text-align: center">Logga in</h3>
+
+        <div id="login-error-msg-holder" class="container" >
+          <p id="errorMessage">Ogiltigt användarnamn <span id="error-msg-next-line">och/eller Lösenord</span> <span id="error-msg-next-line">Om du har inte konto klicka registrera konto</span></p>
+        </div>
+
+        <form id="loginForm" >
+        <label for="username" >Användarenamn(din e-mail)</label>
+        <input id="usernameEmail" type="email" placeholder="Skriv in registrerad e-mail" required>
+        <label for="password" >Lösenord</label>
+        <input id="password" type="password" placeholder="Skriv in lösenord" required>
+        <button id="loginBtn"type="submit">Logga in</button>
+        <button id="RegisterBtn"  class="button-regi" type="submit" onClick="registerPage();" >Registrera konto</button>
+      </form>
     </div>
     <div id="footer">
 
@@ -27,6 +115,7 @@
     crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="login.js"></script>
     
               
 </body>
