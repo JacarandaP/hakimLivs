@@ -11,10 +11,6 @@ $(document).ready(function(){
     }, "Ej godkända tecken."
     )
 
-    let password = $("#passwordBox").val();
-
-        console.log(password);
-
 
     formValidation();
 
@@ -23,7 +19,22 @@ $(document).ready(function(){
     function formValidation(){
         $('#registerForm').validate({ 
             
-            submitHandler:()=> { $('#submitForm').attr('disabled',true)},
+            //submitHandler:()=> { $('#submitForm').attr('disabled',true)},
+         
+ /*           submitHandler: function(form) {
+                if(form.valid()){
+                    console.log("valid")
+                } else {
+                    console.log("invalid")
+                }
+              },
+            
+/*
+            submitHandler:()=> { 
+                window.location.href = "index.html"                    
+                 },
+            */
+            
 
             rules: {
                     firstName: {
@@ -88,7 +99,14 @@ $(document).ready(function(){
                 }
             }
         })
-    
-
     }
+
+
+    $('#submitForm').submit(function(event){
+        event.preventDefault();
+        if($('#submitForm').valid()){
+            console.log("valid");
+            tryCreateUser();
+        }
+    });
 })
