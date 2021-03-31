@@ -25,9 +25,10 @@ function saveMyOrders() {
 
 function profileInit(){
   saveProfile() //this is for MOCK UP data!!! needs to be commented in a near future
-checkLogged()
+  saveMyOrders() // this is for MOCK UP data!!
+  checkLogged()
 loadProfileToTable();
-saveMyOrders()
+
 }
 
 /**
