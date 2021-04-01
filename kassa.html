@@ -26,11 +26,61 @@
             <a href="kassa.html"><i class="bi bi-cart2"></i></i></a>  
           </div>
            <!-- Navbar -->
+        <nav class="nav-bar nav-bar-light"  style="background-color: #e3f2fd; height: 3.5rem; font-weight:bolder" >
+            <a href="index.html" class="back"><img src="images/arrow.svg" alt="arrow"></img> Back to store</a>
+        </nav>
+
     </div>
     <div id="sidebar">
 
     </div>
-    <div id="container">
+    <div id="containerKassa" class="container">
+        <h1 style="text-align: center;" >Your order</h1>
+    <div class="finalTable">
+    <table class="table table-bordered" id="table2" style="width:900px"> 
+        <thead>
+            <tr>
+                <th class="text-center py-3 px-4" style="min-width: 100px;">Product</th>
+                <th class="text-center py-3 px-4" style="min-width: 80px;">Price</th>
+                <th class="text-center py-3 px-4" style="width: 150px;">Quantity</th>
+                <th class="text-center py-3 px-4" style="min-width: 150px;">Total</th>
+                <th class="text-center py-3 px-4" style="min-width: 150px;">Discard</th>
+            </tr>
+             </thead>
+             <tbody id="finalInfo">
+             </tbody>   
+        </table>
+        <div class="d-flex justify-content-start">
+            <h4 class="font-weight-bold">To pay: $<span id="FinalTotalPay" class="text-large"></span></h4>
+          </div>
+</div>
+<div class="form-field error" id="formdiv">
+    <h3 style="text-align: center;" >Please fill in your information and confirm your purchase</h3>
+    <form name="ConfirmForm" action="#" id="form" >
+        <p>Name: </p>
+        <input type="text" size="75" id="clientsName" name="Name">
+        <small id="input1"></small>
+        <br>
+        <p>Address: </p>
+        <input type="text"size="75" id="clientsAddress" name="Address"> 
+        <small id="input2"></small>
+        <br>
+        <p>E-mail Address: </p>
+        <input type="text" size="75" id="clientsMail" name="EMail">
+        <small id="input3"></small>
+        <br>
+        <p>Telephone: </p>
+        <input type="text" size="75" id="clientsPhone" name="Telephone">
+        <small id="input4"></small>
+        <br>
+        <br>
+        <br>
+
+        <p>
+            <input type="button" 
+                   value="Submit" name="submit" id="confirmbtn">
+        </p>
+</div>
 
     </div>
     <div id="footer">
@@ -42,7 +92,9 @@
     crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    
-              
+    <script src="js/showProducts.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/showCart.js"></script>
+    <script src="js/showFinalCart.js"></script>    
 </body>
 </html>
