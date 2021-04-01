@@ -60,7 +60,7 @@ fetch(productsAPI)
  renderProducts=(product,appendTo)=>{
     let template=$('#product-card-template').contents().clone()
     template.find('.product-title').text(product.title)
-    template.find('.product-description').text(product.description)
+    template.find('.product-description').text(product.description.substring(0,50))//TODO: an accordion or popup to extend info (in HTML template)
     template.find('.product-image').attr('src', product.image)
     template.find('.product-price').text(product.price)
     template.find('.product-category').text(product.category)
