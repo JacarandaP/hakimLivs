@@ -30,6 +30,7 @@ function Product(id, title, description, price, category, amount) {
   }
 
  function AddProduct(e){
+  
     let productID =  (e.getAttribute('productID'));
     let productTitle = (e.getAttribute('productTitle'));
     let productDes = (e.getAttribute('productDescription'));
