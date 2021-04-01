@@ -1,5 +1,5 @@
 var backendSendRegister;
-var backendLogging; 
+var backendLoggin; 
 var backendConfirmCart; 
 let usersDBaddress="./mockupdata/fakeUsers.json";
 var userExists=false;
@@ -9,7 +9,7 @@ let userProfile;
 /**
  * function to simulate DB. search if a given email is in DB, if its not there it creates an user and saves the PROFILE in localStorage
  */
-function saveUsersDB(name,lastname,email,telephone,
+function handleUsersEmailDB(name,lastname,email,telephone,
     address,postort,postnummer,password) {
     fetch(usersDBaddress)
       .then((res) => res.json())
@@ -40,8 +40,27 @@ if(!userExists){
 
 backendSendRegister=(name,lastname,email,telephone,
     address,postort,postnummer,password)=>{
-            saveUsersDB(name,lastname,email,telephone,
+            handleUsersEmailDB(name,lastname,email,telephone,
                 address,postort,postnummer,password)
           
         }
 
+backendLoggin=(email,password)=>{
+    fetch(usersDBaddress)
+    .then((res) => res.json())
+    .then((json) => {
+        let usersDB=[];
+
+        json.forEach((users)=>usersDB.push(users))
+    usersDB.forEach((user)=>{ 
+        if(user.email==email && user.password==password){
+       let profile={name:user.email,lastname:user.lastname,email:user.email,telephone:user.telephone,
+        address:user.address,postort:user.postort,postnummer:user.postnummer,password:user.password}
+       console.log("here")
+        saveProfileLocalStorages(profile)
+        
+        alert("you are logged as:" + user.name + " " + user.lastname)
+    }
+    })
+})
+}

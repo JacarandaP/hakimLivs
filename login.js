@@ -30,8 +30,16 @@ loginButton.addEventListener("click", (e) => {
     e.preventDefault();
     const valueEmail =usernameEmail.value;
     const valuePass = password.value;
-    
+    //BACKEND SIMULATION IS HERE
+    backendLoggin(valueEmail,valuePass);
+    //checkLogged()
+    if(loadProfileLocalStorage!==null){
+    alert("you are logged")
+    location.href='index.html';}
+    else
+    loginErrorMsg.style.opacity = 1;
 
+    /*COMMENTED BY BACKEND SIMULATION
     if (valueEmail === objUserData.useremail  && valuePass === objUserData.password) {
         alert("Din inloggning lyckades");
         //location.reload();
@@ -42,6 +50,7 @@ loginButton.addEventListener("click", (e) => {
         //opacity(0) gör elementet transparent->(1)se meddelande
         loginErrorMsg.style.opacity = 1;
     }
+    */
 });
 
 function registerPage() {
