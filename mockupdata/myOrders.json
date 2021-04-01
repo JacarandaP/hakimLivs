@@ -1,6 +1,6 @@
 [
     {
-        "id": 4,
+        "orderNr": 4,
         "date":"21-12-2021",
         "delivered":{
             "name": "Åsa",
@@ -72,7 +72,7 @@
         
     },
      {
-        "id": 7,
+        "orderNr": 7,
         "date":"1-02-2021",
         "delivered":{
             "name": "Åsa",

@@ -17,7 +17,6 @@ function saveMyOrders() {
   fetch(ordersAPI)
     .then((res) => res.json())
     .then((json) => {
-      console.log(json);
       saveOrdersLocalStorages(json);
     });
 }
@@ -90,11 +89,11 @@ renderOrders=()=>{
   if(orders!==null){
     orders.forEach((order)=>{
     let template=$('#order-history-card').contents().clone()
-    template.find('.order-history-id').text(order.id)
+    template.find('.order-history-id').text(order.orderNr)
     template.find('.order-history-date').text(order.date)
-    template.find('.order-history-toggle').attr('data-target',value="#toggle"+order.id)
-    template.find('.order-history-toggle').attr('aria-controls',"toggle"+order.id)
-    template.find('.orders-body-collapse').attr('id',"toggle"+order.id)
+    template.find('.order-history-toggle').attr('data-target',value="#toggle"+order.orderNr)
+    template.find('.order-history-toggle').attr('aria-controls',"toggle"+order.orderNr)
+    template.find('.orders-body-collapse').attr('id',"toggle"+order.orderNr)
     template.find('.order-delivery-address').text("to implement")
     template.find('.order-products-cards').text()
     template.find('.order-delivery-address').text(order.delivered.name + " " + order.delivered.lastname + " "+order.delivered.address+ " "+ order.delivered.postort +" " + order.delivered.postnummer)
