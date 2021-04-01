@@ -1,4 +1,4 @@
-$(document).ready(function(){
+//$(document).ready(function(){
 
     // tillsvidare
     let emailAlreadyInDb = false;
@@ -34,13 +34,19 @@ $(document).ready(function(){
 
 
     function tryCreateUser(){
+        /*COMMENTED BY BACKEND SIMULATION take out when no need simulation
+
         if(isEmailAvailable() && $("#registerForm").valid()){
             $("#emailAvailableMsg").html("");
             console.log("valid");
+*/
             createUser();
+/*COMMENTED BY BACKEND SIMULATION
+
         } else {
             $("#emailAvailableMsg").html("Den här mejlen är redan registrerad på en användare. Logga in eller använd en annan mejl.")
         }
+        */
         
     }
 
@@ -57,14 +63,19 @@ $(document).ready(function(){
         user = { name : inputName, 
             lastname: inputLastname, 
             email : inputEmail, 
-            telehpone: inputPhone,
+            telephone: inputPhone,
             address: inputAddress,
             postort: inputPostort,
             postnummer: inputPostnummer,
             password: inputPassword
         };
+/**
+ * ADDED BT BACKEND SIMULATION here the bacendSimulation making up a response
+ */
+ backendSendRegister(inputName,inputLastname,inputEmail,inputPhone,
+    inputAddress,inputPostort,inputPostnummer,inputPassword);
 
-        
+        /* COMMENTED BY BACKEND SIMULATION
         jUser = JSON.stringify(user);
         //console.log(user);
         console.log(jUser);
@@ -72,12 +83,14 @@ $(document).ready(function(){
             localStorage.setItem("PROFILE", jUser);
             window.location.href = "index.html";
         }
+
+        */
         // skicka JSON.stringify(user) till databas
 
     }
 
 
-})
+//})
 
 /*
 register-> skapar profile.json -> skickar til bandesiumaltionSendRegister(profile.json)-> 

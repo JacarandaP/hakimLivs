@@ -1,4 +1,4 @@
-$(document).ready(function(){
+//$(document).ready(function(){
 
 
     jQuery.validator.addMethod("specialChrs", function (value, element) {
@@ -12,7 +12,7 @@ $(document).ready(function(){
     )
 
 
-    formValidation();
+  //  formValidation();
 
 
 
@@ -20,20 +20,24 @@ $(document).ready(function(){
         $('#registerForm').validate({ 
             
             //submitHandler:()=> { $('#submitForm').attr('disabled',true)},
-         
- /*           submitHandler: function(form) {
+/*         
+            submitHandler: function(form) {
                 if(form.valid()){
                     console.log("valid")
                 } else {
                     console.log("invalid")
                 }
               },
-            
-/*
-            submitHandler:()=> { 
-                window.location.href = "index.html"                    
-                 },
             */
+
+            submitHandler:()=> { 
+                tryCreateUser()
+                //ADDED BY BACKEND SIMULATION
+               if(!userExists){
+                window.location.href = "index.html" 
+               }
+                 },
+            
             
 
             rules: {
@@ -106,7 +110,8 @@ $(document).ready(function(){
         event.preventDefault();
         if($('#submitForm').valid()){
             console.log("valid");
+
             tryCreateUser();
         }
     });
-})
+//})
