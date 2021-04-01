@@ -4,7 +4,7 @@ const productsAPI='./mockupdata/products.json'
 const categoriesAPI='./mockupdata/categories.json'
 //function to render products
 let renderProducts;
-//fuctio to save products
+//function to save products
 let saveProductsLocalStorages;
 let loadProductsLocalStorage = [];
 var categories=new Array();
@@ -65,6 +65,12 @@ fetch(productsAPI)
     template.find('.product-price').text(product.price)
     template.find('.product-category').text(product.category)
     template.find('.card').attr('data-category',product.category)
+    template.find('.add-to-cart').attr('productID',product.id)
+    template.find('.add-to-cart').attr('productTitle', product.title)
+    template.find('.add-to-cart').attr('productDescription', product.description)
+    template.find('.add-to-cart').attr('productPrice', product.price)
+    template.find('.add-to-cart').attr('productCategory', product.category)
+    template.find('.add-to-cart').attr('productAmount', 1)
     appendTo.append(template);
 
 }
@@ -106,4 +112,5 @@ let categoryName = $(this).data('name');
 $('#products').empty()
 getProductsByCategory(renderProducts, $("#products"), categoryName)
 }))
+
 

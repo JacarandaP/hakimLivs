@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"/>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -46,40 +46,52 @@
             &#9776;
           </button>
           <div class="w3-container w-auto" id="navbar">
+
             <a href="index.html"><h1 class="d-inline ">Hakim Livs</h1></a>
+
             <form class="form-inline d-inline ">
-              <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Search">
+              <input class="form-control mr-sm-2 mb-2 " type="search" placeholder="Search">
               <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button>
             </form>
+
             <a href="loggin.html"><i class="bi bi-person "></i></a>
-            <a href="kassa.html"><i class="bi bi-cart2"></i></i></a>  
-          </div>
+            <a href="kassa.html"><i class="bi bi-cart2"></i></i></a> 
+
+          <!--  <ul class="nav justify-content-end">-->
+             <!-- <li class="nav-item"> -->
+                <a href="kassa.html" id="showcartbtn" type="button" style="background-color:black" class="btn btn-primary" 
+                 data-bs-target="#cart"><img src="images/cart.svg" alt="cartpic"> <span id="counter" class="total-count"></span></a>
+
+                  <button id="clear" class="clear-cart btn btn-danger">Empty Cart</button>
+             <!-- </li>-->
+         <!-- </ul>-->
         </div>
-        <div class="w3-container" class="container">
+      </div>
+        <div class="w3-container ">
           <div id="offering-container">
             <img
               src="https://dummyimage.com/1280x720/d61c54/fff&text=offer!"
               class="img-fluid"
             />
           </div>
-          <div id="products" class=""></div>
+          <div id="products" class="container mt-3"></div>
         </div>
 
         <div id="footer"></div>
       </div>
     </div>
     <template id="product-card-template">
-      <div class="card d-inline-block" style="width: 20em">
+      <div class="card d-inline-block shadow mh-25" style="width: 20em;">
         <img class="card-img-top product-image" src="" alt="Product" />
         <div class="card-body">
-          <h5 class="card-title product-title">Card title</h5>
-          <p class="card-text product-description">
+          <h5 class="card-title product-title font-weight-bold" >Card title</h5>
+          <p class="card-text product-description " >
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
           <p class="card-footer product-price"></p>
-          <p class="card-text product-category"></p>
-          <a href="#" class="btn btn-primary" data-productId="">BUY</a>
+          <p  class="card-text product-category"></p>
+          <a href="#" id="buy" class="add-to-cart btn btn-primary", onclick="AddProduct(this); getTotalAmountProducts(); event.preventDefault()" >BUY</a>
         </div>
       </div>
     </template>
@@ -95,6 +107,8 @@
     
     <script src="js/showProducts.js"></script>
     <script src="js/effects.js"></script>
+    <script src="js/showCart.js"></script>
+    <script src="js/showFinalCart.js"></script>
     <script>
       getProducts(renderProducts, $("#products"))
         getCategories(renderCategories, $("#category-list"))
