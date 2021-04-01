@@ -4,7 +4,7 @@ const productsAPI='./mockupdata/products.json'
 const categoriesAPI='./mockupdata/categories.json'
 //function to render products
 let renderProducts;
-//fuctio to save products
+//function to save products
 let saveProductsLocalStorages;
 let loadProductsLocalStorage = [];
 var categories=new Array();

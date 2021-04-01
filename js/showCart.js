@@ -1,3 +1,7 @@
+/**
+ * Functions to load, save and empty the shopping cart
+ */
+
 let shoppingCart = [];
 
 function Product(id, title, description, price, category, amount) {
@@ -29,6 +33,12 @@ function Product(id, title, description, price, category, amount) {
     saveCart();
   }
 
+  /**
+   * 
+   * @param {event on click} e 
+   * @returns goes out of the loop if the product already exists, just increases the amount of that product in the cart
+   */
+
  function AddProduct(e){
   
     let productID =  (e.getAttribute('productID'));
@@ -49,6 +59,12 @@ function Product(id, title, description, price, category, amount) {
     saveCart();
     }
 
+/**
+ * 
+ * @returns total amout of products in cart
+ */
+
+
     function getTotalAmountProducts(){
         var totalAmountProducts = 0;
         for(var item in shoppingCart){
@@ -62,6 +78,7 @@ $('#clear').click(function(){
     emptyCart();
     $('#counter').html(getTotalAmountProducts());
   })
+
 
 
 
