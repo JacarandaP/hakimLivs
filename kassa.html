@@ -23,13 +23,9 @@
               <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button>
             </form>
             <a href=""><i class="bi bi-person "></i></a>
-            <a href="kassa.html"><i class="bi bi-cart2"></i></i></a>  
+            <a href="kassa.html"><i class="bi bi-cart2"><span id="counter" class="total-count"></span></i></i></a> 
+            <a href="index.html" class="back"><img src="images/arrow.svg" alt="arrow"></img> Back to store</a> 
           </div>
-           <!-- Navbar -->
-        <nav class="nav-bar nav-bar-light"  style="background-color: #e3f2fd; height: 3.5rem; font-weight:bolder" >
-            <a href="index.html" class="back"><img src="images/arrow.svg" alt="arrow"></img> Back to store</a>
-        </nav>
-
     </div>
     <div id="sidebar">
 
@@ -53,38 +49,36 @@
         <div class="d-flex justify-content-start">
             <h4 class="font-weight-bold">To pay: $<span id="FinalTotalPay" class="text-large"></span></h4>
           </div>
-</div>
-<div class="form-field error" id="formdiv">
-    <h3 style="text-align: center;" >Please fill in your information and confirm your purchase</h3>
-    <form name="ConfirmForm" action="#" id="form" >
-        <p>Name: </p>
-        <input type="text" size="75" id="clientsName" name="Name">
-        <small id="input1"></small>
-        <br>
-        <p>Address: </p>
-        <input type="text"size="75" id="clientsAddress" name="Address"> 
-        <small id="input2"></small>
-        <br>
-        <p>E-mail Address: </p>
-        <input type="text" size="75" id="clientsMail" name="EMail">
-        <small id="input3"></small>
-        <br>
-        <p>Telephone: </p>
-        <input type="text" size="75" id="clientsPhone" name="Telephone">
-        <small id="input4"></small>
-        <br>
-        <br>
-        <br>
+    </div>
+    <div class="form-field error" id="formdiv">
+        <h3 style="text-align: center;" >Please fill in your information and confirm your purchase</h3>
+        <form name="ConfirmForm" action="#" id="form" >
+            <p>Name: </p>
+            <input type="text" size="75" id="clientsName" name="Name">
+            <small id="input1"></small>
+            <br>
+            <p>Address: </p>
+            <input type="text"size="75" id="clientsAddress" name="Address"> 
+            <small id="input2"></small>
+            <br>
+            <p>E-mail Address: </p>
+            <input type="text" size="75" id="clientsMail" name="EMail">
+            <small id="input3"></small>
+            <br>
+            <p>Telephone: </p>
+            <input type="text" size="75" id="clientsPhone" name="Telephone">
+            <small id="input4"></small>
+            <br>
+            <br>
+            <br>
 
         <p>
             <input type="button" 
                    value="Submit" name="submit" id="confirmbtn">
         </p>
-</div>
-
+        </div>
     </div>
     <div id="footer">
-
     </div>
     <script
     src="https://code.jquery.com/jquery-3.6.0.js"
