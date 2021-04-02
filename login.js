@@ -3,6 +3,7 @@ var obj = {
   useremail: 'test@gmail.com',
   password: 'test'
 };
+/*COMMENTED BY BACKEND SIMULATION
 array.push(obj);
 console.log(obj.useremail);
 console.log(obj.password);
@@ -15,10 +16,11 @@ console.log(localStorage);
 //Konvertera värdet som erhållits i JSON-format till ett objekt som kan användas i JaveScript genom JSON.parse ()
 var getjsonUserData = localStorage.getItem("userData");
 var objUserData = JSON.parse(getjsonUserData);
+
 console.log(objUserData);
 console.log(objUserData.useremail);
 console.log(objUserData.password);
-
+*///END OF COMMENT BACKEND SIMULATION
 
 //const  loginForm  =  document.getElementById("loginForm");
 const usernameEmail = document.getElementById("usernameEmail");
@@ -32,9 +34,10 @@ loginButton.addEventListener("click", (e) => {
     const valuePass = password.value;
     //BACKEND SIMULATION IS HERE
     backendLoggin(valueEmail,valuePass);
-    //checkLogged()
+  // checkLogged()
+    //console.log(isLogged)
     if(loadProfileLocalStorage!==null){
-    alert("you are logged")
+        //if(isLogged){
     location.href='index.html';}
     else
     loginErrorMsg.style.opacity = 1;
@@ -50,7 +53,7 @@ loginButton.addEventListener("click", (e) => {
         //opacity(0) gör elementet transparent->(1)se meddelande
         loginErrorMsg.style.opacity = 1;
     }
-    */
+    *///END OF COMMENT
 });
 
 function registerPage() {

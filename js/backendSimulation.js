@@ -56,9 +56,9 @@ backendLoggin=(email,password)=>{
         if(user.email==email && user.password==password){
        let profile={name:user.email,lastname:user.lastname,email:user.email,telephone:user.telephone,
         address:user.address,postort:user.postort,postnummer:user.postnummer,password:user.password}
-       console.log("here")
+      
         saveProfileLocalStorages(profile)
-        
+        checkLogged()
         alert("you are logged as:" + user.name + " " + user.lastname)
     }
     })
