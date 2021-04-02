@@ -29,20 +29,21 @@ const  loginButton  =  document.getElementById("loginBtn");
 const  loginErrorMsg  =  document.getElementById("errorMessage");
 
 loginButton.addEventListener("click", (e) => {
-    e.preventDefault();
+   e.preventDefault();
     const valueEmail =usernameEmail.value;
     const valuePass = password.value;
     //BACKEND SIMULATION IS HERE
-    backendLoggin(valueEmail,valuePass);
-  // checkLogged()
-    //console.log(isLogged)
+    backendLoggin(valueEmail,valuePass,frontendReacts);
+  
+
+    /*COMMENTED BY BACKEND SIMULATION
     if(loadProfileLocalStorage!==null){
         //if(isLogged){
     location.href='index.html';}
     else
     loginErrorMsg.style.opacity = 1;
 
-    /*COMMENTED BY BACKEND SIMULATION
+    
     if (valueEmail === objUserData.useremail  && valuePass === objUserData.password) {
         alert("Din inloggning lyckades");
         //location.reload();
@@ -58,4 +59,16 @@ loginButton.addEventListener("click", (e) => {
 
 function registerPage() {
     location.href = 'register.html';
+}
+let frontendReacts=(profile)=>{
+   
+   console.log(profile)
+   // checkLogged()
+    if(isLogged){
+      //  alert("you are logged as:" + profile.name + " " + profile.lastname)
+    location.href='index.html';
+
+}
+    else
+    loginErrorMsg.style.opacity = 1;
 }

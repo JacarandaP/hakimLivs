@@ -3,8 +3,9 @@ const ordersAPI = "./mockupdata/myOrders.json";
 let renderOrders;
 /**
  * saves profile data to local storage ONLY FOR TESTING
- *
+ *  has to be changed to a get request like: /api/user
  */
+/* COMMENTED BY BACKEND SIMULATION
 function saveProfile() {
   fetch(profileAPI)
     .then((res) => res.json())
@@ -12,7 +13,11 @@ function saveProfile() {
       saveProfileLocalStorages(json);
     });
 }
-
+*/
+/**
+ * saves order data to local storage ONLY FOR TESTING
+ *  has to be changed to a get request like: /api/order
+ */
 function saveMyOrders() {
   fetch(ordersAPI)
     .then((res) => res.json())
@@ -23,7 +28,7 @@ function saveMyOrders() {
 /**END OF MOCK UP SET UP */
 
 function profileInit(){
-  saveProfile() //this is for MOCK UP data!!! needs to be commented in a near future
+ // saveProfile() //this is for MOCK UP data!!! needs to be commented in a near future
   saveMyOrders() // this is for MOCK UP data!!
   checkLogged()
 loadProfileToTable();
