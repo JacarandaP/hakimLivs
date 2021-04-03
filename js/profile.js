@@ -1,6 +1,7 @@
 const profileAPI = "./mockupdata/myProfile.json";
 const ordersAPI = "./mockupdata/myOrders.json";
 let renderOrders;
+
 /**
  * saves profile data to local storage ONLY FOR TESTING
  *  has to be changed to a get request like: /api/user
@@ -22,7 +23,7 @@ function saveMyOrders() {
   fetch(ordersAPI)
     .then((res) => res.json())
     .then((json) => {
-      saveOrdersLocalStorages(json);
+      localStorage.setItem(ordersStorage, JSON.stringify(json));
     });
 }
 /**END OF MOCK UP SET UP */
@@ -30,7 +31,7 @@ function saveMyOrders() {
 function profileInit(){
  // saveProfile() //this is for MOCK UP data!!! needs to be commented in a near future
   saveMyOrders() // this is for MOCK UP data!!
-  checkLogged()
+ // checkLogged()
 loadProfileToTable();
 
 }
@@ -39,7 +40,7 @@ loadProfileToTable();
  * Load profile data and show
  */
 const loadProfileToTable=()=>{
-    let profile=loadProfileLocalStorage;
+    let profile=JSON.parse(localStorage.getItem("PROFILE"));
     $('#user-name').text(profile.name)
     $('#user-last-name').text(profile.lastname)
     $('#user-phone-number').text(profile.telephone)
@@ -49,7 +50,7 @@ const loadProfileToTable=()=>{
 
 }
 const loadProfileToForm=()=>{
-  let profile=loadProfileLocalStorage;
+  let profile=JSON.parse(localStorage.getItem("PROFILE"));
   $('#form-name').val(profile.name)
   $('#form-last-name').val(profile.lastname)
   $('#form-phone').val(profile.telephone)
@@ -73,7 +74,7 @@ $("#edit-profile").click(() => {
  * submit profile update and refresh local storage. TODO: NEEDS TO CALL BACKEND AND HAVE SUCCES RESPONSE
  */
 $('#submit-profile-changes').click(()=>{
-  let savedProfile=loadProfileLocalStorage;
+  let savedProfile=JSON.parse(localStorage.getItem("PROFILE"));
   let profile={
     address: $('#form-address').val(),
     email:savedProfile.email,
@@ -87,10 +88,11 @@ telephone: $('#form-phone').val()
   }
 //post it to BACKEND, if succeed save to local storage !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 saveProfileLocalStorages(profile)
+localStorage.setItem(profileStorage, JSON.stringify(profile));
 //ADD A FANCY ALERT! for user?????
 })
 renderOrders=()=>{
-  let orders=loadOrdersLocalStorage
+  let orders=JSON.parse(localStorage.getItem(ordersStorage))
   if(orders!==null){
     orders.forEach((order)=>{
     let template=$('#order-history-card').contents().clone()

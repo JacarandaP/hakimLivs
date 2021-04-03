@@ -19,13 +19,16 @@
         <div class="w3-container w-auto" id="navbar">
             <a href="index.html"><h1 class="d-inline">Hakim Livs</h1></a>
             <form class="form-inline d-inline ">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button>
+             <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button> -->
             </form>
+            <div class="float-right">
             <a href=""><i class="bi bi-person "></i></a>
-            <a href="kassa.html"><i class="bi bi-cart2"><span id="counter" class="total-count"></span></i></i></a> 
+            <a href="kassa.html"><i class="bi bi-cart2 pl-5 pr-5"><span id="counter" class="total-count"></span></i></i></a> 
             <a href="index.html" class="back"><img src="images/arrow.svg" alt="arrow"></img> Back to store</a> 
+
           </div>
+    </div>
     </div>
     <div id="sidebar">
 
@@ -50,6 +53,7 @@
             <h4 class="font-weight-bold">To pay: $<span id="FinalTotalPay" class="text-large"></span></h4>
           </div>
     </div>
+    <button id="clear" class="clear-cart btn btn-danger">Empty Cart</button>
     <div class="form-field error" id="formdiv">
         <h3 style="text-align: center;" >Please fill in your information and confirm your purchase</h3>
         <form name="ConfirmForm" action="#" id="form" >

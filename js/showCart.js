@@ -31,6 +31,10 @@ function Product(id, title, description, price, category, amount) {
   function emptyCart(){
     shoppingCart= [];
     saveCart();
+    //BACKEND SIMULATOR ADDED
+    $('#finalInfo').hide();
+    $('#FinalTotalPay').hide();
+    
   }
 
   /**

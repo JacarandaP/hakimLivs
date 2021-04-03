@@ -6,6 +6,7 @@
  */
 
 function renderFinalCart(){
+
     showEmptyCartMssg();
     let checkoutCart = shoppingCart;
     let finalShoppingCart = "";
@@ -117,5 +118,17 @@ function renderFinalCart(){
     }
   }
 
+  //ADDED BY BACKEND SIMULATION
+  let getProfileDetails=()=>{
+    if(localStorage.getItem("PROFILE")!=null){
+      let profile=JSON.parse(localStorage.getItem("PROFILE"))
+      console.log(profile.name)
+      $('#clientsName').val(profile.name)
+      $('#clientsPhone').val(profile.telephone)
+      $('#clientsAddress').val(profile.address)
+      $('#clientsMail').val(profile.email)
+    }
+  }
+getProfileDetails();
 
  

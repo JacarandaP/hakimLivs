@@ -1,3 +1,5 @@
+
+
 /**
  * js to manage the inlogning
  */
@@ -11,10 +13,19 @@ var checkLogged=()=>{if(loadCredentialsLocalStorage!==null)isLogged=true; consol
  * FOR BACKEND SIMULATION checks if its logged and changes loggin button to redirect to profile, and shows name
  */
 let changeTopVarOnloggedIn=()=>{
-    checkLogged();
-    let profile=loadProfileLocalStorage;
-    if(isLogged & loadProfileLocalStorage!=null){
+   // checkLogged();
+    let profile=JSON.parse(localStorage.getItem("PROFILE"));
+  
+    if(profile!=null){
         $('#loggin-button').attr('href','profile.html')
-        $('#navbar').append('logged as:'+profile.name);
+        $('#navbar').append('</br>logged as:'+profile.name);
+        $('#navbar').after('<button id="logout" class="btn btn-danger float-right mt-2" style="height:30px" onClick="loggout();">Logg out</button>')
+        
     }
+   
 }
+let loggout=()=> {localStorage.removeItem("PROFILE");
+localStorage.removeItem("CREDENTIALS")
+localStorage.removeItem("shoppingCart")
+localStorage.removeItem("ORDERS")
+location.href="index.html"}

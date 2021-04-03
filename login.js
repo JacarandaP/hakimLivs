@@ -34,7 +34,7 @@ loginButton.addEventListener("click", (e) => {
     const valuePass = password.value;
     //BACKEND SIMULATION IS HERE
     backendLoggin(valueEmail,valuePass,frontendReacts);
-  
+    
 
     /*COMMENTED BY BACKEND SIMULATION
     if(loadProfileLocalStorage!==null){
@@ -61,8 +61,15 @@ function registerPage() {
     location.href = 'register.html';
 }
 let frontendReacts=(profile)=>{
-   
-   console.log(profile)
+    if(profile!=null){
+  alert('Welcome '+ profile.name + '!')
+  location.href='index.html'}
+  else{
+      alert("Not logged in, wrong password??wrong e-mail??")
+  }
+}
+    
+/*
    // checkLogged()
     if(isLogged){
       //  alert("you are logged as:" + profile.name + " " + profile.lastname)
@@ -71,4 +78,4 @@ let frontendReacts=(profile)=>{
 }
     else
     loginErrorMsg.style.opacity = 1;
-}
+    */
