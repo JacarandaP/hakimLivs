@@ -19,7 +19,7 @@ let changeTopVarOnloggedIn=()=>{
     if(profile!=null){
         $('#loggin-button').attr('href','profile.html')
         $('#navbar').append('</br>logged as:'+profile.name);
-        $('#navbar').after('<button id="logout" class="btn btn-danger float-right mt-2" style="height:30px" onClick="loggout();">Logg out</button>')
+        $('#navbar').after('<button id="logout" class="btn btn-danger float-right mt-2" style="height:30px" onClick="loggout();">Log out</button>')
         
     }
    

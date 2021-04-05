@@ -23,7 +23,7 @@
               <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button> -->
             </form>
             <div class="float-right">
-            <a href=""><i class="bi bi-person "></i></a>
+            <a href="loggin.html" id="loggin-button" ><i class="bi bi-person "></i></a>
             <a href="kassa.html"><i class="bi bi-cart2 pl-5 pr-5"><span id="counter" class="total-count"></span></i></i></a> 
             <a href="index.html" class="back"><img src="images/arrow.svg" alt="arrow"></img> Back to store</a> 
 
@@ -54,32 +54,47 @@
           </div>
     </div>
     <button id="clear" class="clear-cart btn btn-danger">Empty Cart</button>
-    <div class="form-field error" id="formdiv">
+    <div class="form-field" id="formdiv">
         <h3 style="text-align: center;" >Please fill in your information and confirm your purchase</h3>
-        <form name="ConfirmForm" action="#" id="form" >
-            <p>Name: </p>
-            <input type="text" size="75" id="clientsName" name="Name">
-            <small id="input1"></small>
+        <form name="confirmForm" action="" id="checkoutForm"  type="actionForm" >
+            <fieldset>
+            <p>
+                <label for="firstName">First name: </label> 
+            </p>
+            <input type="text" size="75" id="clientsFirstName" name="firstName">
+           
+            <p>
+                <label for="lastName">Last name </label> 
+            </p>
+            <input type="text" size="75" id="clientsLastName" name="lastName">
+          
+            <p>
+                <label for="email">E-mail:</label>
+            </p>
+            <input type="text" size="75" id="clientsMail" name="email">
+            <p>
+                <laberl for="phone">Telephone: </label>
+            </p>
+            <input type="text" size="75" id="clientsPhone" name="phone">
+            <p>
+                <label for="street">Street: </label>
+            </p>
+            <input type="text"size="75" id="clientsStreet" name="address"> 
+            <p>
+                <label for="city">City: </label>
+            </p>
+            <input type="text"size="75" id="clientsCity" name="city"> 
+            <p>
+                <label for="postalCode">ZipCode: </label>
+            </p>
+            <input type="text"size="75" id="clientsZipCode" name="postalCode"> 
             <br>
-            <p>Address: </p>
-            <input type="text"size="75" id="clientsAddress" name="Address"> 
-            <small id="input2"></small>
             <br>
-            <p>E-mail Address: </p>
-            <input type="text" size="75" id="clientsMail" name="EMail">
-            <small id="input3"></small>
-            <br>
-            <p>Telephone: </p>
-            <input type="text" size="75" id="clientsPhone" name="Telephone">
-            <small id="input4"></small>
-            <br>
-            <br>
-            <br>
-
         <p>
-            <input type="button" 
-                   value="Submit" name="submit" id="confirmbtn">
+            <input type="submit" class="submit" value="Submit" name="submit" id="confirmbtn">
         </p>
+    </fieldset>
+        </form>
         </div>
     </div>
     <div id="footer">
@@ -90,9 +105,19 @@
     crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js"></script>
     <script src="js/showProducts.js"></script>
     <script src="js/effects.js"></script>
     <script src="js/showCart.js"></script>
-    <script src="js/showFinalCart.js"></script>    
+    <script src="js/showFinalCart.js"></script>
+    <script src="js/validateForm.js"></script> 
+    <script src="js/backendSimulation.js"></script>
+    <script src="js/sessionManager.js"></script>   
+      
+    <script>
+          changeTopVarOnloggedIn();
+        formValidationCheckout()  
+     </script>
 </body>
 </html>

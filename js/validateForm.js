@@ -114,4 +114,65 @@
             tryCreateUser();
         }
     });
+
+    /**
+     * Validates the form at the check out
+     */
+
+    function formValidationCheckout(){
+        $('#checkoutForm').validate({ 
+
+            rules: {
+                    firstName: {
+                    required: true,
+                    specialChrs: true,
+                },
+                lastName: {
+                    required: true,
+                    specialChrs: true
+                }, 
+                email: {
+                    required: true, 
+                    email: true
+                },
+                phone: {
+                    required: true,
+                    number: true,
+                    minlength: 9
+                },
+                address: {
+                    required: true,
+                    numeralsAndSpecialChars: true
+                },
+                city: {
+                    required: true,
+                    specialChrs: true
+                },
+                postalCode: {
+                    required: true,
+                    number: true,
+                    rangelength: [5,6]
+                }
+        
+            }, 
+            messages: {
+                firstName: "Var god ange förnamn.",
+                lastName: "Var god ange efternamn.",
+                email: "Var god ange e-postadress.",
+                phone: "Var god ange ett giltigt telefonnummer",
+                address: "Var god ange din gata.",
+                city: "Var god ange din postort.",
+                postalCode:  {
+                    required: "Var god ange ditt postnummer.",
+                    number: "Var god ange giltigt postnummer."
+                }
+            },
+            
+           submitHandler: function(form) {
+              //info about the order sends to backend and the cart is emptied
+              displayConfirmationMsgg();
+          }
+        })
+    }
+
 //})

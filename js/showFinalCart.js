@@ -8,6 +8,7 @@
 function renderFinalCart(){
 
     showEmptyCartMssg();
+    displayMssgNotLoggedIn();
     let checkoutCart = shoppingCart;
     let finalShoppingCart = "";
     let finalTotalToPay = 0;
@@ -122,13 +123,38 @@ function renderFinalCart(){
   let getProfileDetails=()=>{
     if(localStorage.getItem("PROFILE")!=null){
       let profile=JSON.parse(localStorage.getItem("PROFILE"))
-      console.log(profile.name)
-      $('#clientsName').val(profile.name)
+      $('#clientsFirstName').val(profile.name)
+      $('#clientsLastName').val(profile.lastname)
       $('#clientsPhone').val(profile.telephone)
-      $('#clientsAddress').val(profile.address)
+      $('#clientsStreet').val(profile.address)
+      $('#clientsCity').val(profile.postort)
+      $('#clientsZipCode').val(profile.postnummer)
       $('#clientsMail').val(profile.email)
     }
   }
 getProfileDetails();
 
+/**
+ * Function to ask the user to log in to continue with the purchase
+ */
+
+function displayMssgNotLoggedIn(){
+  if(localStorage.getItem("PROFILE") == null) {
+    $('#formdiv').html('<div class="col-sm-12 text center"><h3><strong> Please log in to confirm your purchase</strong></h3>'+
+    '<a href="loggin.html" class="btn btn-primary m-3">Log in</a>'+
+    '</div>')
+  }
+}
+
+/**
+ * Function to inform the user that the order has been sent. 
+ */
+
+function displayConfirmationMsgg(){
+$('#containerKassa').html('<div class="col-sm-12 empty-cart-cls text-center">' +
+'<h3><strong>Your order has been sent. Thank you!</strong></strong></h3>'+
+'<a href="index.html" class="btn btn-primary cart-btn-transform m-3">continue shopping</a>'+
+'</div>');
+  emptyCart()
+}
  
