@@ -23,9 +23,9 @@
 
         <form class="form-group" id="loginForm" >
         <label for="username" >Adminsnamn</label>
-        <input id="username" class="form-control" type="text" placeholder="Skriv in registrerad e-mail" required>
+        <input id="username" class="form-control" type="text" placeholder="Skriv in registrerad namn" oninvalid="this.setCustomValidity('fyll i det här fältet med ditt adminsnamn')"  oninput="setCustomValidity('')" required>
         <label for="password" >Lösenord</label>
-        <input id="password" class="form-control" type="password" placeholder="Skriv in lösenord" required>
+        <input id="password" class="form-control" type="password" placeholder="Skriv in lösenord" oninvalid="this.setCustomValidity('fyll i det här fältet med din lösenord')"  oninput="setCustomValidity('')" required>
         <button id="loginBtn" class="mt-4 btn btn-primary w-100" type="submit">Logga in</button>
         <div id="login-error-msg-holder" class="container pt-5 text-center" >
             <p id="errorMessage">Ogiltigt Adminsnamn <span id="error-msg-next-line">och/eller Lösenord</span></p>
