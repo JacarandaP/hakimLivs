@@ -40,7 +40,7 @@ let frontendReacts=(profile)=>{
     
     $(document).ready(()=>{
         $('#loginBtn').css('background-color', 'grey')
-        $('#usernameEmail, #password').keydown(()=>{
+        $('#usernameEmail, #password').keyup(()=>{
         if( password.value.length >0 && usernameEmail.value.length>0)
         $('#loginBtn').css('background-color', ' #a0abeb') 
          else  $('#loginBtn').css('background-color', 'grey')
