@@ -12,7 +12,13 @@
     <div class="container">
 
 
-        <div id="produkt-katalog" class=" mb-3">
+        <div id="produkt-katalog" class="bg-light shadow mb-3">
+            <label>Sök produkt</label>
+        <div id="search-product" class="row m-1">
+            <input id="search-product-input" type="text" class="form-control col" placeholder="skriv pris, title, id eller kategori">
+       
+    </div>
+            <h3>PRODUKTER</h3>
             <table class="table">
                 <thead>
                     <tr>
@@ -24,21 +30,40 @@
                     </tr>
                   </thead>
                   <tbody id="to-append-products">
-                      <template id="produkt-katalog-item">
-                    <tr>
-                      <th class="product-id"scope="row">1</th>
-                      <td class="product-title"></td>
-                      <td class="product-category"></td>
-                      <td class="product-price"></td>
-                      <td class="product-edit"><button class="btn btn-primary">redigera</button></td>
-                    </tr>
-                </template>
+                     
             </table>
             
-        </div>
-        <button class="btn btn-primary" onclick="gotoeditProduct()">lägga en ny produkt</button>
+       
+        <button class="btn btn-primary m-2" onclick="gotoeditProduct()">lägga en ny produkt</button>
     </div>
+    
+    <div id="kategori-katalog" class="bg-light shadow container mt-5 mb-5">
+        <label>Sök kategori</label>
+        <div id="search-category" class="row m-1">
+            <input id="search-category-input" type="text" class="form-control col" placeholder="skriv en kategori" >
+       
+    </div>
+        <h3>KATEGORIER</h3>
+      <ul class="list-group to-append-categories">
+        
    
+      </ul>
+            <div class="row mt-5">
+               
+            <input id="add-category-input" class="form-control col" ></input>
+            <button id="add-category" class="btn btn-primary col mb-2">lägga till ny kategori</button>
+        </div>
+    </div>
+</div>
+<template id="produkt-katalog-item">
+    <tr>
+      <th class="product-id"scope="row">1</th>
+      <td class="product-title"></td>
+      <td class="product-category"></td>
+      <td class="product-price"></td>
+      <td class="product-edit"><button class="btn btn-primary">redigera</button></td>
+    </tr>
+</template>
     <script
     src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -48,6 +73,10 @@
     <script src="admin.js"></script>
     <script>
         getProducts(renderProducts);
+       getCategories(renderCategories);
+       searchAndFilter('#search-product-input','#to-append-products > tr')
+       searchAndFilter('#search-category-input','.to-append-categories > li')
+       addCategory()
     </script>
 </body>
 </html>
