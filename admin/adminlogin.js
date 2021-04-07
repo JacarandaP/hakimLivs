@@ -28,7 +28,7 @@ let frontendReacts=(response)=>{
 
 loginButton.on('click', (e)=>{
    //this is for test doesnt submit anything!
-  //  e.preventDefault()
+    e.preventDefault()
 //get the values
     const valueName=$('#username').val();
 const valuePass=$('#password').val();
