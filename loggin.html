@@ -19,37 +19,22 @@
    }
 
    #errorMessage {
-  width: 23%;
+ 
   text-align: center;
-  margin: 0;
-  padding: 5px;
+  
   font-size: 12px;
   font-weight: bold;
   color: #8a0000;
-  border: 1px solid #8a0000;
-  background-color: #e58f8f;
+ 
   opacity: 0;/* man kan inte se meddelande*/
 }
 
-  #errorMessage {
-    width: 23%;
-    text-align: center;
-    margin: 0;
-    padding: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    color: #8a0000;
-    border: 1px solid #8a0000;
-    background-color: #e58f8f;
-    opacity: 0;/* man kan inte se meddelande*/
-  }
+
 
   #login-error-msg-holder {
     width: 100%;
     height: 100%;
-    display: grid;
-    justify-items: center;
-    align-items: center;
+   
   }
 /*
     .container{
@@ -71,7 +56,8 @@
   }
   
   .button-regi-all {
-    background-color: #a0abeb;
+    background-color: #868686;
+   
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -108,17 +94,21 @@
 
         <h3 style="text-align: center">Logga in</h3>
 
-        <div id="login-error-msg-holder" class="container" >
-          <p id="errorMessage">Ogiltigt användarnamn <span id="error-msg-next-line">och/eller Lösenord</span> <span id="error-msg-next-line">Om du har inte konto klicka registrera konto</span></p>
-        </div>
+        
 
         <form id="loginForm" >
         <label for="username" >Användarenamn(din e-mail)</label>
-        <input id="usernameEmail" type="email" placeholder="Skriv in registrerad e-mail" required>
+        <input id="usernameEmail" type="email" placeholder="Skriv in registrerad e-mail"  required>
         <label for="password" >Lösenord</label>
         <input id="password" type="password" placeholder="Skriv in lösenord" required>
         <button id="loginBtn" class="button-regi-all" type="submit">Logga in</button>
-        <button id="RegisterBtn"  class="button-regi-all button-regi" type="submit" onClick="registerPage();" >Registrera konto</button>
+        <button id="RegisterBtn"  class="button-regi-all button-regi" type="submit"  onClick="registerPage();" >Registrera konto</button>
+        <div class="float-right">
+          <a href="#" >glömt lösenord?</a></div>
+        <div id="login-error-msg-holder" class="container pt-5" >
+          <p id="errorMessage">Ogiltigt användarnamn <span id="error-msg-next-line">och/eller Lösenord</span> <span id="error-msg-next-line">Om du har inte konto klicka registrera konto</span></p>
+        </div>
+        
       </form>
     </div>
     <div id="footer">

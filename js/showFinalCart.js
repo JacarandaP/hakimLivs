@@ -92,6 +92,7 @@ function renderFinalCart(){
   
   $('#finalInfo').on("click", ".minus-prd",(function(){
     let prdName = $(this).data('name');
+    if($('.item-count').val()>1)
     removeOne(prdName);
   
   }));
