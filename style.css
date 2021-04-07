@@ -15,7 +15,7 @@
     font-size: 15px;
     font-style: normal;
 }
-.product-table-scrollbar {
+.with-scrollbar {
     position: relative;
     height: 400px;
     overflow: auto;
