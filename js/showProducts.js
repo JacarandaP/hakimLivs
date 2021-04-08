@@ -71,6 +71,8 @@ fetch(productsAPI)
     template.find('.add-to-cart').attr('productPrice', product.price )
     template.find('.add-to-cart').attr('productCategory', product.category)
     template.find('.add-to-cart').attr('productAmount', 1)
+    template.find('.product-image').attr('product-id',product.id)
+    resizeObject(template.find('.product-image'))
     appendTo.append(template);
 
 }
@@ -112,5 +114,16 @@ let categoryName = $(this).data('name');
 $('#products').empty()
 getProductsByCategory(renderProducts, $("#products"), categoryName)
 }))
+
+/**
+ * function to show product info in product page
+ */
+let showProductPage=(e)=>{
+    let products=JSON.parse(localStorage.getItem('PRODUCTS'));
+   let product=products[e.getAttribute('product-id')-1]
+   sessionStorage.setItem('PRODUCT_INFO',JSON.stringify(product));
+   location.href='produkt.html'
+}
+
 
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+
+
+</head>
+   
+    
+<body>
+    
+    <div id="container" class="container">
+
+        <h3 style="text-align: center">Logga in</h3>
+
+        
+
+        <form class="form-group" id="loginForm" >
+        <label for="username" >Adminsnamn</label>
+        <input id="username" class="form-control" type="text" placeholder="Skriv in registrerad namn" oninvalid="this.setCustomValidity('fyll i det här fältet med ditt adminsnamn')"  oninput="setCustomValidity('')" required>
+        <label for="password" >Lösenord</label>
+        <input id="password" class="form-control" type="password" placeholder="Skriv in lösenord" oninvalid="this.setCustomValidity('fyll i det här fältet med din lösenord')"  oninput="setCustomValidity('')" required>
+        <button id="loginBtn" class="mt-4 btn btn-primary w-100" type="submit">Logga in</button>
+        <div id="login-error-msg-holder" class="container pt-5 text-center" >
+            <p id="errorMessage">Ogiltigt Adminsnamn <span id="error-msg-next-line">och/eller Lösenord</span></p>
+          </div>
+      </form>
+    </div>
+    <div id="footer">
+
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+   
+    
+    <script src="adminlogin.js"></script>
+
+    
+              
+</body>
+</html>
