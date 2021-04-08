@@ -44,7 +44,7 @@ function Product(id, title, description, price, category, amount) {
    */
 
  function AddProduct(e){
-  
+
     let productID =  (e.getAttribute('productID'));
     let productTitle = (e.getAttribute('productTitle'));
     let productDes = (e.getAttribute('productDescription'));
@@ -92,7 +92,74 @@ $('#clear').click(function(){
   })
 
 
+/**
+ * Replaces the button with minusplus buttons
+ * @param {event} e 
+ */
+let replaceButton=(e)=>{
+  let productId=e.getAttribute('productid');
+  $.each(shoppingCart,(i,product)=>{
+    if(productId===product.id){
+      let newButtons=minusPlus(product)
+      $(e).replaceWith(newButtons)
+      
+    }
+  })
+  
 
+}
+/**
+ * to render the minus-plus buttons
+ * @param {product object} product 
+ * @returns 
+ */
+let minusPlus= (product)=>{
+  return "<div class='input-group'><button class='minus-prd  btn btn-primary' onclick='addOrRest(this)' data-name='" + product.title + "'>-</button>"
++ "<input class=' text-center item-count form-control bg-white' style='border:0;' data-name='" +  product.title + "' value='" + product.amount + "'readonly>"
++ "<button class='plus-prd btn btn-primary input-group-addon' onclick='addOrRest(this)' data-name='" +  product.title + "'>+</button></div>"}
 
-
-    
+/**
+ * to add or rest when plus or minus buttons are clicked
+ * @param {event} e 
+ */
+let addOrRest=(e)=>{
+  let productTitle=e.getAttribute('data-name');
+  let isAdd=$(e).hasClass('plus-prd');
+  console.log($(e))
+  $.each(shoppingCart,(i,product)=>{
+    if(product.title==productTitle)
+    if(isAdd)
+      product.amount=operationAdd(product.amount);
+      else product.amount=operationRest(product.amount);
+    })
+    if(isAdd){
+    let amount=$(e).prev().val();
+    $(e).prev().val(operationAdd(Number(amount)));
+    }
+    else{
+    $(e).next().val(operationRest(Number($(e).next().val())));
+    }
+     
+      $('#finalInfo').html(renderFinalCart());
+      $('#counter').html(getTotalAmountProducts());
+      saveCart()
+}
+/**
+ * takes a number and returns the sum
+ * @param {number to sum} a 
+ * @returns 
+ */
+let operationAdd=(a)=>{
+  a++;
+  return a;
+}
+/**
+ * takes a number and rests 1, doesnt rest further than 1
+ * @param {number to rest} a 
+ * @returns 
+ */
+let operationRest=(a)=>{
+  if(a>1)
+    a--;
+  return a;
+}
