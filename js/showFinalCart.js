@@ -21,16 +21,16 @@ function renderFinalCart(){
     finalTotalToPay += checkoutCart[i].price * checkoutCart[i].amount;
     finalShoppingCart += "<tr>"
     +"<td>" + finalPrdName + "</td>"
-    +"<td>"+ "$" + finalPrdPrice + "</td>"
+    +"<td>" + finalPrdPrice + "kr.</td>"
     + "<td><div class='input-group'><button class='minus-prd  btn btn-primary' data-name='" + finalPrdName + "'>-</button>"
     + "<input class='item-count form-control' data-name='" +  finalPrdName + "' value='" + finalPrdAmount + "'>"
     + "<button class='plus-prd btn btn-primary input-group-addon' data-name='" +  finalPrdName + "'>+</button></div></td>"
-    + "<td>"+ "$" + finalTotalPrice+ "</td>" 
+    + "<td>" + finalTotalPrice+ "kr.</td>" 
     + "<td><button class='delete-prd' data-name='" + finalPrdName + "'><img src='images/trash.svg' alt='remove' fill='red'></img></button></td>"
     +  "</tr>";
   }
   
-  $('#FinalTotalPay').html(Number(finalTotalToPay).toFixed(2));
+  $('#FinalTotalPay').html(Number(finalTotalToPay).toFixed(2)+"kr.");
     
     return finalShoppingCart;
   }
@@ -92,7 +92,7 @@ function renderFinalCart(){
   
   $('#finalInfo').on("click", ".minus-prd",(function(){
     let prdName = $(this).data('name');
-    if($('.item-count').val()>1)
+    if($(this).next().val()>1)
     removeOne(prdName);
   
   }));

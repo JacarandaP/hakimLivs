@@ -74,7 +74,15 @@ function Product(id, title, description, price, category, amount) {
         for(var item in shoppingCart){
           totalAmountProducts += Number(shoppingCart[item].amount);
         }
+      
+       if(totalAmountProducts===0){
+       $('#counter').hide();
+            
+       }
+       else{
+        $('#counter').show();
         $('#counter').html(totalAmountProducts);
+       }
         return totalAmountProducts;
       }
 
