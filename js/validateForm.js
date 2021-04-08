@@ -18,17 +18,6 @@
 
     function formValidation(){
         $('#registerForm').validate({ 
-            
-            //submitHandler:()=> { $('#submitForm').attr('disabled',true)},
-/*         
-            submitHandler: function(form) {
-                if(form.valid()){
-                    console.log("valid")
-                } else {
-                    console.log("invalid")
-                }
-              },
-            */
 
             submitHandler:()=> { 
                 tryCreateUser()
@@ -40,31 +29,37 @@
             
             
 
-            rules: {
+                 rules: {
                     firstName: {
                     required: true,
                     specialChrs: true,
+                    maxlength: 100
                 },
                 lastName: {
                     required: true,
-                    specialChrs: true
+                    specialChrs: true, 
+                    maxlength: 100
                 }, 
                 email: {
                     required: true, 
-                    email: true
+                    email: true, 
+                    maxlength: 100
                 },
                 phone: {
                     required: true,
                     number: true,
-                    minlength: 9
+                    minlength: 9, 
+                    maxlength: 15
                 },
                 address: {
                     required: true,
-                    numeralsAndSpecialChars: true
+                    numeralsAndSpecialChars: true, 
+                    maxlength: 50
                 },
                 city: {
                     required: true,
-                    specialChrs: true
+                    specialChrs: true, 
+                    maxlength: 50
                 },
                 postalCode: {
                     required: true,
@@ -82,16 +77,29 @@
                 }
             }, 
             messages: {
-                firstName: "Var god ange förnamn.",
-                lastName: "Var god ange efternamn.",
-                email: "Var god ange e-postadress.",
-                phone: "Var god ange ett giltigt telefonnummer",
-                address: "Var god ange din gata.",
-                city: "Var god ange din postort.",
-                postalCode:  {
-                    required: "Var god ange ditt postnummer.",
-                    number: "Var god ange giltigt postnummer."
+                firstName: {
+                    required: "Var god ange förnamn.",
+                    maxlength: "Namnet du har angivit är för långt."
                 },
+                lastName: {
+                    required: "Var god ange förnamn.",
+                    maxlength: "Namnet du har angivit är för långt."
+                },
+                email: {
+                    required: "Var god ange e-postadress.",
+                    maxlength: "E-postadressen du har angivit är för lång."
+                },
+                phone: "Var god ange ett giltigt telefonnummer",
+                address: {
+                    required: "Var god ange din gata.",
+                    maxlength: "Gatuadressen du har angivit är för lång."
+                },
+                city: {
+                    required: "Var god ange din postort.",
+                    maxlength: "Postorten du har angivit är för lång."
+                },
+                
+                postalCode: "Var god ange giltigt postnummer.",
                 password: {
                     required: "Var god ange ett lösenord.",
                     minlength: "Ditt lösenord måste vara minst åtta tecken långt."
