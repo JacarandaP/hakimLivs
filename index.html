@@ -75,7 +75,7 @@
     </div>
     <template id="product-card-template">
       <div class="card d-inline-block shadow mh-25" style="width: 20em;">
-        <img class="card-img-top product-image" src="" alt="Product" />
+        <img class="card-img-top product-image" src="" alt="Product"  onclick="showProductPage(this)" />
         <div class="card-body">
           <h5 class="card-title product-title font-weight-bold" >Card title</h5>
           <p class="card-text product-description " >
@@ -84,7 +84,7 @@
           </p>
           <p class="card-footer product-price"></p>
           <p  class="card-text product-category"></p>
-          <a href="#" id="buy" class="add-to-cart btn btn-primary", onclick="AddProduct(this); getTotalAmountProducts(); event.preventDefault()" >BUY</a>
+          <a href="#" id="buy" class="add-to-cart btn btn-primary", onclick="AddProduct(this); getTotalAmountProducts(); event.preventDefault()" >KÖP</a>
         </div>
       </div>
     </template>
@@ -97,9 +97,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
     <!--script to show products-->
-    
-    <script src="js/showProducts.js"></script>
     <script src="js/effects.js"></script>
+    <script src="js/showProducts.js"></script>
+    
     <script src="js/showCart.js"></script>
     <script src="js/showFinalCart.js"></script>
     <script src="js/localStorageManager.js"></script>
