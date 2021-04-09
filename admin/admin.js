@@ -1,5 +1,6 @@
 const toCategoriesAddress='../mockupdata/categories.json'
 const toProductsAddress='../mockupdata/products.json'
+const toOrdersAddress='../mockupdata/adminorders.json'
 
 
 /**
@@ -16,7 +17,7 @@ const toProductsAddress='../mockupdata/products.json'
     
 }
 /**
- * get categories
+ * get categories and render
  */
  let getCategories=(render)=>{
     fetch(toCategoriesAddress)
@@ -27,6 +28,31 @@ const toProductsAddress='../mockupdata/products.json'
         )
     })
     
+}
+/**
+ * get orders and render
+ */
+ let getOrders=(render)=>{
+    fetch(toOrdersAddress)
+    .then(resp=>resp.json())
+    .then((json)=>{
+        json.forEach((order)=>{
+        render(order)}
+        )
+    })
+    
+}
+/**
+ *  to render orders
+ */
+let renderOrders=(order)=>{
+    let template=$('#order-katalog-item').contents().clone()
+    template.find('.order-id').text(order.orderId)
+    template.find('.order-customer').text(order.customerId)
+    template.find('.order-date').text(order.date)
+    template.find('.order-price').text(order.price +" kr")
+   
+    $('#to-append-orders').append(template);
 }
 /**
  * render products on table

@@ -11,7 +11,7 @@
 <body>
     <div class="container">
 
-
+<!--PRODUKT KATALOG-->
         <div id="produkt-katalog" class="bg-light shadow mb-3">
             <label>Sök produkt</label>
         <div id="search-product" class="row m-1">
@@ -36,7 +36,17 @@
        
         <button class="btn btn-primary m-2" onclick="gotoeditProduct()">lägga en ny produkt</button>
     </div>
-    
+    <template id="produkt-katalog-item">
+        <tr>
+          <th class="product-id"scope="row">1</th>
+          <td class="product-title"></td>
+          <td class="product-category"></td>
+          <td class="product-price"></td>
+          <td class="product-edit"><button class="btn btn-primary">redigera</button></td>
+        </tr>
+    </template>
+    <!--END OF PRODUKT KATALOG-->
+    <!--KATEGORI KATALOG-->
     <div id="kategori-katalog" class="bg-light shadow container mt-5 mb-5">
         <label>Sök kategori</label>
         <div id="search-category" class="row m-1">
@@ -54,16 +64,40 @@
             <button id="add-category" class="btn btn-primary col mb-2">lägga till ny kategori</button>
         </div>
     </div>
+
+
+<!--END OF KATEGORI KATALOG-->
+<!--BESTÄLNING KATALOG nummer,kund id,totpris, data-->
+<div id="beställning-katalog" class="bg-light shadow mb-3">
+    <label>Sök beställning</label>
+<div id="search-order" class="row m-1">
+    <input id="search-order-input" type="text" class="form-control col" maxlength="50" placeholder="skriv pris, beställning nummer, kund id eller data">
+
 </div>
-<template id="produkt-katalog-item">
-    <tr>
-      <th class="product-id"scope="row">1</th>
-      <td class="product-title"></td>
-      <td class="product-category"></td>
-      <td class="product-price"></td>
-      <td class="product-edit"><button class="btn btn-primary">redigera</button></td>
-    </tr>
+    <h3>BESTÄLLNINGAR</h3>
+    <table class="table">
+        <thead>
+            <tr>
+              <th scope="col">Nr</th>
+              <th scope="col">Kund</th>
+              <th scope="col">Datum</th>
+              <th scope="col">Total pris</th>
+            </tr>
+          </thead>
+          <tbody id="to-append-orders">
+             
+    </table>
+</div>
+</div>
+<template id="order-katalog-item">
+<tr>
+  <th class="order-id"scope="row">1</th>
+  <td class="order-customer"></td>
+  <td class="order-date"></td>
+  <td class="order-price"></td>
+</tr>
 </template>
+<!--END OF BESTÄLNING KATALOG-->
     <script
     src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -74,8 +108,10 @@
     <script>
         getProducts(renderProducts);
        getCategories(renderCategories);
+       getOrders(renderOrders)
        searchAndFilter('#search-product-input','#to-append-products > tr')
        searchAndFilter('#search-category-input','.to-append-categories > li')
+       searchAndFilter('#search-order-input','#to-append-orders > tr')
        addCategory()
     </script>
 </body>
