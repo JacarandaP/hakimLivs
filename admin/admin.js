@@ -1,7 +1,7 @@
 const toCategoriesAddress='../mockupdata/categories.json'
 const toProductsAddress='../mockupdata/products.json'
 const toOrdersAddress='../mockupdata/adminorders.json'
-
+var selectedProduktId;
 
 /**
  * get products and render
@@ -73,7 +73,8 @@ let renderProducts=(product)=>{
  * sends the info of the product and goes to product edit page
  */
 let gotoeditProduct=(e)=>{
-    location.href="adminprodukt.html"
+    console.log($(e.attr('product-id')));
+   // location.href="adminprodukt.html"
 }
 
 /**
