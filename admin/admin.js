@@ -1,7 +1,7 @@
 const toCategoriesAddress='../mockupdata/categories.json'
 const toProductsAddress='../mockupdata/products.json'
 const toOrdersAddress='../mockupdata/adminorders.json'
-var selectedProduktId;
+
 
 /**
  * get products and render
@@ -73,8 +73,8 @@ let renderProducts=(product)=>{
  * sends the info of the product and goes to product edit page
  */
 let gotoeditProduct=(e)=>{
-    console.log($(e.attr('product-id')));
-   // location.href="adminprodukt.html"
+    sessionStorage.setItem("TEMP_ID",e.getAttribute('product-id'));
+    location.href="produktSida.html"
 }
 
 /**
@@ -117,3 +117,4 @@ let sendCategoryToDB=(category)=>{
    console.log("sending"+ category)
 
 }
+$('#add-new-product').on('click', ()=>{location.href="produktSida.html"})

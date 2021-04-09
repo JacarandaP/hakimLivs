@@ -13,24 +13,25 @@
         <h3>Redigera Produkt</h3>
         <form id="registerForm" type="actionForm"  class="form-group" action="#">
 
-            <label for="titel">Titel:</label> <br>
-            <input id="titel" class="form-control" name="firstName" type="text" maxlength="50"> <br>
+            <label for="titleBox">Titel:</label> <br>
+            <input id="titleBox" class="form-control" name="firstName" type="text" maxlength="50"> <br>
 
             <label for="descriptionBox">Beskrivning:</label> <br>
             <input id="descriptionBox" class="form-control" name="lastName" type="text"maxlength="100"> <br>
 
             <label for="imageBox">Bild:(Klistra in address till bilden)</label> <br>
-            <input id="imageBox" class="form-control" name="image" type="text"> <button id="show-image" class="btn btn-primary">visa bild</button>
+            <input id="imageBox" class="form-control" name="image" type="text"> <button id="show-image" type="button" class="btn btn-primary">visa bild</button>
             <br>
 
-            <label for="phoneBox">Pris:</label> <br>
-            <input id="phoneBox" class="form-control" name="phone" type="text"maxlength="10"> <br>
+            <label for="priceBox">Pris:</label> <br>
+            <input id="priceBox" class="form-control" name="phone" type="text"maxlength="10"> <br>
 
             <label>Kategori</label>
             <select id="category-combobox" class="form-select" aria-label="Default select example">
               </select>
           <div class="row mt-5">
             <input id="submitForm" class="btn btn-primary" type="submit" value="spara">
+            <button id="go-back" type="button" class="btn btn-danger ml-3">avsluta</button>
         </div>
            
         </form>
