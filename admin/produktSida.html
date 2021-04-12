@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkt</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Redigera Produkt</h3>
+        <form id="registerForm" type="actionForm"  class="form-group" action="#">
+
+            <label for="titleBox">Titel:</label> <br>
+            <input id="titleBox" class="form-control" name="firstName" type="text" maxlength="50"> <br>
+
+            <label for="descriptionBox">Beskrivning:</label> <br>
+            <input id="descriptionBox" class="form-control" name="lastName" type="text"maxlength="100"> <br>
+
+            <label for="imageBox">Bild:(Klistra in address till bilden)</label> <br>
+            <input id="imageBox" class="form-control" name="image" type="text"> <button id="show-image" type="button" class="btn btn-primary">visa bild</button>
+            <br>
+
+            <label for="priceBox">Pris:</label> <br>
+            <input id="priceBox" class="form-control" name="phone" type="text"maxlength="10"> <br>
+
+            <label>Kategori</label>
+            <select id="category-combobox" class="form-select" aria-label="Default select example">
+              </select>
+          <div class="row mt-5">
+            <input id="submitForm" class="btn btn-primary" type="submit" value="spara">
+            <button id="go-back" type="button" class="btn btn-danger ml-3">avsluta</button>
+        </div>
+           
+        </form>
+        <div class="float-right" id="image-container">
+
+        </div>
+       
+
+</div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="admin.js"></script>
+    <script src="produktsida.js"></script>
+    <script>
+     
+    </script>
+</body>
+</html>
