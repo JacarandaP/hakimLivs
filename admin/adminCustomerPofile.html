@@ -11,18 +11,84 @@
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <nav>
-                <h2>CUSTOMER PROFILE</h2>
-                <ul>
-                    <li><a href="adminHome.html">Home</a></li>
-                    <li><a href="adminOrder.html">Order</a></li>
-                    <li><a href="adminCustomerPofile.html">profile</a></li>
-                </ul>
-            </nav>
+    <div class="header sticky-top">
+        <nav>
+            <h2>KUND SIDA</h2>
+            <ul>
+                <li><a href="adminHome.html">Home</a></li>
+                <li><a href="adminOrder.html">Order</a></li>
+                <li><a href="adminCustomerPofile.html">profile</a></li>
+            </ul>
+        </nav>
+    </div>
+
+<div class="container">
+    <div id="criteria" class="bg-light border border-success rounded p-3">
+    <h3>Trogna kunder</h3>
+    <h5>skapa kriteria för trogna kunder</h5>
+    <span id="confirmed-message" class="">message</span>
+    <div class="mt-5 mb-5">
+        <div class="form-group ">
+        <label for="beställning-pris">Beställings total pris</label>
+        <input class="form-control col" id="beställning-pris" maxlength="6"></input>
+        <label for="beställning-per-vecka">Bestälning kvantitet per vecka</label>
+        <select id="beställning-per-vecka" class="form-select col" aria-label="Default select example">
+            <option selected>Välja</option>
+          </select>
         </div>
-    </header>
+        <div class="col">
+        <button id="send-criteria" class="btn btn-primary">Sätta</button>
+    </div>
+    </div>
+</div>
+   
+    <!--BESTÄLNING KATALOG nummer,kund id,totpris, data-->
+    <div id="beställning-katalog" class="bg-light shadow mb-3">
+        <label>Sök Kunder</label>
+    <div id="search-customer" class="row m-1">
+        <input id="search-customer-input" type="text" class="form-control col" maxlength="50" placeholder="skriv kund nummer,true eller false, total beställningar eller total betallat">
+    
+    </div>
+        <h3>Kunder</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">Nr</th>
+                  <th scope="col">Trogna</th>
+                  <th scope="col">Total Beställningar</th>
+                  <th scope="col">Total Betallat</th>
+                </tr>
+              </thead>
+              <tbody id="to-append-customers">
+                 
+        </table>
+    </div>
+    </div>
+    <template id="customer-item">
+    <tr>
+      <th class="customer-id"scope="row">1</th>
+      <td class="customer-trogna"></td>
+      <td class="customer-total-orders"></td>
+      <td class="customer-total-price"></td>
+    </tr>
+    </template>
+    <!--END OF BESTÄLNING KATALOG-->
+
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <script src="admin.js"></script>
+        <script src="kundsida.js"></script>
+        <script>
+            setSelectorValues();
+            sendCriteria();
+            updateUserTable(renderUsers)
+           searchAndFilter('#search-customer-input','#to-append-customers > tr')
+  
+        </script>
 
 </body>
 
