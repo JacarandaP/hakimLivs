@@ -8,12 +8,13 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="adminStyle.css" />
+    <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body>
 
-    <header>
-        <div class="header">
+
+        <div class="header sticky-top">
             <nav>
                 <h2>HOME PAGE</h2>
                 <ul>
@@ -23,8 +24,82 @@
                 </ul>
             </nav>
         </div>
-    </header>
 
+    <div class="container">
+
+        <!--PRODUKT KATALOG-->
+                <div id="produkt-katalog" class="bg-light shadow mb-3">
+                    <label>Sök produkt</label>
+                <div id="search-product" class="row m-1">
+                    <input id="search-product-input" type="text" class="form-control col" maxlength="50" placeholder="skriv pris, title, id eller kategori">
+               
+            </div>
+                    <h3>PRODUKTER</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col">id</th>
+                              <th scope="col">Titel</th>
+                              <th scope="col">Kategori</th>
+                              <th scope="col">Pris</th>
+                              <th scop="col">Edit</th>
+                            </tr>
+                          </thead>
+                          <tbody id="to-append-products">
+                             
+                    </table>
+                    
+               
+                <button id="add-new-product" class="btn btn-primary m-2">lägga en ny produkt</button>
+            </div>
+            <template id="produkt-katalog-item">
+                <tr>
+                  <th class="product-id"scope="row">1</th>
+                  <td class="product-title"></td>
+                  <td class="product-category"></td>
+                  <td class="product-price"></td>
+                  <td class="product-edit"><button class="btn btn-primary">redigera</button></td>
+                </tr>
+            </template>
+            <!--END OF PRODUKT KATALOG-->
+            <!--KATEGORI KATALOG-->
+            <div id="kategori-katalog" class="bg-light shadow container mt-5 mb-5">
+                <label>Sök kategori</label>
+                <div id="search-category" class="row m-1">
+                    <input id="search-category-input" type="text" class="form-control col" maxlength="50" placeholder="skriv en kategori" >
+               
+            </div>
+                <h3>KATEGORIER</h3>
+              <ul class="list-group to-append-categories">
+                
+           
+              </ul>
+                    <div class="row mt-5">
+                       
+                    <input id="add-category-input" class="form-control col" ></input>
+                    <button id="add-category" class="btn btn-primary col mb-2">lägga till ny kategori</button>
+                </div>
+            </div>
+        
+        </div>
+        <!--END OF KATEGORI KATALOG-->
+       
+            <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+            <script src="admin.js"></script>
+            <script>
+                getProducts(renderProducts);
+               getCategories(renderCategories);
+             //  getOrders(renderOrders)
+               searchAndFilter('#search-product-input','#to-append-products > tr')
+               searchAndFilter('#search-category-input','.to-append-categories > li')
+              // searchAndFilter('#search-order-input','#to-append-orders > tr')
+               addCategory()
+            </script>
 </body>
 
 </html>

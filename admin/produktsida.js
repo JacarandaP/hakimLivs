@@ -41,7 +41,7 @@ let printProduct=()=>{
 }
 printProduct()
 
-$("#go-back").on('click',()=>location.href="admin.html")
+$("#go-back").on('click',()=>location.href="adminHome.html")
 /*
 $('#registerForm').on('submit',()=>{
     //take the values and do a post
