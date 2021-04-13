@@ -1,5 +1,3 @@
-//$(document).ready(function(){
-
 
     jQuery.validator.addMethod("specialChrs", function (value, element) {
         return new RegExp('^[A-Za-zÀ-žÅÄÖåäö ]+$').test(value)
@@ -123,7 +121,33 @@
         }
     });
 
-    /**
+    
+   
+
+    function loginFormValidation(){
+        $('#loginForm').validate({
+
+            submitHandler:()=> { $('#submit').attr('disabled',true)},
+
+            rules : {
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 8,   
+                }
+            },
+            messages: {
+                email: "Var god ange ditt användarnamn (e-mejladress)",
+                password: "Var god ange ditt lösenord."
+            }
+        })
+    };
+
+
+     /**
      * 
      * Validates the form at the check out
      * 
