@@ -124,7 +124,9 @@
     });
 
     /**
+     * 
      * Validates the form at the check out
+     * 
      */
 
     function formValidationCheckout(){
