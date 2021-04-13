@@ -48,13 +48,14 @@ $('#show-footer-update').hide();
  */
 let renderOrders=(order)=>{
     let template=$('#order-katalog-item').contents().clone()
-    template.find('.order-id').text(order.orderId)
+    template.find('.order-id > a').text(order.orderId)
     template.find('.order-customer').text(order.customerId)
     template.find('.order-date').text(order.date)
     template.find('.order-price').text(order.price +" kr")
    
     $('#to-append-orders').append(template);
 }
+
 /**
  * render products on table
  */
@@ -120,52 +121,13 @@ let sendCategoryToDB=(category)=>{
 }
 $('#add-new-product').on('click', ()=>{location.href="produktSida.html"})
 
-/**
- * fetch footer and print values
- */
-let updateFooter=()=>{
-fetch(toFooterData).then(resp=>resp.json()).then(data=>{
+  /**
+   * sends to orderSida and set id value when id is clicked
+   * 
+   */
+ let goToOrderDetails=(e)=>{
+     sessionStorage.setItem("ORDER_ID",$(e).text())
+     location.href="adminOrderSida.html"
+ }
+
     
-$('#email-input').val(data.email)
-$('#phone-input').val(data.phone)
-$('#address-input').val(data.address)
-$('#city-input').val(data.ort)
-$('#zip-input').val(data.zip)
-$('#opening-times-from').val(data.openfrom)
-$('#opening-times-till').val(data.opentill)
-})
-}
-
-/**
- * timepicker setup (uses timepicker plugin)
- */
-
-    $('.timepicker').timepicker({
-        timeFormat: 'HH:mm',
-        interval: 30,
-        minTime: '7',
-        maxTime: '23:30pm',
-        defaultTime: '7:00',
-        startTime: '07:00',
-        dynamic: false,
-        dropdown: true,
-        scrollbar: true
-    });
-/**
- * send footer data and print response
- */
-  $('#submit-footer').on('click',()=>{
-      let footerData={
-        email:$('#email-input').val(),
-      phone:$('#phone-input').val(),
-      address:$('#address-input').val(),
-      ort:$('#city-input').val(),
-      zip:$('#zip-input').val(),
-      openfrom:$('#opening-times-from').val(),
-      opentill:$('#opening-times-till').val()}
-
-      //here we post and we receive response, if ok show footer
-      let response= `Sidfoten uppdaterat: ${footerData.email} ${footerData.phone} \n ${footerData.address} ${footerData.ort} ${footerData.zip} oppetider: från ${footerData.openfrom} till ${footerData.opentill}`
-      $('#show-footer-update').text(response)
-      $('#show-footer-update').show();
-  })

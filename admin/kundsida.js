@@ -1,6 +1,10 @@
 const usersAPIaddress='../mockupdata/adminkunder.json'
 //set up 
+
 $('#confirmed-message').hide();
+
+
+
 
 /**
  * set values to selector

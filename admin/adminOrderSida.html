@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beställning</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="top-meny">
+        <nav class="navbar navbar-nav"></nav>
+          <!-- Navbar -->
+          <div class="w3-container w-auto" id="navbar">
+            <form class="form-inline d-inline ">
+        
+            </form>
+            <div class="float-right">
+           
+            <a href="adminOrder.html" class="back"><img src="../images/arrow.svg" alt="arrow"></img>Tillbaka till bestälnning sidan</a> 
+  
+          </div>
+    </div>
+    </div>
+    <div class="container">
+        <h1 class="mb-5">BESTÄLLNING DETALJER</h1>
+        <div class="row">
+        <div class="col">
+            <h4>Beställning nummer: </h4>
+            <h3 id="order-number">1</h3>
+        </div>
+        <div id="customer-info" class="col">
+            <div id="customer-name">HODEI ECEIZA</div>
+            <div id="customer-address">HODEIGATAN 1, HODEICITY, 12345</div>
+        </div>
+        </div>
+        <h3 class="mt-5">Produkter</h3>
+        <div class="row mt-5">
+            
+        <ul id="order-list" class="list-group">
+          
+
+        </ul>
+    </div>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="adminOrderSida.js"></script>
+    <script>
+        getOrderData(renderOrderData,orderId);
+        //setCustomerData(renderCustomerData,1)
+    </script>
+   
+</body>
+</html>
