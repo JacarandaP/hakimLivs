@@ -29,30 +29,30 @@
     <div class="container">
         <div id="footer-edit-container" class="mb-5">
             <h3>Redigera sidfoten</h3>
-            <form class="row">
+            <form class="row" id="footerForm">
                 <div class="col-md-6">
                     <label for="email-input" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email-input" placeholder="" required>
+                    <input type="email" class="form-control" name="email" id="email-input" placeholder="" required>
                 </div>
                 <div class="col-md-6">
                     <label for="phone-input" class="form-label">Telefonnummer</label>
-                    <input type="text" class="form-control" id="phone-input" maxlength="9" required>
+                    <input type="text" class="form-control" name="phone" id="phone-input" maxlength="9" required>
                 </div>
                 <div class="col-md-6">
-                    <label for="address-input" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address-input" maxlength="100" required>
+                    <label for="address-input" class="form-label">Adress</label>
+                    <input type="text" class="form-control" name="address" id="address-input" maxlength="100" required>
                 </div>
                 <div class="col-md-6">
                     <label for="city-input" class="form-label">Ort</label>
-                    <input type="text" class="form-control" id="city-input" maxlength="50" required>
+                    <input type="text" class="form-control" name="city" id="city-input" maxlength="50" required>
                 </div>
                 <div class="col-md-6">
                     <label for="zip-input" class="form-label">Postnummer</label>
-                    <input type="text" class="form-control" id="zip-input" maxlength="5" required>
+                    <input type="text" class="form-control" name="zip" id="zip-input" maxlength="5" required>
                 </div>
                 
                 <div class="row">
-                    <div class="col-12 text-center mt-2 mb-2">Oppetider</div>
+                    <div class="col-12 text-center mt-2 mb-2">Öppettider</div>
                   
                     <div class="col">
                     <label for="opening-times-from" class="form-label">från</label>
@@ -137,6 +137,10 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js"></script>
+            
+            <script src="../js/validateForm.js"></script>
             <script src="admin.js"></script>
             <script>
                 getProducts(renderProducts);
@@ -147,7 +151,7 @@
               // searchAndFilter('#search-order-input','#to-append-orders > tr')
                addCategory()
                 updateFooter();
-               
+                formValidationAdminFooter();
             </script>
 </body>
 
