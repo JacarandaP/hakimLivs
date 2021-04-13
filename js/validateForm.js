@@ -130,7 +130,7 @@
             submitHandler:()=> { $('#submit').attr('disabled',true)},
 
             rules : {
-                name: {
+                email: {
                     required: true,
                     email: true
                 },
@@ -140,15 +140,10 @@
                 }
             },
             messages: {
-                name: {
-                    required: "Var god ange ditt användarnamn (e-mejladress)",
-                },
-                password: {
-                    required: "Var god ange ditt lösenord"
-                }
+                email: "Var god ange ditt användarnamn (e-mejladress)",
+                password: "Var god ange ditt lösenord."
             }
         })
-
     };
 
 
