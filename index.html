@@ -60,17 +60,17 @@
           </div>
         </div>
       </div>
-        <div class="w3-container ">
+        <div class="w3-container  mb-3 ">
           <div id="offering-container">
             <img
               src="https://dummyimage.com/1280x720/d61c54/fff&text=offer!"
               class="img-fluid"
             />
           </div>
-          <div id="products" class="container mt-3"></div>
+          <div id="products" class="container mt-3 mb-5"></div>
         </div>
 
-        <div id="footer"></div>
+        <div id="footer" class="fixed-bottom "></div>
       </div>
     </div>
     <template id="product-card-template">
@@ -104,6 +104,7 @@
     <script src="js/showFinalCart.js"></script>
     <script src="js/localStorageManager.js"></script>
     <script src="js/sessionManager.js"></script>
+    <script src="js/sidfot.js"></script>
     <script>
       getProducts(renderProducts, $("#products"))
         getCategories(renderCategories, $("#category-list"))
