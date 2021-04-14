@@ -25,7 +25,7 @@ function registerPage() {
 }
 let frontendReacts=(profile)=>{
     if(profile!=null){
-  alert('Welcome '+ profile.name + '!')
+  alert('Välkommen '+ profile.name + '!')
   location.href='index.html'}
   else{
      

@@ -33,7 +33,7 @@ function handleUsersEmailDB(
           userExists = true; //DATABASE RESPONSE GIVES NO ACCEPTED
           console.log(userExists);
           alert(
-            "this email is already registered, we can send a ficticious verification to that email :)"
+            "Den här mailadressen är redan registrerad. Vi kan skicka en fiktiv verifikation till den registrerade e-mailen. :)"
           );
           sessionStorage.removeItem("USERSDBEMAIL");
           break;
@@ -59,7 +59,7 @@ function handleUsersEmailDB(
           password: profile.password,
         });
         sessionStorage.removeItem("USERSDBEMAIL");
-        alert(name + " with " + email + "has been created");
+        alert(name + " med " + email + "har skapats");
       }
     });
 }
