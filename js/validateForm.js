@@ -7,7 +7,12 @@
     jQuery.validator.addMethod("numeralsAndSpecialChars", function (value, element) {
         return new RegExp('^[A-Za-z0-9À-žÅÄÖåäö ]+$').test(value)
     }, "Ej godkända tecken."
-    )
+    ),
+
+    jQuery.validator.addMethod("postalCodeFormat", function (value, element) {
+        return new RegExp('^[0-9 ]+$').test(value)
+    }, "Ej godkända tecken."
+    ),
 
 
   //  formValidation();
@@ -80,7 +85,7 @@
                     maxlength: "Namnet du har angivit är för långt."
                 },
                 lastName: {
-                    required: "Var god ange förnamn.",
+                    required: "Var god ange efternamn.",
                     maxlength: "Namnet du har angivit är för långt."
                 },
                 email: {
@@ -122,6 +127,69 @@
     });
 
     
+    function updateUserProfileValidation(){
+        $("#user-update-form").validate({
+
+            submitHandler:()=> { $('#submit-profile-changes').attr('disabled',true)},
+ 
+            rules: {
+                firstName: {
+                required: true,
+                specialChrs: true,
+                maxlength: 100
+            },
+            lastName: {
+                required: true,
+                specialChrs: true, 
+                maxlength: 100
+            }, 
+            phone: {
+                required: true,
+                number: true,
+                minlength: 9, 
+                maxlength: 15
+            },
+            address: {
+                required: true,
+                numeralsAndSpecialChars: true, 
+                maxlength: 50
+            },
+            city: {
+                required: true,
+                specialChrs: true, 
+                maxlength: 50
+            },
+            zip: {
+                required: true,
+                postalCodeFormat: true,
+                rangelength: [5,6]
+            }
+        },
+            messages: {
+                firstName: {
+                    required: "Var god ange förnamn.",
+                    maxlength: "Namnet du har angivit är för långt."
+                },
+                lastName: {
+                    required: "Var god ange efternamn.",
+                    maxlength: "Namnet du har angivit är för långt."
+                },
+                phone: "Var god ange ett giltigt telefonnummer",
+                address: {
+                    required: "Var god ange din gata.",
+                    maxlength: "Gatuadressen du har angivit är för lång."
+                },
+                city: {
+                    required: "Var god ange din postort.",
+                    maxlength: "Postorten du har angivit är för lång."
+                },
+                zip: {
+                    required: "Var god ange ett postnummer.",
+                    postalCode: "Var god ange giltigt postnummer."
+                }
+            }
+        })
+    }
    
 
     function loginFormValidation(){
