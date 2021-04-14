@@ -12,6 +12,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .bd-example {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem -15px 0;
+    border: solid #f7f7f9;
+    border-width: .2rem 0 0;
+    }
+    </style>
 </head>
 <body>
     <div id="top-meny">
@@ -19,7 +28,7 @@
       <div class="w3-container w-auto w3-blue-gray sticky-top" id="navbar">
         <a href="index.html" ><h1 class="d-inline ">Hakim Livs</h1></a>
         <form class="form-inline d-inline ">
-          <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Search">
+        <!--  <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Search">-->
           <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button>
         </form>
         <a href=""><i class="bi bi-person "></i></a>
@@ -30,40 +39,73 @@
     <div id="sidebar">
 
     </div>
-    <div id="container">
-        <form id="registerForm" type="actionForm" action="#">
+    <div id="container" class="container">
+      <h3>REGISTRERA PERSONUPPGIFTER</h3>
+      <div class="bd-example">
+        <form id="registerForm" type="actionForm" action="#"  class="needs-validation">
+         <div class="form-row">
+          
+          <div class="form-group col-md-6">
+            <label for="firstNameBox">Förnamn:</label> <br> 
+            <input id="firstNameBox" name="firstName" type="text" class="form-control"> <br> 
+          </div>
 
-            <label for="firstNameBox">Förnamn:</label> <br>
-            <input id="firstNameBox" name="firstName" type="text"> <br>
-
+          <div class="form-group col-md-6">
             <label for="lastNameBox">Efternamn:</label> <br>
-            <input id="lastNameBox" name="lastName" type="text"> <br>
-
+            <input id="lastNameBox" name="lastName" type="text" class="form-control"> <br>
+          </div>
+        </div>
+        
+        
+        
+        <div class="form-row">
+          <div class="form-group col-md-6">
             <label for="emailBox">E-post:</label> <br>
-            <input id="emailBox" name="email" type="email"> 
+            <input id="emailBox" name="email" type="email" class="form-control"> 
             <span id="emailAvailableMsg"></span><br>
+          </div>
+        
+        
 
+          <div class="form-group col-md-6">
             <label for="phoneBox">Telefonnummer:</label> <br>
-            <input id="phoneBox" name="phone" type="text"> <br>
+            <input id="phoneBox" name="phone" type="text" class="form-control"> <br>
+          </div>
+        </div>
 
+          <div class="form-group">
             <label for="addressBox">Gata:</label> <br>
-            <input id="addressBox" name="address" type="text"> <br>
+            <input id="addressBox" name="address" type="text" class="form-control"> <br>
+          </div>
 
+        <div class="form-row">
+          <div class="form-group col-md-6">
             <label for="cityBox">Postort:</label> <br>
-            <input id="cityBox" name="city" type="text"> <br>
+            <input id="cityBox" name="city" type="text" class="form-control"> <br>
+          </div>
 
+          <div class="form-group col-md-6">
             <label for="postalCodeBox">Postnummer:</label> <br>
-            <input id="postalCodeBox" name="postalCode" type="text"> <br>
+            <input id="postalCodeBox" name="postalCode" type="text" class="form-control"> <br>
+          </div>
+        </div>
 
+          <div class="form-group">
             <label for="passwordBox">Lösenord:</label> <br>
-            <input id="passwordBox" name="password" type="password"> <br>
+            <input id="passwordBox" name="password" type="password" class="form-control"> <br>
+          </div>
 
+          <div class="form-group">
             <label for="repeatPasswordBox">Upprepa ditt lösenord:</label> <br>
-            <input id="repeatPasswordBox" name="repeatPassword" type="password"> <br>
-            <br>
-            <input id="submitForm" type="submit" value="Registrera">
+            <input id="repeatPasswordBox" name="repeatPassword" type="password" class="form-control"> <br>
+          </div>
+
+            <input id="submitForm" type="submit" value="Registrera" class="btn btn-primary">
+
 
         </form>
+      </div>
+
 
     </div>
     <div id="footer">
