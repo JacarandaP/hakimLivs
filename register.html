@@ -20,6 +20,16 @@
     border: solid #f7f7f9;
     border-width: .2rem 0 0;
     }
+/*
+    input [type=email],[type=text],[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  */
     </style>
 </head>
 <body>
@@ -44,15 +54,14 @@
       <div class="line">
         <form id="registerForm" type="actionForm" action="#"  class="needs-validation">
          <div class="form-row">
-          
           <div class="form-group col-md-6">
-            <label for="firstNameBox">Förnamn:</label> <br> 
-            <input id="firstNameBox" name="firstName" type="text" class="form-control"> <br> 
+            <label for="firstNameBox">Förnamn:</label>
+            <input id="firstNameBox" name="firstName" type="text" class="form-control">
           </div>
 
           <div class="form-group col-md-6">
-            <label for="lastNameBox">Efternamn:</label> <br>
-            <input id="lastNameBox" name="lastName" type="text" class="form-control"> <br>
+            <label for="lastNameBox">Efternamn:</label>
+            <input id="lastNameBox" name="lastName" type="text" class="form-control">
           </div>
         </div>
       
@@ -61,46 +70,46 @@
         
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="emailBox">E-post:</label> <br>
+            <label for="emailBox">E-post:</label>
             <input id="emailBox" name="email" type="email" class="form-control"> 
-            <span id="emailAvailableMsg"></span><br>
+            <span id="emailAvailableMsg"></span>
           </div>
         
         
 
           <div class="form-group col-md-6">
-            <label for="phoneBox">Telefonnummer:</label> <br>
-            <input id="phoneBox" name="phone" type="text" class="form-control"> <br>
+            <label for="phoneBox">Telefonnummer:</label>
+            <input id="phoneBox" name="phone" type="text" class="form-control">
           </div>
         </div>
 
           <div class="form-group">
-            <label for="addressBox">Gata:</label> <br>
-            <input id="addressBox" name="address" type="text" class="form-control"> <br>
+            <label for="addressBox">Gata:</label>
+            <input id="addressBox" name="address" type="text" class="form-control">
           </div>
 
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="cityBox">Postort:</label> <br>
-            <input id="cityBox" name="city" type="text" class="form-control"> <br>
+            <label for="cityBox">Postort:</label>
+            <input id="cityBox" name="city" type="text" class="form-control">
           </div>
-
           <div class="form-group col-md-6">
-            <label for="postalCodeBox">Postnummer:</label> <br>
-            <input id="postalCodeBox" name="postalCode" type="text" class="form-control"> <br>
+            <label for="postalCodeBox">Postnummer:</label>
+            <input id="postalCodeBox" name="postalCode" type="text" class="form-control">
           </div>
         </div>
 
-          <div class="form-group">
-            <label for="passwordBox">Lösenord:</label> <br>
-            <input id="passwordBox" name="password" type="password" class="form-control"> <br>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="passwordBox">Lösenord:</label>
+            <input id="passwordBox" name="password" type="password" class="form-control">
           </div>
 
-          <div class="form-group">
-            <label for="repeatPasswordBox">Upprepa ditt lösenord:</label> <br>
-            <input id="repeatPasswordBox" name="repeatPassword" type="password" class="form-control"> <br>
+          <div class="form-group col-md-6">
+            <label for="repeatPasswordBox">Upprepa ditt lösenord:</label>
+            <input id="repeatPasswordBox" name="repeatPassword" type="password" class="form-control">
           </div>
-
+        </div>
             <input id="submitForm" type="submit" value="Registrera" class="btn btn-primary">
 
 
