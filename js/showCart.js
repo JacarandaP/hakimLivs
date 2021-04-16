@@ -1,8 +1,22 @@
-/**
- * Functions to load, save and empty the shopping cart
- */
 
 let shoppingCart = [];
+
+let productsinOrderDetails = [];
+
+
+let customer=JSON.parse(localStorage.getItem('PROFILE'));
+
+let customerID = customer.customerID;
+
+let orderDetails = { 
+  customerID : customerID, 
+  productID: productsinOrderDetails }
+
+function ProductInOrder(productID, productPrice){
+  this.productID = productID
+  this.productPrice = productPrice
+}
+
 
 function Product(id, title, description, price, category, amount) {
     this.id = id;
@@ -13,6 +27,22 @@ function Product(id, title, description, price, category, amount) {
     this.amount = amount;
     
   }
+
+  function placeOrder(){
+    let productInShoppingCartID
+    let productInShoppingCartPrice
+    let numberOfItems
+    for(var item in shoppingCart){
+      productInShoppingCartID = shoppingCart[item].id
+      productInShoppingCartPrice = shoppingCart[item].price
+      numberOfItems = shoppingCart[item].amount
+      for(i= 0; i < numberOfItems; i++){
+        let productInOrder = new ProductInOrder(productInShoppingCartID, productInShoppingCartPrice)
+        productsinOrderDetails.push(productInOrder);
+        saveOrderDetails();
+    }
+  }
+}
   
   function saveCart(){
     localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
@@ -27,6 +57,21 @@ function Product(id, title, description, price, category, amount) {
   if (localStorage.getItem("shoppingCart") != null) {
     loadCart();
   }
+
+  function saveOrderDetails(){
+    localStorage.setItem('OrderDetails', JSON.stringify(orderDetails));
+    
+  }
+  
+  function loadOrderDetails() {
+    orderDetails = JSON.parse(localStorage.getItem('OrderDetails'));
+ 
+  
+  }
+  if (localStorage.getItem("OrderDetails") != null) {
+    loadOrderDetails();
+  }
+
 
   function emptyCart(){
     shoppingCart= [];

@@ -156,6 +156,6 @@ $('#containerKassa').html('<div class="col-sm-12 empty-cart-cls text-center">' +
 '<h3><strong>Your order has been sent. Thank you!</strong></strong></h3>'+
 '<a href="index.html" class="btn btn-primary cart-btn-transform m-3">continue shopping</a>'+
 '</div>');
-  emptyCart()
+
 }
  
