@@ -49,6 +49,8 @@ $('#submitForm').on('click',()=>{
     let product={title:$('#titleBox').val(),description: $('#descriptionBox').val(), price:  $('#priceBox').val(),image: $('#imageBox').val(), category:{id:categoryId}}
     
     sendProductToDB(product);//take the values and do a post
+    alert("saved " +  product.title) //ALERT NOT FANCY, WILL CHANGE IN A FUTURE
+    location.href="adminHome.html"
 })
 
 let sendProductToDB=(product)=>{

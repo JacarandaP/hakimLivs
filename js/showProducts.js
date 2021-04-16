@@ -1,7 +1,11 @@
 //
-//some variables
-const productsAPI='./mockupdata/products.json'
-const categoriesAPI='./mockupdata/categories.json'
+//some variables 
+//const productsAPI='./mockupdata/products.json'
+//CHANGED FOR TEST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+const productsAPI='http://hakimssuperserver.herokuapp.com/product/'
+//const categoriesAPI='./mockupdata/categories.json'
+//CHANGED FOR TEST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+const categoriesAPI='http://hakimssuperserver.herokuapp.com/category/all'
 //function to render products
 let renderProducts;
 //function to save products
@@ -17,8 +21,8 @@ var categories=new Array();
     fetch(categoriesAPI)
     .then(res=>res.json())
     .then(json=>json.forEach((category)=>{
-        categories.push(category);
-        render(category,appendTo)
+        categories.push(category.name); //CHANGED FOR TEST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        render(category.name,appendTo)
     }))
 }
 
@@ -29,7 +33,7 @@ var categories=new Array();
  * @param {the element to append the list} appendTo 
  */
 function renderCategories(category,appendTo){
-   
+  
     let categoryItem="<li><button id='category' data-name='"+category+"' class='category list-group-item list-group-item-action'>"+category+"</button></li>"
     appendTo.append(categoryItem)
 }
@@ -63,17 +67,18 @@ fetch(productsAPI)
     template.find('.product-description').text(product.description.substring(0,50))//TODO: an accordion or popup to extend info (in HTML template)
     template.find('.product-image').attr('src', product.image)
     template.find('.product-price').text(product.price+" kr")
-    template.find('.product-category').text(product.category)
+    template.find('.product-category').text(product.category.name) //CHANGED FOR TEST
     template.find('.card').attr('data-category',product.category)
     template.find('.add-to-cart').attr('productID',product.id)
     template.find('.add-to-cart').attr('productTitle', product.title)
     template.find('.add-to-cart').attr('productDescription', product.description)
     template.find('.add-to-cart').attr('productPrice', product.price )
-    template.find('.add-to-cart').attr('productCategory', product.category)
+    template.find('.add-to-cart').attr('productCategory', product.category.name) //CHANGED FOR TEST
     template.find('.add-to-cart').attr('productAmount', 1)
     template.find('.product-image').attr('product-id',product.id)
     resizeObject(template.find('.product-image'))
     appendTo.append(template);
+    
 
 }
 /**
@@ -98,7 +103,7 @@ function getProductsByCategory(render,appendTo, category){
    
     loadProductsLocalStorage.forEach((product)=>{
         
-        if(product.category === category){
+        if(product.category.name === category){ //changed for test!!!!!!!!
             render(product,appendTo)
           
         }
