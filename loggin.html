@@ -69,6 +69,7 @@
   .button-regi {
     background-color: #fa7979;
   }
+
     </style>
 </head>
    
@@ -76,29 +77,25 @@
 <body>
     <div id="top-meny">
       <!-- Navbar -->
-      <div class="w3-container w-auto w3-blue-gray" style="padding: 20px 30px 20px 30px;" id="navbar">
-      
-        <a href="index.html"><h1 class="d-inline ">Hakim Livs</h1></a>
+      <div class="w3-container w-auto w3-blue-gray sticky-top" style="padding: 20px 30px 20px 30px;" id="navbar">
+        <a href="index.html" ><h1 class="d-inline ">Hakim Livs</h1></a>
         <form class="form-inline d-inline ">
-       <!-- <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Search">-->
-         <!-- <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button> -->
+        <!--  <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Search">-->
+        <!--  <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button> -->
         </form>
         <div class="float-right">
         <a href="" id="loggin-button"><i class="bi bi-person "></i></a>
-        <a href="kassa.html"><i class="bi bi-cart2 pl-5 pr-5 "><span id="counter" class="total-count"></span></i></i></a>  
-       </div>
+        <a href="kassa.html"><i class="bi bi-cart2 pl-5 pr-2 "><span id="counter" class="total-count"></span></i></i></a>  
+        </div>
       </div>
        <!-- Navbar end-->
     </div>
     <div id="sidebar">
 
     </div>
-    <div id="container" class="container">
+    <div id="container" class="container" style="padding-top: 20px;">
 
         <h3 style="text-align: center">Logga in</h3>
-
-        
-
         <form id="loginForm" >
         <label for="username" >Användarnamn (e-mail)</label>
         <input id="usernameEmail" name="email" type="email" placeholder="Skriv in registrerad e-mail">
@@ -115,7 +112,6 @@
         <div id="login-error-msg-holder" class="container pt-5" >
           <p id="errorMessage">Ogiltigt användarnamn <span id="error-msg-next-line">och/eller lösenord</span> <span id="error-msg-next-line">Om du inte har ett konto, skapa ett genom att klicka på registrera konto</span></p>
         </div>
-        
       </form>
     </div>
     <div id="footer">
