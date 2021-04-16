@@ -1,5 +1,5 @@
 //const toCategoriesAddress='../mockupdata/categories.json'
-const toCategoriesAddress='http://localhost:8080/category/all'
+const toCategoriesAddress='http://hakimssuperserver.herokuapp.com/category/all'
 const toProductsAddress='../mockupdata/products.json'
 const toOrdersAddress='../mockupdata/adminorders.json'
 const toFooterData='../mockupdata/adminfooter.json'
@@ -113,7 +113,7 @@ $('#add-category').on('click', ()=>{
 
     let newCategory={name:$('#add-category-input').val()};
 
-    fetch('http://localhost:8080/category/add',
+    fetch('http://hakimssuperserver.herokuapp.com/category/add',
     { method:"POST",
     headers: {
         'Accept': '*/*',
