@@ -165,7 +165,7 @@ $('#opening-times-till').val(data.opentill)
       opentill:$('#opening-times-till').val()}
 
       //here we post and we receive response, if ok show footer
-      let response= `Sidfoten uppdaterat: ${footerData.email} ${footerData.phone} \n ${footerData.address} ${footerData.ort} ${footerData.zip} oppetider: från ${footerData.openfrom} till ${footerData.opentill}`
+      let response= `Sidfoten uppdaterad: ${footerData.email} ${footerData.phone} \n ${footerData.address} ${footerData.ort} ${footerData.zip} oppetider: från ${footerData.openfrom} till ${footerData.opentill}`
       $('#show-footer-update').text(response)
       $('#show-footer-update').show();
   })

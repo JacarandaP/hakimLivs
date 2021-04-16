@@ -1,5 +1,3 @@
-//$(document).ready(function(){
-
 
     jQuery.validator.addMethod("specialChrs", function (value, element) {
         return new RegExp('^[A-Za-zÀ-žÅÄÖåäö ]+$').test(value)
@@ -123,8 +121,36 @@
         }
     });
 
-    /**
+    
+   
+
+    function loginFormValidation(){
+        $('#loginForm').validate({
+
+            submitHandler:()=> { $('#submit').attr('disabled',true)},
+
+            rules : {
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true,
+                    minlength: 8,   
+                }
+            },
+            messages: {
+                email: "Var god ange din e-postadress",
+                password: "Var god ange ditt lösenord."
+            }
+        })
+    };
+
+
+     /**
+     * 
      * Validates the form at the check out
+     * 
      */
 
     function formValidationCheckout(){
@@ -182,5 +208,98 @@
           }
         })
     }
+
+    function formValidationAdminLogin(){
+        $('#loginForm').validate({
+            rules: {
+                username:{
+                    required: true,
+                    maxlength: 100,
+                    minlength: 3
+                },
+                password:{
+                    required: true,
+                    minlength: 8
+                }
+            },
+            messages:{
+                username:{
+                required: "Var god ange användarnamn.",
+                maxlength: "Användarnamnet du har angivit är för långt.",
+                minlength: "Användarnamnet du har angivit är för kort."
+            },
+            password: {
+                required: "Var god ange ett lösenord.",
+                minlength: "Ditt lösenord måste vara minst åtta tecken långt."
+            }
+            }
+
+        })
+
+    }
+
+    $('#loginForm').submit(function(event){
+        event.preventDefault();
+        if($('#loginForm').valid()){
+            console.log("valid");
+        }
+    });
+
+    function formValidationAdminFooter(){
+        $("#footerForm").validate({
+          rules: {
+            email: {
+              required: true,
+              email: true,
+              maxlength: 100,
+            },
+            address: {
+              required: true,
+              numeralsAndSpecialChars: true,
+            },
+            phone: {
+              required: true,
+              number: true,
+              minlength: 9,
+            },
+            zip: {
+              required: true,
+              number: true,
+              rangelength: [5, 6],
+            },
+            city: {
+              required: true,
+              specialChrs: true,
+            },
+          },
+          messages: {
+            email: {
+              required: "Var god ange användarnamn.",
+              maxlength: "Användarnamnet du har angivit är för långt.",
+            },
+            address: "Var god ange en adress.",
+            phone: {
+              required: "Var god ange ett telefonnummer.",
+              number: "Var god ange ett giltigt telefonnummer.",
+              minlength: "Telefonnummret är för kort.",
+            },
+            city: "Var god ange en postort.",
+            zip: {
+              required: "Var god ange ett postnummer.",
+              number: "Var god ange giltigt postnummer.",
+              rangelength: "Postnummret måste vara mellan 5 och 6 siffror",
+            },
+          },
+        });
+    }
+
+    $('#footerForm').submit(function(event){
+        event.preventDefault();
+        if($('#footerForm').valid()){
+            console.log("valid");
+        }
+    });
+
+
 
 //})

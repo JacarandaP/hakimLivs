@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Profile</title>
+    <title>Kund Sida</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="adminStyle.css" />
 </head>
@@ -15,9 +15,9 @@
         <nav>
             <h2>KUND SIDA</h2>
             <ul>
-                <li><a href="adminHome.html">Home</a></li>
-                <li><a href="adminOrder.html">Order</a></li>
-                <li><a href="adminCustomerPofile.html">profile</a></li>
+                <li><a href="adminHome.html">Hem</a></li>
+                <li><a href="adminOrder.html">Beställningar</a></li>
+                <li><a href="adminCustomerPofile.html">Profil</a></li>
             </ul>
         </nav>
     </div>
@@ -25,19 +25,19 @@
 <div class="container">
     <div id="criteria" class="bg-light border border-success rounded p-3">
     <h3>Trogna kunder</h3>
-    <h5>skapa kriteria för trogna kunder</h5>
+    <h5>sätt kriteria för trogna kunder</h5>
     <span id="confirmed-message" class="">message</span>
     <div class="mt-5 mb-5">
         <div class="form-group ">
-        <label for="beställning-pris">Beställings total pris</label>
+        <label for="beställning-pris">Beställningens totala pris</label>
         <input class="form-control col" id="beställning-pris" maxlength="6"></input>
-        <label for="beställning-per-vecka">Bestälning kvantitet per vecka</label>
+        <label for="beställning-per-vecka">Antal beställningar per vecka</label>
         <select id="beställning-per-vecka" class="form-select col" aria-label="Default select example">
-            <option selected>Välja</option>
+            <option selected>Välj kvantitet</option>
           </select>
         </div>
         <div class="col">
-        <button id="send-criteria" class="btn btn-primary">Sätta</button>
+        <button id="send-criteria" class="btn btn-primary">Godkänn</button>
     </div>
     </div>
 </div>
@@ -46,7 +46,7 @@
     <div id="beställning-katalog" class="bg-light shadow mb-3">
         <label>Sök Kunder</label>
     <div id="search-customer" class="row m-1">
-        <input id="search-customer-input" type="text" class="form-control col" maxlength="50" placeholder="skriv kund nummer,true eller false, total beställningar eller total betallat">
+        <input id="search-customer-input" type="text" class="form-control col" maxlength="50" placeholder="Skriv kundnummer, true eller false, totalt antal beställningar eller totalt pris">
     
     </div>
         <h3>Kunder</h3>
@@ -54,9 +54,9 @@
             <thead>
                 <tr>
                   <th scope="col">Nr</th>
-                  <th scope="col">Trogna</th>
-                  <th scope="col">Total Beställningar</th>
-                  <th scope="col">Total Betallat</th>
+                  <th scope="col">Trogna kunder</th>
+                  <th scope="col">Totalt antal beställningar</th>
+                  <th scope="col">Totalt pris</th>
                 </tr>
               </thead>
               <tbody id="to-append-customers">
