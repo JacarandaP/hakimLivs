@@ -105,6 +105,7 @@ $(searchInput).keyup(()=>{
 
 })
 }
+
 /**
  * send category and update list
  */
