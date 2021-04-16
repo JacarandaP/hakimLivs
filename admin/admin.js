@@ -1,5 +1,5 @@
 //const toCategoriesAddress='../mockupdata/categories.json'
-const toCategoriesAddress='http://hakimssuperserver.herokuapp.com/category/all'
+const toCategoriesAddress='https://hakimssuperserver.herokuapp.com/category/all'
 const toProductsAddress='../mockupdata/products.json'
 const toOrdersAddress='../mockupdata/adminorders.json'
 const toFooterData='../mockupdata/adminfooter.json'
