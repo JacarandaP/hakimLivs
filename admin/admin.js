@@ -1,4 +1,5 @@
-const toCategoriesAddress='../mockupdata/categories.json'
+//const toCategoriesAddress='../mockupdata/categories.json'
+const toCategoriesAddress='http://localhost:8080/category/all'
 const toProductsAddress='../mockupdata/products.json'
 const toOrdersAddress='../mockupdata/adminorders.json'
 const toFooterData='../mockupdata/adminfooter.json'
@@ -83,7 +84,7 @@ let gotoeditProduct=(e)=>{
  * render categories on list
  */
  let renderCategories=((category)=>{
-    let template=`<li class="list-group-item category-item">${category}</li>`
+    let template=`<li class="list-group-item category-item">${category.name}</li>`
     $('.to-append-categories').append(template);
     
 })
@@ -109,7 +110,19 @@ $(searchInput).keyup(()=>{
  */
 let addCategory=()=>{
 $('#add-category').on('click', ()=>{
-    let newCategory=$('#add-category-input').val();
+
+    let newCategory={name:$('#add-category-input').val()};
+
+    fetch('http://localhost:8080/category/add',
+    { method:"POST",
+    headers: {
+        'Accept': '*/*',
+        'Content-Type': 'application/json'},
+      body:JSON.stringify(newCategory)}).
+      then(resp=>resp.json()).
+      then(json=>console.log(json))
+
+
   // sendCategoryToDB(newCategory)
    renderCategories(newCategory)
 })
