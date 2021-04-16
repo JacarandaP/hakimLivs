@@ -2,10 +2,10 @@
 //some variables 
 //const productsAPI='./mockupdata/products.json'
 //CHANGED FOR TEST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-const productsAPI='http://hakimssuperserver.herokuapp.com/product/'
+const productsAPI='https://hakimssuperserver.herokuapp.com/product/'
 //const categoriesAPI='./mockupdata/categories.json'
 //CHANGED FOR TEST!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-const categoriesAPI='http://hakimssuperserver.herokuapp.com/category/all'
+const categoriesAPI='https://hakimssuperserver.herokuapp.com/category/all'
 //function to render products
 let renderProducts;
 //function to save products
