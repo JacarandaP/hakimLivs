@@ -1,10 +1,37 @@
 .bi{
  font-size: 25px;
 }
-
+/*search field*/
 .form-control{
-    min-width: 400px;
+    min-width: 200px;
 }
+
+@media only screen and (max-width:520px) {
+    .form-control{
+        min-width: 100px;
+    }
+}
+
+@media only screen and (min-width:651px) {
+    .bi{
+        font-size: 30px;
+    }
+    .form-control{
+        min-width: 200px;
+    }
+    
+}
+
+@media only screen and (min-width:961px) {
+    .bi{
+        font-size: 40px;
+    }
+
+    .form-control{
+            min-width: 400px;
+    }
+}
+
 
 
 #sidebar{

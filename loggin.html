@@ -12,6 +12,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
     <style>
 
     #error-msg-next-line {
@@ -70,6 +72,59 @@
     background-color: #fa7979;
   }
 
+  /*smart phone*/
+  .hakimLivs-design{
+    font-family: 'Zen Dots', cursive;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);
+    color: goldenrod;
+    font-size: 25px; 
+    border:solid 1px rgb(87, 10, 231);
+    box-shadow: 0 0 5px 5px #bce2e8, 0 0 5px 3px #bce2e8 inset;
+    border-radius: 10px;
+    padding: 5px;
+
+  }
+
+  /*tablet*/
+  @media only screen and (min-width:651px) {
+
+    .hakimLivs-design{
+    font-family: 'Zen Dots', cursive;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);
+    color: goldenrod;
+    font-size: 40px; 
+    border:solid 1px rgb(87, 10, 231);
+    box-shadow: 0 0 5px 5px #bce2e8, 0 0 5px 3px #bce2e8 inset;
+    border-radius: 10px;
+    padding: 5px;
+
+  }
+    
+  }
+
+  /*laptop desktop*/
+  @media only screen and (min-width:961px) {
+
+    .hakimLivs-design{
+    font-family: 'Zen Dots', cursive;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);
+    color: goldenrod;
+    font-size: 55px; 
+    border:solid 1px rgb(87, 10, 231);
+    box-shadow: 0 0 5px 5px #bce2e8, 0 0 5px 3px #bce2e8 inset;
+    border-radius: 10px;
+    padding: 5px;
+
+  }
+    
+  }
+
     </style>
 </head>
    
@@ -78,7 +133,7 @@
     <div id="top-meny">
       <!-- Navbar -->
       <div class="w3-container w-auto w3-blue-gray sticky-top" style="padding: 20px 30px 20px 30px;" id="navbar">
-        <a href="index.html" ><h1 class="d-inline ">Hakim Livs</h1></a>
+        <a href="index.html" ><h1 class="d-inline hakimLivs-design" >Hakim Livs</h1></a>
         <form class="form-inline d-inline ">
         <!--  <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Search">-->
         <!--  <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button> -->
