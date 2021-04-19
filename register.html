@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Registrera</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link
@@ -12,58 +12,115 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <style>   
+      .line {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem -15px 0;
+    border: solid #f7f7f9;
+    border-width: .2rem 0 0;
+    }
+    
+/*
+    input [type=email],[type=text],[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  */
+    </style>
 </head>
 <body>
     <div id="top-meny">
       <!-- Navbar -->
-      <div class="w3-container w-auto w3-blue-gray sticky-top" id="navbar">
-        <a href="index.html" ><h1 class="d-inline ">Hakim Livs</h1></a>
+      <div class="w3-container w-auto w3-blue-gray sticky-top" style="padding: 20px 30px 20px 30px;" id="navbar">
+        <a href="index.html" ><h1 class="d-inline hakimLivs-design">Hakim Livs</h1></a>
         <form class="form-inline d-inline ">
-          <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button>
+        <!--  <input class="form-control mr-sm-2 mb-2" type="search" placeholder="Search">-->
+        <!--  <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Search</button> -->
         </form>
-        <a href=""><i class="bi bi-person "></i></a>
-        <a href="kassa.html"><i class="bi bi-cart2"></i></i></a>  
+        <div class="float-right">
+        <a href="" id="loggin-button"><i class="bi bi-person "></i></a>
+        <a href="kassa.html"><i class="bi bi-cart2 pl-5 pr-2 "><span id="counter" class="total-count"></span></i></i></a>  
+        </div>
       </div>
        <!-- Navbar -->
     </div>
     <div id="sidebar">
 
     </div>
-    <div id="container">
-        <form id="registerForm" type="actionForm" action="#">
+    <div id="container" class="container">
+      <h3>REGISTRERA PERSONUPPGIFTER</h3>
+      <div class="line">
+        <form id="registerForm" type="actionForm" action="#"  >
+         <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="firstNameBox">Förnamn:</label>
+            <input id="firstNameBox" name="firstName" type="text" class="form-control">
+          </div>
 
-            <label for="firstNameBox">Förnamn:</label> <br>
-            <input id="firstNameBox" name="firstName" type="text"> <br>
+          <div class="form-group col-md-6">
+            <label for="lastNameBox">Efternamn:</label>
+            <input id="lastNameBox" name="lastName" type="text" class="form-control">
+          </div>
+        </div>
+      
+        
+        
+        
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="emailBox">E-post:</label>
+            <input id="emailBox" name="email" type="email" class="form-control"> 
+            <span id="emailAvailableMsg"></span>
+          </div>
+        
+        
 
-            <label for="lastNameBox">Efternamn:</label> <br>
-            <input id="lastNameBox" name="lastName" type="text"> <br>
+          <div class="form-group col-md-6">
+            <label for="phoneBox">Telefonnummer:</label>
+            <input id="phoneBox" name="phone" type="text" class="form-control">
+          </div>
+        </div>
 
-            <label for="emailBox">E-post:</label> <br>
-            <input id="emailBox" name="email" type="email"> 
-            <span id="emailAvailableMsg"></span><br>
+          <div class="form-group">
+            <label for="addressBox">Gata:</label>
+            <input id="addressBox" name="address" type="text" class="form-control">
+          </div>
 
-            <label for="phoneBox">Telefonnummer:</label> <br>
-            <input id="phoneBox" name="phone" type="text"> <br>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="cityBox">Postort:</label>
+            <input id="cityBox" name="city" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="postalCodeBox">Postnummer:</label>
+            <input id="postalCodeBox" name="postalCode" type="text" class="form-control">
+          </div>
+        </div>
 
-            <label for="addressBox">Gata:</label> <br>
-            <input id="addressBox" name="address" type="text"> <br>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="passwordBox">Lösenord:</label>
+            <input id="passwordBox" name="password" type="password" class="form-control">
+          </div>
 
-            <label for="cityBox">Postort:</label> <br>
-            <input id="cityBox" name="city" type="text"> <br>
+          <div class="form-group col-md-6">
+            <label for="repeatPasswordBox">Upprepa ditt lösenord:</label>
+            <input id="repeatPasswordBox" name="repeatPassword" type="password" class="form-control">
+          </div>
+        </div>
+            <input id="submitForm" type="submit" value="Registrera" class="btn btn-primary">
 
-            <label for="postalCodeBox">Postnummer:</label> <br>
-            <input id="postalCodeBox" name="postalCode" type="text"> <br>
-
-            <label for="passwordBox">Lösenord:</label> <br>
-            <input id="passwordBox" name="password" type="password"> <br>
-
-            <label for="repeatPasswordBox">Upprepa ditt lösenord:</label> <br>
-            <input id="repeatPasswordBox" name="repeatPassword" type="password"> <br>
-            <br>
-            <input id="submitForm" type="submit" value="Registrera">
 
         </form>
+      </div>
+
 
     </div>
     <div id="footer" class="fixed-bottom">

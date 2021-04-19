@@ -130,4 +130,10 @@ $('#add-new-product').on('click', ()=>{location.href="produktSida.html"})
      location.href="adminOrderSida.html"
  }
 
-    
+      //here we post and we receive response, if ok show footer
+      /*
+      let response= `Sidfoten uppdaterad: ${footerData.email} ${footerData.phone} \n ${footerData.address} ${footerData.ort} ${footerData.zip} oppetider: från ${footerData.openfrom} till ${footerData.opentill}`
+      $('#show-footer-update').text(response)
+      $('#show-footer-update').show();
+      */
+

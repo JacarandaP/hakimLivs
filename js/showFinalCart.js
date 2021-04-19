@@ -114,8 +114,8 @@ function renderFinalCart(){
  function showEmptyCartMssg(){
     if(shoppingCart.length === 0){
       $('#containerKassa').html('<div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3"> '+
-      '<h3><strong>Your Cart is Empty</strong></h3>'+
-      '<a href="index.html" class="btn btn-primary cart-btn-transform m-3">continue shopping</a>'+
+      '<h3><strong>Din varukorg är tom</strong></h3>'+
+      '<a href="index.html" class="btn btn-primary cart-btn-transform m-3">Fortsätt handla</a>'+
   '</div>')
     }
   }
@@ -141,8 +141,8 @@ getProfileDetails();
 
 function displayMssgNotLoggedIn(){
   if(localStorage.getItem("PROFILE") == null) {
-    $('#formdiv').html('<div class="col-sm-12 text center"><h3><strong> Please log in to confirm your purchase</strong></h3>'+
-    '<a href="loggin.html" class="btn btn-primary m-3">Log in</a>'+
+    $('#formdiv').html('<div class="col-sm-12 text center"><h3><strong>Var god logga in för att slutföra din beställning</strong></h3>'+
+    '<a href="loggin.html" class="btn btn-primary m-3">Logga in</a>'+
     '</div>')
   }
 }
@@ -153,8 +153,8 @@ function displayMssgNotLoggedIn(){
 
 function displayConfirmationMsgg(){
 $('#containerKassa').html('<div class="col-sm-12 empty-cart-cls text-center">' +
-'<h3><strong>Your order has been sent. Thank you!</strong></strong></h3>'+
-'<a href="index.html" class="btn btn-primary cart-btn-transform m-3">continue shopping</a>'+
+'<h3><strong>Din beställning har skickats. Tack för ditt köp!</strong></strong></h3>'+
+'<a href="index.html" class="btn btn-primary cart-btn-transform m-3">Fortsätt handla</a>'+
 '</div>');
   emptyCart()
 }

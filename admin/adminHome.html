@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Hem</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     <link rel="stylesheet" href="adminStyle.css" />
@@ -17,11 +17,11 @@
 
         <div class="header sticky-top">
             <nav>
-                <h2>HOME PAGE</h2>
+                <h2>ADMIN</h2>
                 <ul>
-                    <li><a href="adminHome.html">Home</a></li>
-                    <li><a href="adminOrder.html">Order</a></li>
-                    <li><a href="adminCustomerPofile.html">profile</a></li>
+                    <li><a href="adminHome.html">Hem</a></li>
+                    <li><a href="adminOrder.html">Beställningar</a></li>
+                    <li><a href="adminCustomerPofile.html">Profil</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,7 +31,7 @@
             <h3>Redigera sidfoten</h3>
             <form class="row" id="footerForm">
                 <div class="col-md-6">
-                    <label for="email-input" class="form-label">Email</label>
+                    <label for="email-input" class="form-label">E-mail</label>
                     <input type="email" class="form-control" name="email" id="email-input" placeholder="" required>
                 </div>
                 <div class="col-md-6">
@@ -77,18 +77,18 @@
                 <div id="produkt-katalog" class="bg-light shadow mb-3">
                     <label>Sök produkt</label>
                 <div id="search-product" class="row m-1">
-                    <input id="search-product-input" type="text" class="form-control col" maxlength="50" placeholder="skriv pris, title, id eller kategori">
+                    <input id="search-product-input" type="text" class="form-control col" maxlength="50" placeholder="Skriv in pris, titel, id eller kategori">
                
             </div>
                     <h3>PRODUKTER</h3>
                     <table class="table">
                         <thead>
                             <tr>
-                              <th scope="col">id</th>
+                              <th scope="col">Id</th>
                               <th scope="col">Titel</th>
                               <th scope="col">Kategori</th>
                               <th scope="col">Pris</th>
-                              <th scop="col">Edit</th>
+                              <th scop="col">Redigera</th>
                             </tr>
                           </thead>
                           <tbody id="to-append-products">
@@ -96,7 +96,7 @@
                     </table>
                     
                
-                <button id="add-new-product" class="btn btn-primary m-2">lägga en ny produkt</button>
+                <button id="add-new-product" class="btn btn-primary m-2">Lägg till en ny produkt</button>
             </div>
             <template id="produkt-katalog-item">
                 <tr>
@@ -112,7 +112,7 @@
             <div id="kategori-katalog" class="bg-light shadow container mt-5 mb-5">
                 <label>Sök kategori</label>
                 <div id="search-category" class="row m-1">
-                    <input id="search-category-input" type="text" class="form-control col" maxlength="50" placeholder="skriv en kategori" >
+                    <input id="search-category-input" type="text" class="form-control col" maxlength="50" placeholder="Skriv in en kategori" >
                
             </div>
                 <h3>KATEGORIER</h3>
@@ -123,7 +123,7 @@
                     <div class="row mt-5">
                        
                     <input id="add-category-input" class="form-control col" ></input>
-                    <button id="add-category" class="btn btn-primary col mb-2">lägga till ny kategori</button>
+                    <button id="add-category" class="btn btn-primary col mb-2">Lägg till en ny kategori</button>
                 </div>
             </div>
         

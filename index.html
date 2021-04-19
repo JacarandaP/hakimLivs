@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Hakim Livs</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -15,9 +15,11 @@
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"/>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="top-meny"></div>
+    <div id="top-meny"> </div><!--top-many end-->
 
 
     <!--sidebar -->
@@ -32,33 +34,37 @@
         Close &times;
       </button>
       <ul id="category-list" class=" list-group components"></ul>
-      <a href="#" class="w3-bar-item w3-button">Popular products</a>
-      <a href="#" class="w3-bar-item w3-button">New products</a>
+      <a href="#" class="w3-bar-item w3-button">Populära produkter</a>
+      <a href="#" class="w3-bar-item w3-button">Nya produkter</a>
     </div>
 
     <div class="w3-main " style="margin-left: 200px">
       <div id="container" class="w3-main ">
-        <div class="w3-blue-gray d-flex w-100 sticky-top">
+        <div class="w3-blue-gray d-flex w-100 sticky-top" style="padding: 20px 30px 20px 30px;">
           <button
             class="w3-button w3-blue-gray w3-xlarge w3-hide-large w-auto"
             onclick="openSideBar()"
           >
             &#9776;
           </button>
+          <!-- Navbar -->
           <div class="w3-container w-auto" id="navbar">
-
-            <a href="index.html"><h1 class="d-inline ">Hakim Livs</h1></a>
-
+            <a href="index.html"><h1 class="d-inline hakimLivs-design" >Hakim Livs</h1></a>
+            <!--Serch area-->
             <form class="form-inline d-inline ">
-              <input class="form-control mr-sm-2 mb-2 d-none d-sm-inline-block " type="search" placeholder="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0 mx-auto d-none d-sm-inline-block" type="submit">Search</button>
+              <input class="form-control mr-sm-2 mb-2 d-sm-inline-block " type="search" placeholder="Sök"> <!--remove d-none from class to show search field-->
+              <button class="btn btn-outline-success my-2 my-sm-0 mx-auto  d-sm-inline-block" style="line-height: 25px;" type="submit">Sök</button> <!--remove d-none from class to show search btn-->
             </form>
-<div class="float-right">
+            <!--Serch area end-->
+            <div class="float-right" style="line-height: 50px;">
             <a id="loggin-button" href="loggin.html"><i class="bi bi-person pl-5 pr-2 "></i></a>
-            <a href="kassa.html" id="showcartbtn"><i class="bi bi-cart2"><span id="counter" class="total-count"></span></i></i></a> 
-            
+            <a href="kassa.html" id="showcartbtn"><i class="bi bi-cart2 pl-5 pr-5"><span id="counter" class="total-count"></span></i></i></a> 
+           </div>
           </div>
-        </div>
+        <!-- Navbar end-->
+      
+      
+      
       </div>
         <div class="w3-container  mb-3 ">
           <div id="offering-container">

@@ -208,7 +208,7 @@
                 }
             },
             messages: {
-                email: "Var god ange ditt användarnamn (e-mejladress)",
+                email: "Var god ange din e-postadress",
                 password: "Var god ange ditt lösenord."
             }
         })
