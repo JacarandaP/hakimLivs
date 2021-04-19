@@ -7,7 +7,7 @@ let getProductInfo=()=>{
     $('#product-info-title').text(productInfo.title)
     $('#product-info-description').text(productInfo.description)
     $('#product-info-price').text(productInfo.price + " kr")
-    $('#product-info-category').text(productInfo.category)
+    $('#product-info-category').text(productInfo.category.name)
     $('#product-info-img').attr('src',productInfo.image)
     $('#buy').attr('productID',productInfo.id)
     $('#buy').attr('productTitle',productInfo.title)
