@@ -4,20 +4,14 @@
     let emailAlreadyInDb = false;
     let backendSimulatorAnswer = true;
 
-
-    //$("#testSkicka").on("clicka", sendEmail($("#emailBox").val()));
-    $("#testSkicka").on("clicka", createUser());
+    $("#testSkicka").on("click", createUser);
+    
 
     // skicka epostadressen till backend, kontrollera om den redan finns
     // om den finns - isEmailAvailable() returnera false, om den är ledig returnera true
     // om true: skapa användare, skicka till backend
     // om false: meddelande vid mejlfältet.
 
-
-    //$("#submitForm").click(tryCreateUser);
-
-
-    //$("#submitForm").submit(tryCreateUser);
 /*
     $('#submitForm').submit(function(event){
         event.preventDefault();
@@ -36,14 +30,7 @@
         }
     }
 
-    function sendEmail(inputEmail){
-
-        fetch("localhost:8080/customer/checkemail/"+inputEmail,
-        { method:"GET" } ).
-        then(response=>console.log(response)).
-        then(json=>console.log(json))
-      
-    }
+   
 
 
     function tryCreateUser(){
@@ -64,7 +51,7 @@
     }
 
     function sendUserToDB(user){
-        fetch('localhost:8080/customer/add',
+        fetch('http://localhost:8080/customer/tryadd',
         { method:"POST",
         headers: {
             'Accept': '*/*',

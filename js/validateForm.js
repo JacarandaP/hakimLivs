@@ -15,10 +15,6 @@
     ),
 
 
-  //  formValidation();
-
-
-
     function registerFormValidation(){
         $('#registerForm').validate({ 
 
@@ -28,11 +24,11 @@
                if(!userExists){
                 window.location.href = "index.html" 
                }
-                 },
+            },
             
             
 
-                 rules: {
+            rules: {
                     firstName: {
                     required: true,
                     specialChrs: true,
