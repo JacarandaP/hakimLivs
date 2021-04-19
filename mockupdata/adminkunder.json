@@ -3,28 +3,28 @@
         "id":"2",
         "trogna":true,
         "totalOrders":"4",
-        "totalPrice":"3000"
+        "totalPrice":"3000.00 kr"
 
     },
     {
         "id":"4",
         "trogna":true,
         "totalOrders":"9",
-        "totalPrice":"345000"
+        "totalPrice":"345000.00 kr"
 
     },
     {
         "id":"5",
         "trogna":false,
         "totalOrders":"1",
-        "totalPrice":"100"
+        "totalPrice":"100.00 kr"
 
     },
     {
         "id":"8",
         "trogna":true,
         "totalOrders":"54",
-        "totalPrice":"430000"
+        "totalPrice":"430000.00 kr"
 
     }
 ]

@@ -3,67 +3,67 @@
         "orderId":"1",
         "customerId":"32",
         "date":"2021-03-31",
-        "price":"220"
+        "price":"220.00 kr"
     },
     {
         "orderId":"2",
         "customerId":"9",
         "date":"2020-12-21",
-        "price":"430.3"
+        "price":"430.30 kr"
     },
     {
         "orderId":"3",
         "customerId":"12",
         "date":"2020-10-01",
-        "price":"3220.23"
+        "price":"3220.23 kr"
     },
     {
         "orderId":"4",
         "customerId":"21",
         "date":"2020-02-12",
-        "price":"7620"
+        "price":"7620.00 kr"
     },
     {
         "orderId":"5",
         "customerId":"1",
         "date":"2021-02-20",
-        "price":"980"
+        "price":"980.00 kr"
     },
     {
         "orderId":"6",
         "customerId":"2",
         "date":"2021-03-31",
-        "price":"22120.99"
+        "price":"22120.99 kr"
     },
     {
         "orderId":"7",
         "customerId":"8",
         "date":"2020-12-12",
-        "price":"23220.23"
+        "price":"23220.23 kr"
     },
     {
         "orderId":"8",
         "customerId":"6",
         "date":"2019-03-31",
-        "price":"2200"
+        "price":"2200.00 kr"
     },
     {
         "orderId":"9",
         "customerId":"2",
         "date":"2020-12-03",
-        "price":"3420"
+        "price":"3420.00 kr"
     },
     {
         "orderId":"10",
         "customerId":"2",
         "date":"2020-03-01",
-        "price":"1220"
+        "price":"1220.00 kr"
     },
     {
         "orderId":"11",
         "customerId":"5",
         "date":"2021-04-31",
-        "price":"220"
+        "price":"220.00 kr"
     }
 
 ]
