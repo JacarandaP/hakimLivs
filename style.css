@@ -1,7 +1,7 @@
 /*to fix navi logo and search area index.html */
 @media only screen and (max-width:540px) {
     .bi{
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .form-control{
