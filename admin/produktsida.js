@@ -10,7 +10,7 @@ $("#show-image").on("click",()=>{
 })
 
 let renderCombobox=(category)=>{
-    let template=`<option value="${category}">${category}</option>`
+    let template=`<option value="${category.id}">${category.name}</option>`
     $('#category-combobox').append(template)
 
 }
@@ -42,8 +42,27 @@ let printProduct=()=>{
 printProduct()
 
 $("#go-back").on('click',()=>location.href="adminHome.html")
-/*
-$('#registerForm').on('submit',()=>{
-    //take the values and do a post
+/
+$('#submitForm').on('click',()=>{
+    let categoryId=$('#category-combobox').children('option:selected').val()
+    console.log(categoryId)
+    let product={title:$('#titleBox').val(),description: $('#descriptionBox').val(), price:  $('#priceBox').val(),image: $('#imageBox').val(), category:{id:categoryId}}
+    
+    sendProductToDB(product);//take the values and do a post
+    alert("saved " +  product.title) //ALERT NOT FANCY, WILL CHANGE IN A FUTURE
+    location.href="adminHome.html"
 })
-*/
+
+let sendProductToDB=(product)=>{
+
+    fetch('https://hakimssuperserver.herokuapp.com/product/add',
+    { method:"POST",
+    headers: {
+        'Accept': '*/*',
+        'Content-Type': 'application/json'},
+      body:JSON.stringify(product)}).
+      then(resp=>resp.json()).
+      then(json=>console.log(json))
+  
+
+}

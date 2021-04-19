@@ -1,7 +1,9 @@
-const toCategoriesAddress='../mockupdata/categories.json'
+//const toCategoriesAddress='../mockupdata/categories.json'
+const toCategoriesAddress='https://hakimssuperserver.herokuapp.com/category/all'
 const toProductsAddress='../mockupdata/products.json'
 const toOrdersAddress='../mockupdata/adminorders.json'
 const toFooterData='../mockupdata/adminfooter.json'
+const sendNewProduct='localhost:8080/product/add'
 
 $('#show-footer-update').hide();
 /**
@@ -83,7 +85,7 @@ let gotoeditProduct=(e)=>{
  * render categories on list
  */
  let renderCategories=((category)=>{
-    let template=`<li class="list-group-item category-item">${category}</li>`
+    let template=`<li class="list-group-item category-item">${category.name}</li>`
     $('.to-append-categories').append(template);
     
 })
@@ -104,18 +106,30 @@ $(searchInput).keyup(()=>{
 
 })
 }
+
 /**
  * send category and update list
  */
 let addCategory=()=>{
 $('#add-category').on('click', ()=>{
-    let newCategory=$('#add-category-input').val();
-  // sendCategoryToDB(newCategory)
+
+    let newCategory={name:$('#add-category-input').val()};
+
+    
+   sendCategoryToDB(newCategory)
    renderCategories(newCategory)
 })
 
 }
 let sendCategoryToDB=(category)=>{
+    fetch('http://hakimssuperserver.herokuapp.com/category/add',
+    { method:"POST",
+    headers: {
+        'Accept': '*/*',
+        'Content-Type': 'application/json'},
+      body:JSON.stringify(category)}).
+      then(resp=>resp.json()).
+      then(json=>console.log(json))
    console.log("sending"+ category)
 
 }
