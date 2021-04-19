@@ -24,7 +24,7 @@ let sendCriteria=()=>{
 
     //send with fetch post data and print response if ok
     let response=criteria;
-    $('#confirmed-message').text(`Nu en trogna kunden är när har en beställning av ${response.orderprice} kr. och har beställat ${response.orderpervecka} gånger per vecka`)
+    $('#confirmed-message').text(`Kriteria för en trogen kund: Beställningspriset är ${response.orderprice} kr och kunden har beställt ${response.orderpervecka} gånger per vecka`)
     $('#confirmed-message').show();
     //update also the customer table down there???
     $('#to-append-customers').empty();

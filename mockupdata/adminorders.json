@@ -11,14 +11,14 @@
         "customerId":"1",
         "products":["1","2","5","2","3"],
         "date":"2020-12-21",
-        "price":"430.3"
+        "price":"430"
     },
     {
         "orderId":"3",
         "customerId":"3",
         "products":["1","2","5","2","3"],
         "date":"2020-10-01",
-        "price":"3220.23"
+        "price":"3220"
     },
     {
         "orderId":"4",
@@ -39,14 +39,14 @@
         "customerId":"2",
         "products":["1","2","5","2","3"],
         "date":"2021-03-31",
-        "price":"22120.99"
+        "price":"22120"
     },
     {
         "orderId":"7",
         "customerId":"8",
         "products":["1","2","5","2","3"],
         "date":"2020-12-12",
-        "price":"23220.23"
+        "price":"23220"
     },
     {
         "orderId":"8",
