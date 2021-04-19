@@ -161,7 +161,7 @@
 .footerFixed{
     min-height: 100vh;
     position: relative;
-    padding-bottom:100px ;
+    padding-bottom:20px ;
     box-sizing: border-box;
 }
 
