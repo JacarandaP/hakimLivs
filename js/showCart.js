@@ -8,9 +8,11 @@ let customer=JSON.parse(localStorage.getItem('PROFILE'));
 
 let customerID = customer.customerID;
 
-let orderDetails = { 
+let orderDetails = productsinOrderDetails; /*{ 
+ 
   customerID : customerID, 
-  productID: productsinOrderDetails }
+  productID: productsinOrderDetails 
+}*/
 
 function ProductInOrder(productID, productPrice){
   this.productID = productID

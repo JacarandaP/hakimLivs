@@ -158,4 +158,29 @@ $('#containerKassa').html('<div class="col-sm-12 empty-cart-cls text-center">' +
 '</div>');
 
 }
- 
+
+let bekräftaKassa=()=>{
+  placeOrder();   
+                emptyCart();
+                postShoppingCart()
+              //POSTA ORDERDETAILS TO BACKEND AND JUST THEN TÖMMA PRODUCTSINORDERDETAILS
+              //  postShoppingCart();
+              displayConfirmationMsgg();
+}
+ let postShoppingCart=()=>{
+   let orderDetails=JSON.parse(localStorage.getItem('OrderDetails'));
+
+    let customer=JSON.parse(localStorage.getItem("PROFILE"))
+console.log(orderDetails);
+    fetch("https://hakimssuperserver.herokuapp.com/orders/add/"+customer.customerID+"",
+    { method:"POST",
+    headers: {
+        'Accept': '*/*',
+        'Content-Type': 'application/json'},
+      body:JSON.stringify(orderDetails)}).
+      then(resp=>resp.json()).
+      then(json=>console.log(json))
+  
+ }
+ $('#confirmbtn').on('click',(e)=>{e.preventDefault();bekräftaKassa()});
+
