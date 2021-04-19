@@ -271,7 +271,10 @@
             },
             
            submitHandler: function(form) {
-              //info about the order sends to backend and the cart is emptied
+                placeOrder();   
+                emptyCart();
+              //POSTA ORDERDETAILS TO BACKEND AND JUST THEN TÖMMA PRODUCTSINORDERDETAILS
+                
               displayConfirmationMsgg();
           }
         })

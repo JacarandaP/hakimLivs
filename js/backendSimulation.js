@@ -106,7 +106,7 @@ backendLoggin = (email, password, frontendReacts) => {
           // saveCredentialsLocalStorage({email:user.email,password:user.password})
           //DB RETURNS A PROFILE.JSON we create one and save it to local storage
            profile = {
-             id:user.id,
+            customerID: user.id,
             name: user.name,
             lastname: user.lastname,
             email,
