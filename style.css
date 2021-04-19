@@ -168,5 +168,6 @@
 footer{
     position: absolute;
     bottom: 0;
-    height: auto;
+    box-sizing: border-box;
+    height: 100;
 }
