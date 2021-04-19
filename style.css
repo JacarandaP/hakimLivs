@@ -99,8 +99,8 @@
     
   }
 
-  /*Galaxy hold*/
-  @media only screen and (max-width:280px) {
+  /*Galaxy hold -280  Galaxy S5 -360*/
+  @media only screen and (max-width:360px) {/*280->360*/
 
     .hakimLivs-design{
     font-family: 'Zen Dots', cursive;
