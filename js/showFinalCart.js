@@ -141,7 +141,7 @@ getProfileDetails();
 
 function displayMssgNotLoggedIn(){
   if(localStorage.getItem("PROFILE") == null) {
-    $('#formdiv').html('<div class="col-sm-12 text center"><h3><strong>Var god logga in för att slutföra din beställning</strong></h3>'+
+    $('#containerKassa').html('<div class="col-sm-12 text center"><h3><strong>Var god logga in för att slutföra din beställning</strong></h3>'+
     '<a href="loggin.html" class="btn btn-primary m-3">Logga in</a>'+
     '</div>')
   }
@@ -161,11 +161,11 @@ $('#containerKassa').html('<div class="col-sm-12 empty-cart-cls text-center">' +
 
 let bekräftaKassa=()=>{
   placeOrder();   
-                emptyCart();
-                postShoppingCart()
-              //POSTA ORDERDETAILS TO BACKEND AND JUST THEN TÖMMA PRODUCTSINORDERDETAILS
-              //  postShoppingCart();
-              displayConfirmationMsgg();
+  emptyCart();
+  postShoppingCart()
+  displayConfirmationMsgg();
+  localStorage.removeItem("OrderDetails");
+  
 }
  let postShoppingCart=()=>{
    let orderDetails=JSON.parse(localStorage.getItem('OrderDetails'));
@@ -180,6 +180,7 @@ console.log(orderDetails);
       body:JSON.stringify(orderDetails)}).
       then(resp=>resp.json()).
       then(json=>console.log(json))
+    localStorage.removeItem("OrderDetails");
   
  }
  $('#confirmbtn').on('click',(e)=>{e.preventDefault();bekräftaKassa()});

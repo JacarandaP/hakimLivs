@@ -4,15 +4,7 @@ let shoppingCart = [];
 let productsinOrderDetails = [];
 
 
-let customer=JSON.parse(localStorage.getItem('PROFILE'));
-
-let customerID = customer.customerID;
-
-let orderDetails = productsinOrderDetails; /*{ 
- 
-  customerID : customerID, 
-  productID: productsinOrderDetails 
-}*/
+let orderDetails = productsinOrderDetails; 
 
 function ProductInOrder(productID, productPrice){
   this.productID = productID
