@@ -19,7 +19,7 @@
 
 
 
-    function formValidation(){
+    function registerFormValidation(){
         $('#registerForm').validate({ 
 
             submitHandler:()=> { 
@@ -114,17 +114,7 @@
                 }
             }
         })
-    }
-
-
-    $('#submitForm').submit(function(event){
-        event.preventDefault();
-        if($('#submitForm').valid()){
-            console.log("valid");
-
-            tryCreateUser();
-        }
-    });
+    };
 
     
     function updateUserProfileValidation(){

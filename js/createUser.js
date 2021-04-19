@@ -4,6 +4,10 @@
     let emailAlreadyInDb = false;
     let backendSimulatorAnswer = true;
 
+
+    //$("#testSkicka").on("clicka", sendEmail($("#emailBox").val()));
+    $("#testSkicka").on("clicka", createUser());
+
     // skicka epostadressen till backend, kontrollera om den redan finns
     // om den finns - isEmailAvailable() returnera false, om den är ledig returnera true
     // om true: skapa användare, skicka till backend
@@ -32,6 +36,15 @@
         }
     }
 
+    function sendEmail(inputEmail){
+
+        fetch("localhost:8080/customer/checkemail/"+inputEmail,
+        { method:"GET" } ).
+        then(response=>console.log(response)).
+        then(json=>console.log(json))
+      
+    }
+
 
     function tryCreateUser(){
         /*COMMENTED BY BACKEND SIMULATION take out when no need simulation
@@ -50,6 +63,19 @@
         
     }
 
+    function sendUserToDB(user){
+        fetch('localhost:8080/customer/add',
+        { method:"POST",
+        headers: {
+            'Accept': '*/*',
+            'Content-Type': 'application/json'},
+          body:JSON.stringify(user)}).
+          then(resp=>resp.json()).
+          then(json=>console.log(json))
+    }
+
+   
+
     function createUser(){
         let inputName = $("#firstNameBox").val();
         let inputLastname = $("#lastNameBox").val();
@@ -60,15 +86,17 @@
         let inputPostnummer = $("#postalCodeBox").val();
         let inputPassword = $("#passwordBox").val();
 
-        user = { name : inputName, 
+        user = { firstname : inputName, 
             lastname: inputLastname, 
             email : inputEmail, 
             telephone: inputPhone,
             address: inputAddress,
-            postort: inputPostort,
-            postnummer: inputPostnummer,
+            city: inputPostort,
+            zip: inputPostnummer,
             password: inputPassword
         };
+
+        sendUserToDB(user);
 /**
  * ADDED BT BACKEND SIMULATION here the bacendSimulation making up a response
  */
