@@ -159,14 +159,13 @@
     }
 
 .footerFixed{
-    min-height: 90vh;
+    min-height: 100vh;
     position: relative;
-    padding-bottom:20px ;
+    padding-bottom:100px ;
     box-sizing: border-box;
 }
 
 footer{
-    height:10vh;
     position: absolute;
     bottom: 0;
 }
