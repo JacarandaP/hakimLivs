@@ -69,6 +69,7 @@
                 type="text"
                 class="form-control-plaintext"
                 id="form-name"
+                name="firstName"
                 placeholder="First name"
                 value="Mark"
                 required
@@ -82,6 +83,7 @@
                 type="text"
                 class="form-control-plaintext"
                 id="form-last-name"
+                name="lastName"
                 placeholder="Last name"
                 value="Otto"
                 required
@@ -95,12 +97,15 @@
                 type="text"
                 class="form-control-plaintext"
                 id="form-phone"
+                name="phone"
                 placeholder="Phone number"
                 value="123456789"
                 required
               />
+              <br>
             </div>
           </div>
+          <br>
           <div class="form-row">
             <div class="col-md-6 mb-3">
               <label for="form-city" class="font-weight-bold">City</label>
@@ -108,6 +113,7 @@
                 type="text"
                 class="form-control-plaintext"
                 id="form-city"
+                name="city"
                 placeholder="City"
                 required
               />
@@ -118,6 +124,7 @@
                 type="text"
                 class="form-control-plaintext"
                 id="form-address"
+                name="address"
                 placeholder="Address"
                 required
               />
@@ -128,6 +135,7 @@
                 type="text"
                 class="form-control-plaintext"
                 id="form-zip"
+                name="zip"
                 placeholder="Zip"
                 required
               />
@@ -206,13 +214,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js"></script>
+
     <script src="js/localStorageManager.js"></script>
     <script src="js/sessionManager.js"></script>
     <script src="js/profile.js"></script>
     <script src="js/sidfot.js"></script>
+    <script src="js/validateForm.js"></script>
+
     <script>
       profileInit();
-      renderOrders()
+      renderOrders();
+      updateUserProfileValidation();
     </script>
   </body>
 </html>

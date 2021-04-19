@@ -97,10 +97,14 @@
         
 
         <form id="loginForm" >
-        <label for="username" >Användarenamn(din e-mail)</label>
-        <input id="usernameEmail" type="email" placeholder="Skriv in registrerad e-mail"  required>
+        <label for="username" >Användarnamn (din e-mail)</label>
+        <input id="usernameEmail" name="email" type="email" placeholder="Skriv in registrerad e-mail">
+        <br>
+
         <label for="password" >Lösenord</label>
-        <input id="password" type="password" placeholder="Skriv in lösenord" required>
+        <input id="password" name="password" type="password" placeholder="Skriv in lösenord">
+        <br>
+
         <button id="loginBtn" class="button-regi-all" type="submit">Logga in</button>
         <button id="RegisterBtn"  class="button-regi-all button-regi" type="submit"  onClick="registerPage();" >Registrera konto</button>
         <div class="float-right">
@@ -120,6 +124,10 @@
     crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.min.js"></script>
+    
     <script src="js/sessionManager.js"></script>
     <script src="js/localStorageManager.js"></script>
     <script src="js/backendSimulation.js"></script>
@@ -127,6 +135,11 @@
     <script src="js/login.js"></script>
     <script src="js/showCart.js"></script>
     <script src="js/sidfot.js"></script>
+    <script src="js/validateForm.js"></script>
+
+    <script>
+      loginFormValidation()
+    </script>
     
               
 </body>
