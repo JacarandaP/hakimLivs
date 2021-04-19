@@ -1,9 +1,10 @@
 //const toCategoriesAddress='../mockupdata/categories.json'
 const toCategoriesAddress='https://hakimssuperserver.herokuapp.com/category/all'
-const toProductsAddress='../mockupdata/products.json'
+//const toProductsAddress='../mockupdata/products.json'
+const toProductsAddress='https://hakimssuperserver.herokuapp.com/product'
 const toOrdersAddress='../mockupdata/adminorders.json'
 const toFooterData='../mockupdata/adminfooter.json'
-const sendNewProduct='localhost:8080/product/add'
+//const sendNewProduct='localhost:8080/product/add'
 
 $('#show-footer-update').hide();
 /**
@@ -65,7 +66,7 @@ let renderProducts=(product)=>{
     let template=$('#produkt-katalog-item').contents().clone()
     template.find('.product-id').text(product.id)
     template.find('.product-title').text(product.title)
-    template.find('.product-category').text(product.category)
+    template.find('.product-category').text(product.category.name)
     template.find('.product-price').text(product.price +" kr")
     template.find('.product-edit').attr('product-id',product.id)
     template.find('.product-edit').attr('onclick',"gotoeditProduct(this);")
@@ -130,7 +131,7 @@ let sendCategoryToDB=(category)=>{
       body:JSON.stringify(category)}).
       then(resp=>resp.json()).
       then(json=>console.log(json))
-   console.log("sending"+ category)
+   //console.log("sending"+ category)
 
 }
 $('#add-new-product').on('click', ()=>{location.href="produktSida.html"})

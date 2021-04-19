@@ -12,7 +12,7 @@ $("#show-image").on("click",()=>{
 let renderCombobox=(category)=>{
     let template=`<option value="${category.id}">${category.name}</option>`
     $('#category-combobox').append(template)
-
+    console.log($('#titleBox').attr('productid'))
 }
 
 getCategories(renderCombobox);
@@ -27,11 +27,11 @@ let printProduct=()=>{
             if(product.id==selectedProductId){
                 sessionStorage.removeItem("TEMP_ID");
                 $('#titleBox').val(product.title);
+                $('#titleBox').attr("productId",product.id)
                 $('#descriptionBox').val(product.description);
                 $('#priceBox').val(product.price);
                 $('#imageBox').val(product.image);
                $("option[value='"+product.category+"'").attr("selected",true)
-                console.log($("option[value='"+product.category+"'"))
                 printImage();
             }
        }
@@ -45,9 +45,12 @@ $("#go-back").on('click',()=>location.href="adminHome.html")
 /
 $('#submitForm').on('click',()=>{
     let categoryId=$('#category-combobox').children('option:selected').val()
-    console.log(categoryId)
-    let product={title:$('#titleBox').val(),description: $('#descriptionBox').val(), price:  $('#priceBox').val(),image: $('#imageBox').val(), category:{id:categoryId}}
-    
+   
+    let product;
+if($('#titleBox').attr('productid')==NaN)
+    product={title:$('#titleBox').val(),description: $('#descriptionBox').val(), price:  $('#priceBox').val(),image: $('#imageBox').val(), category:{id:categoryId}}
+else
+product={id:$('#titleBox').attr('productid'),title:$('#titleBox').val(),description: $('#descriptionBox').val(), price:  $('#priceBox').val(),image: $('#imageBox').val(), category:{id:categoryId}}
     sendProductToDB(product);//take the values and do a post
     alert("saved " +  product.title) //ALERT NOT FANCY, WILL CHANGE IN A FUTURE
     location.href="adminHome.html"
