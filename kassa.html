@@ -14,11 +14,13 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <!--<script type="text/javascript" src="footerFixed.js"></script>-->
 </head>
 <body>
+    <div class="footerFixed">
     <div id="top-meny">
         <!-- Navbar -->
-        <div class="w3-container w-auto w3-blue-gray" style="padding: 20px 30px 20px 30px;" id="navbar">
+        <div class="w3-container w-auto w3-blue-gray sticky-top" style="padding: 20px 30px 20px 30px;" id="navbar">
             <a href="index.html"><h1 class="d-inline hakimLivs-design">Hakim Livs</h1></a>
             <form class="form-inline d-inline ">
              <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search">
@@ -32,14 +34,15 @@
           </div>
         </div>
         <!-- Navbar end-->
+        
     </div>
     <div id="sidebar">
 
     </div>
     <div id="containerKassa" class="container">
-        <h1 style="text-align: center;" >Din beställning</h1>
-    <div class="finalTable">
-    <table class="table table-bordered" id="table2" style="width:900px"> 
+        <h1 style="text-align: center; margin-top: 40px" >Din beställning</h1>
+    <div class="table-responsive">
+        <table class="table-bordered" id="table2" > 
         <thead>
             <tr>
                 <th class="text-center py-3 px-4" style="min-width: 100px;">Produkt</th>
@@ -48,13 +51,13 @@
                 <th class="text-center py-3 px-4" style="min-width: 150px;">Totalt</th>
                 <th class="text-center py-3 px-4" style="min-width: 150px;">Ta bort</th>
             </tr>
-             </thead>
+        </thead>
              <tbody id="finalInfo">
              </tbody>   
         </table>
-        <div class="d-flex justify-content-start">
-            <h4 class="font-weight-bold">Totalt pris: <span id="FinalTotalPay" class="text-large"></span></h4>
-          </div>
+    </div>
+    <div class="d-flex justify-content-start">
+        <h4 class="font-weight-bold">Totalt pris: <span id="FinalTotalPay" class="text-large"></span></h4>
     </div>
     <button id="clear" class="clear-cart btn btn-danger">Töm varukorgen</button>
    <!--<div class="form-field" id="formdiv">
@@ -103,7 +106,9 @@
     -->
         <button type="button" class="btn btn-primary float-right" id="confirmbtn">Bekräfta</button>
     </div>
-    <div id="footer"class="fixed-bottom">
+</div>
+    <div id="footer">
+        
     </div>
     <script
     src="https://code.jquery.com/jquery-3.6.0.js"
@@ -125,5 +130,6 @@
           changeTopVarOnloggedIn();
         formValidationCheckout()  
      </script>
+     
 </body>
 </html>

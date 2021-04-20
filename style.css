@@ -1,20 +1,52 @@
-/*to fix navi logo and search area index.html */
+
+
+  @media only screen and (min-width:540px), screen and( max-width:660px) {
+
+ 
+  #sidebar{
+    width: 200px;
+    padding-top: 200px ;
+    
+}
+}
+@media only screen and (min-width:320px), screen and( max-width:540px) {
+
+ 
+    #sidebar{
+      width: 200px;
+      padding-top: 250px  !important;
+      
+  }
+  }
+/*to fix navi logo and search area index.html */ 
 @media only screen and (max-width:540px) {
     .bi{
-        font-size: 25px;
+        font-size: 15px;
     }
 
     .form-control{
             min-width: 100px;
             margin-top: 13px; /*Logo does not take over the serch field */
+            display: none !important;
+        
     }
+    .side-searching{
+            display: block;
+            }
+            #sidebar{
+                width: 200px;
+                padding-top: 150px !important;
+                
+            }
+           
+           
 }
 
 .bi{
  font-size: 25px;
 }
 /*search field*/
-.form-control{
+#navbar.form-control{
     min-width: 100px;
     
 }
@@ -25,10 +57,17 @@
     .bi{
         font-size: 30px;
     }
-    .form-control{
+    #navbar.form-control{
         min-width: 200px;
     }
-    
+    .side-searching{
+        display: none;
+        }
+        #sidebar{
+            width: 200px;
+            padding-top: 150px !important;
+            
+        }
 }
 
 @media only screen and (min-width:961px) {
@@ -36,9 +75,12 @@
         font-size: 40px;
     }
 
-    .form-control{
+    #navbar.form-control{
             min-width: 400px;
     }
+    .side-searching{
+        display: none;
+        }
 }
 
 
@@ -99,8 +141,9 @@
     
   }
 
-  /*Galaxy hold*/
-  @media only screen and (max-width:280px) {
+
+  /*Galaxy S5 -360 iphone6/7/8-375*/
+  @media only screen and (max-width:375px) {/*280->360->375*/
 
     .hakimLivs-design{
     font-family: 'Zen Dots', cursive;
@@ -115,13 +158,45 @@
     padding: 5px;
 
   }
+  #sidebar{
+    width: 200px;
+    /*padding-top: 250px ;*/
+    
 }
+}
+
+
+  /*Galaxy hold -280  iphone 5/SE-320*/
+  @media only screen and (max-width:320px) { /*280->320*/
+
+    .hakimLivs-design{
+    font-family: 'Zen Dots', cursive;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);
+    color: goldenrod;
+    font-size: 10px; 
+    border:solid 1px rgb(87, 10, 231);
+    box-shadow: 0 0 5px 5px #bce2e8, 0 0 5px 3px #bce2e8 inset;
+    border-radius: 10px;
+    padding: 5px;
+
+  }
+  #sidebar{
+    width: 200px;
+    padding-top: 250px ;
+    
+}
+}
+
 
 
 
 
 #sidebar{
     width: 200px;
+   /* padding-top: 150px !important;*/
+    
 }
 
 #counter{
@@ -136,3 +211,18 @@
     .table-wrapper-scroll-y {
     display: block;
     }
+
+/* Fotter for kassa.html*/    
+.footerFixed{
+    min-height: 100vh;
+    position: relative;
+    padding-bottom:100px ;
+    box-sizing: border-box;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 100;
+}

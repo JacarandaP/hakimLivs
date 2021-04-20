@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="footerFixed.js"></script>
   </head>
   <body>
     <div id="top-meny"> </div><!--top-many end-->
@@ -36,6 +37,7 @@
       <ul id="category-list" class=" list-group components"></ul>
       <a href="#" class="w3-bar-item w3-button">Populära produkter</a>
       <a href="#" class="w3-bar-item w3-button">Nya produkter</a>
+      <input class="side-searching" type="search" placeholder="Sök">
     </div>
 
     <div class="w3-main " style="margin-left: 200px">
@@ -53,7 +55,7 @@
             <!--Serch area-->
             <form class="form-inline d-inline ">
               <input class="form-control mr-sm-2 mb-2 d-sm-inline-block " type="search" placeholder="Sök"> <!--remove d-none from class to show search field-->
-              <button class="btn btn-outline-success my-2 my-sm-0 mx-auto  d-sm-inline-block" style="line-height: 25px;" type="submit">Sök</button> <!--remove d-none from class to show search btn-->
+            <!--  <button class="btn btn-outline-success my-2 my-sm-0 mx-auto  d-sm-inline-block" style="line-height: 25px;" type="submit">Sök</button>--> <!--remove d-none from class to show search btn-->
             </form>
             <!--Serch area end-->
             <div class="float-right" style="line-height: 50px;">
@@ -76,7 +78,7 @@
           <div id="products" class="container mt-3 mb-5"></div>
         </div>
 
-        <div id="footer" class="fixed-bottom "></div>
+        <div id="footer" ></div> <!--class="fixed-bottom "-->
       </div>
     </div>
     <template id="product-card-template">
