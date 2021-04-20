@@ -1,29 +1,27 @@
 
     jQuery.validator.addMethod("specialChrs", function (value, element) {
         return new RegExp('^[A-Za-zÀ-žÅÄÖåäö ]+$').test(value)
-    }, "Ej godkända tecken."
-    ),
+    }, "Ej godkända tecken.");
 
     jQuery.validator.addMethod("numeralsAndSpecialChars", function (value, element) {
         return new RegExp('^[A-Za-z0-9À-žÅÄÖåäö ]+$').test(value)
-    }, "Ej godkända tecken."
-    ),
+    }, "Ej godkända tecken.");
 
     jQuery.validator.addMethod("postalCodeFormat", function (value, element) {
         return new RegExp('^[0-9 ]+$').test(value)
-    }, "Ej godkända tecken."
-    ),
+    }, "Ej godkända tecken.");
 
 
     function registerFormValidation(){
         $('#registerForm').validate({ 
 
             submitHandler:()=> { 
-                tryCreateUser()
+                createUser();
+                
                 //ADDED BY BACKEND SIMULATION
-               if(!userExists){
+               /*if(!userExists){
                 window.location.href = "index.html" 
-               }
+               }*/
             },
             
             

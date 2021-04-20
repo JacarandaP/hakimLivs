@@ -20,48 +20,35 @@
         }
     }); */
 
-    // kolla mejladressen - backend 
-    function isEmailAvailable(){
-        let inputEmail = $("#emailBox").val(); // ska skickas till backend
-        if(emailAlreadyInDb){
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-   
 
 
-    function tryCreateUser(){
-        /*COMMENTED BY BACKEND SIMULATION take out when no need simulation
 
-        if(isEmailAvailable() && $("#registerForm").valid()){
-            $("#emailAvailableMsg").html("");
-            console.log("valid");
-*/
-            createUser();
-/*COMMENTED BY BACKEND SIMULATION
 
-        } else {
-            $("#emailAvailableMsg").html("Den här mejlen är redan registrerad på en användare. Logga in eller använd en annan mejl.")
-        }
-        */
-        
-    }
 
     function sendUserToDB(user){
-        fetch('http://localhost:8080/customer/tryadd',
+
+        let request = new Request('http://localhost:8080/customer/tryadd',
         { method:"POST",
-        headers: {
-            'Accept': '*/*',
-            'Content-Type': 'application/json'},
-          body:JSON.stringify(user)}).
-          then(resp=>resp.json()).
-          then(json=>console.log(json))
+          headers: {'Accept': '*/*', 'Content-Type': 'application/json'},
+          body: JSON.stringify(user)
+        });
+
+        fetch(request)
+        .then(resp=>resp.json())
+        .then(function(data) {
+            console.log(data.email)
+            if(data.email == null){
+                //window.location.href = "index.html"
+                console.log("index.html");
+            } else {
+                $("#emailAvailableMsg").html("Den här mejlen är redan registrerad på en användare. Logga in eller använd en annan mejl.")
+            }
+        })
     }
 
    
+   
+
 
     function createUser(){
         let inputName = $("#firstNameBox").val();
@@ -87,6 +74,7 @@
 /**
  * ADDED BT BACKEND SIMULATION here the bacendSimulation making up a response
  */
+/*
  backendSendRegister(inputName,inputLastname,inputEmail,inputPhone,
     inputAddress,inputPostort,inputPostnummer,inputPassword);
 
