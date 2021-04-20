@@ -1,28 +1,3 @@
-//$(document).ready(function(){
-
-    // tillsvidare
-    let emailAlreadyInDb = false;
-    let backendSimulatorAnswer = true;
-
-    $("#testSkicka").on("click", createUser);
-    
-
-    // skicka epostadressen till backend, kontrollera om den redan finns
-    // om den finns - isEmailAvailable() returnera false, om den är ledig returnera true
-    // om true: skapa användare, skicka till backend
-    // om false: meddelande vid mejlfältet.
-
-/*
-    $('#submitForm').submit(function(event){
-        event.preventDefault();
-        if($('#submitForm').valid()){
-            tryCreateUser();
-        }
-    }); */
-
-
-
-
 
 
     function sendUserToDB(user){
@@ -37,16 +12,15 @@
         .then(resp=>resp.json())
         .then(function(data) {
             console.log(data.email)
-            if(data.email == null){
-                //window.location.href = "index.html"
-                console.log("index.html");
-            } else {
+            if(data.email === null){
                 $("#emailAvailableMsg").html("Den här mejlen är redan registrerad på en användare. Logga in eller använd en annan mejl.")
+            } else {
+                window.location.href = "index.html"
+                //console.log("index.html");
             }
         })
     }
-
-   
+ 
    
 
 
@@ -71,24 +45,6 @@
         };
 
         sendUserToDB(user);
-/**
- * ADDED BT BACKEND SIMULATION here the bacendSimulation making up a response
- */
-/*
- backendSendRegister(inputName,inputLastname,inputEmail,inputPhone,
-    inputAddress,inputPostort,inputPostnummer,inputPassword);
-
-        /* COMMENTED BY BACKEND SIMULATION
-        jUser = JSON.stringify(user);
-        //console.log(user);
-        console.log(jUser);
-        if(backendSimulatorAnswer){
-            localStorage.setItem("PROFILE", jUser);
-            window.location.href = "index.html";
-        }
-
-        */
-        // skicka JSON.stringify(user) till databas
 
     }
 

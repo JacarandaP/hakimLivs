@@ -16,6 +16,7 @@
         $('#registerForm').validate({ 
 
             submitHandler:()=> { 
+                $('#submit').attr('disabled',true)
                 createUser();
                 
                 //ADDED BY BACKEND SIMULATION
