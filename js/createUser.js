@@ -1,5 +1,5 @@
 function sendUserToDB(user) {
-  let request = new Request("http://localhost:8080/customer/tryadd", {
+  let request = new Request("http://hakimssuperserver.herokuapp.com/customer/tryadd", {
     method: "POST",
     headers: { Accept: "*/*", "Content-Type": "application/json" },
     body: JSON.stringify(user),
