@@ -24,7 +24,7 @@
         font-size: 15px;
     }
 
-    #navbar.form-control{
+    #navbar .form-control{ /* Need space between #navbar and .form-control*/
             min-width: 100px;
             margin-top: 13px; /*Logo does not take over the serch field */
             display: none !important;
