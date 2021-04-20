@@ -16,13 +16,15 @@ loginButton.addEventListener("click", (e) => {
     const valueEmail =usernameEmail.value;
     const valuePass = password.value;
     //BACKEND SIMULATION IS HERE
-    backendLoggin(valueEmail,valuePass,frontendReacts);
+    //backendLoggin(valueEmail,valuePass,frontendReacts);
+    logIn();
     
 });
 
 function registerPage() {
     location.href = 'register.html';
 }
+
 let frontendReacts=(profile)=>{
     if(profile!=null){
   alert('Välkommen '+ profile.name + '!')
@@ -48,3 +50,52 @@ let frontendReacts=(profile)=>{
        
 })
 
+function logIn(){
+  let username = $("#usernameEmail").val();
+  let password = $("#password").val();
+
+  console.log(username);
+
+  fetch("https://hakimssuperserver.herokuapp.com/customer/checkcustomer/"+username+"/"+password+"",
+    { method:"POST",
+    headers: {
+        'Accept': '*/*',
+        'Content-Type': 'application/json'}}).
+      then(resp=>resp.text()).
+      then(function (user){
+
+        if(!user){
+          console.log("Lösen eller användarnamn blev fel");
+          loginErrorMsg.style.opacity = 1;
+          //$('#errorMessage').html("Användarnamnet eller lösenordet stämmer inte, försök igen!");
+        } else {
+          userJ = JSON.parse(user);
+          let profile = storeInloggedUser(userJ);
+          location.href='index.html';
+        }
+      })
+    
+}
+
+function storeInloggedUser(user){
+
+  localStorage.setItem(
+    "CREDENTIALS",
+    JSON.stringify({ email: user.email, password: user.password })
+  );
+
+  profile = {
+    customerID: user.id,
+    name: user.name,
+    lastname: user.lastname,
+    telephone: user.lastname,
+    email: user.email,
+    telephone: user.telephone,
+    address: user.address,
+    postort: user.postort,
+    postnummer: user.postnummer,
+    password: user.password,
+  };
+  localStorage.setItem("PROFILE", JSON.stringify(profile));
+  return profile;
+}
