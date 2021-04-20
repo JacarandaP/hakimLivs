@@ -1,4 +1,24 @@
-/*to fix navi logo and search area index.html */
+
+
+  @media only screen and (min-width:540px), screen and( max-width:660px) {
+
+ 
+  #sidebar{
+    width: 200px;
+    padding-top: 200px ;
+    
+}
+}
+@media only screen and (min-width:320px), screen and( max-width:540px) {
+
+ 
+    #sidebar{
+      width: 200px;
+      padding-top: 250px  !important;
+      
+  }
+  }
+/*to fix navi logo and search area index.html */ 
 @media only screen and (max-width:540px) {
     .bi{
         font-size: 15px;
@@ -7,14 +27,26 @@
     .form-control{
             min-width: 100px;
             margin-top: 13px; /*Logo does not take over the serch field */
+            display: none !important;
+        
     }
+    .side-searching{
+            display: block;
+            }
+            #sidebar{
+                width: 200px;
+                padding-top: 150px !important;
+                
+            }
+           
+           
 }
 
 .bi{
  font-size: 25px;
 }
 /*search field*/
-.form-control{
+#navbar.form-control{
     min-width: 100px;
     
 }
@@ -25,10 +57,17 @@
     .bi{
         font-size: 30px;
     }
-    .form-control{
+    #navbar.form-control{
         min-width: 200px;
     }
-    
+    .side-searching{
+        display: none;
+        }
+        #sidebar{
+            width: 200px;
+            padding-top: 150px !important;
+            
+        }
 }
 
 @media only screen and (min-width:961px) {
@@ -36,9 +75,12 @@
         font-size: 40px;
     }
 
-    .form-control{
+    #navbar.form-control{
             min-width: 400px;
     }
+    .side-searching{
+        display: none;
+        }
 }
 
 
@@ -116,6 +158,11 @@
     padding: 5px;
 
   }
+  #sidebar{
+    width: 200px;
+    /*padding-top: 250px ;*/
+    
+}
 }
 
 
@@ -135,6 +182,11 @@
     padding: 5px;
 
   }
+  #sidebar{
+    width: 200px;
+    padding-top: 250px ;
+    
+}
 }
 
 
@@ -143,6 +195,8 @@
 
 #sidebar{
     width: 200px;
+   /* padding-top: 150px !important;*/
+    
 }
 
 #counter{
