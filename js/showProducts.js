@@ -124,10 +124,15 @@ getProductsByCategory(renderProducts, $("#products"), categoryName)
  * function to show product info in product page
  */
 let showProductPage=(e)=>{
-    let products=JSON.parse(localStorage.getItem('PRODUCTS'));
-   let product=products[e.getAttribute('product-id')-1]
-   sessionStorage.setItem('PRODUCT_INFO',JSON.stringify(product));
-   location.href='produkt.html'
+  
+    let productId=e.getAttribute('product-id');
+    fetch(`https://hakimssuperserver.herokuapp.com/product/getbyid/${productId}`)
+.then((res)=>res.json())
+.then((json)=>{
+    sessionStorage.setItem('PRODUCT_INFO',JSON.stringify(json))
+    location.href='produkt.html'
+    }
+    )
 }
 
 
