@@ -158,10 +158,11 @@
     display: block;
     }
 
+/* Fotter for kassa.html*/    
 .footerFixed{
     min-height: 100vh;
     position: relative;
-    /*padding-bottom:100px ;*/
+    padding-bottom:100px ;
     box-sizing: border-box;
 }
 
