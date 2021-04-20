@@ -49,7 +49,7 @@ let renderUsers=(user)=>{
     template.find('.customer-id').text(user.id)
     template.find('.customer-trogna').text(user.trogna)
     template.find('.customer-total-orders').text(user.totalOrders)
-    template.find('.customer-total-price').text(user.totalPrice)
+    template.find('.customer-total-price').text(user.totalPrice.replace(".", ","))
     $('#to-append-customers').append(template);
 
 }

@@ -51,7 +51,7 @@ let renderOrders=(order)=>{
     template.find('.order-id').text(order.orderId)
     template.find('.order-customer').text(order.customerId)
     template.find('.order-date').text(order.date)
-    template.find('.order-price').text(order.price)
+    template.find('.order-price').text(order.price.replace(".", ","))
    
     $('#to-append-orders').append(template);
 }
@@ -63,7 +63,7 @@ let renderProducts=(product)=>{
     template.find('.product-id').text(product.id)
     template.find('.product-title').text(product.title)
     template.find('.product-category').text(product.category)
-    template.find('.product-price').text(product.price +" kr")
+    template.find('.product-price').text(product.price.toFixed(2).replace(".", ",") +" kr")
     template.find('.product-edit').attr('product-id',product.id)
     template.find('.product-edit').attr('onclick',"gotoeditProduct(this);")
     $('#to-append-products').append(template);

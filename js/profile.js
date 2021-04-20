@@ -104,7 +104,7 @@ renderOrders=()=>{
     template.find('.order-delivery-address').text("to implement")
     template.find('.order-products-cards').text()
     template.find('.order-delivery-address').text(order.delivered.name + " " + order.delivered.lastname + " "+order.delivered.address+ " "+ order.delivered.postort +" " + order.delivered.postnummer)
-    order.products.forEach((product)=>{ template.find('.order-products-cards').append(`<li class="list-group-item">${product.title}'\n' quantity:${product.quantity}'\n'price:${product.price} kr
+    order.products.forEach((product)=>{ template.find('.order-products-cards').append(`<li class="list-group-item">${product.title}<br> quantity: ${product.quantity}<br>price: ${product.price.toFixed(2).replace(".", ",")} kr
   </li>`)
     $('#accordion').append(template)  
     })
