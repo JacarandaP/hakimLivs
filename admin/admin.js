@@ -123,7 +123,7 @@ $('#add-category').on('click', ()=>{
 
 }
 let sendCategoryToDB=(category)=>{
-    fetch('http://hakimssuperserver.herokuapp.com/category/add',
+    fetch('https://hakimssuperserver.herokuapp.com/category/add',
     { method:"POST",
     headers: {
         'Accept': '*/*',
