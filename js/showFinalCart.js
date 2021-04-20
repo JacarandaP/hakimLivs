@@ -15,9 +15,9 @@ function renderFinalCart(){
   for(var i in checkoutCart){
     let finalPrd = checkoutCart[i].id;
     let finalPrdName = checkoutCart[i].title;
-    let finalPrdPrice = checkoutCart[i].price;
+    let finalPrdPrice = Number(checkoutCart[i].price).toFixed(2).replace(".", ",");
     let finalPrdAmount = checkoutCart[i].amount;
-    let finalTotalPrice = Number(checkoutCart[i].price * checkoutCart[i].amount).toFixed(2);
+    let finalTotalPrice = Number(checkoutCart[i].price * checkoutCart[i].amount).toFixed(2).replace(".", ",");
     finalTotalToPay += checkoutCart[i].price * checkoutCart[i].amount;
     finalShoppingCart += "<tr>"
     +"<td>" + finalPrdName + "</td>"
