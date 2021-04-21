@@ -1,9 +1,10 @@
+/*
 var array = [];
 var obj = {
   useremail: 'test@gmail.com',
   password: 'test'
 };
-
+*/
 
 //const  loginForm  =  document.getElementById("loginForm");
 const usernameEmail = document.getElementById("usernameEmail");
@@ -24,7 +25,7 @@ loginButton.addEventListener("click", (e) => {
 function registerPage() {
     location.href = 'register.html';
 }
-
+/*
 let frontendReacts=(profile)=>{
     if(profile!=null){
   alert('Välkommen '+ profile.name + '!')
@@ -37,7 +38,7 @@ let frontendReacts=(profile)=>{
      $('#errorMessage').fadeOut(3000)
   }
 }
-   
+   */
         
     
     $(document).ready(()=>{
@@ -67,7 +68,7 @@ function logIn(){
         if(!user){
           console.log("Lösen eller användarnamn blev fel");
           loginErrorMsg.style.opacity = 1;
-          //$('#errorMessage').html("Användarnamnet eller lösenordet stämmer inte, försök igen!");
+          $('#errorMessage').html("Användarnamnet eller lösenordet stämmer inte, försök igen!");
         } else {
           userJ = JSON.parse(user);
           let profile = storeInloggedUser(userJ);
@@ -86,14 +87,13 @@ function storeInloggedUser(user){
 
   profile = {
     customerID: user.id,
-    name: user.name,
+    name: user.firstname,
     lastname: user.lastname,
-    telephone: user.lastname,
     email: user.email,
     telephone: user.telephone,
     address: user.address,
-    postort: user.postort,
-    postnummer: user.postnummer,
+    postort: user.city,
+    postnummer: user.zip,
     password: user.password,
   };
   localStorage.setItem("PROFILE", JSON.stringify(profile));

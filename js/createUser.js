@@ -14,7 +14,8 @@ function sendUserToDB(user) {
           "Den här mejlen är redan registrerad på en användare. Logga in eller använd en annan mejl."
         );
       } else {
-        window.location.href = "index.html";
+        $("#registerForm").append(`<div class="text-success text-center">Registrering lyckades med ${data.email} email address,<a href="loggin.html">klicka här för att logga in</a></div>`)
+       // window.location.href = "loggin.html";
         //console.log("index.html");
       }
     });

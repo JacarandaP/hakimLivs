@@ -9,10 +9,16 @@
 
       /**
        *  resizes an element on hover (used for resizing product image look renderProducts function in showProducts)
-       * @param {element to resize} toResize 
+       * @param {element to resize} toChange 
        */
-      var resizeObject=(toResize)=>{
+      var reactOnMouseOver=(toChange)=>{
        
-        toResize.on('mouseover',()=>{toResize.animate({width:'+=30px'},500)})
-        toResize.mouseout(()=>{toResize.animate({width:'-=30px'},500)})
+        toChange.on('mouseover',()=>{
+          toChange.css('cursor', 'pointer');
+
+        })
+        toChange.mouseout(()=>{
+          
+          //toChange.animate({width:'-=30px'},500)
+        })
       }

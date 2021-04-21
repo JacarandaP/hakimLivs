@@ -76,7 +76,7 @@ fetch(productsAPI)
     template.find('.add-to-cart').attr('productCategory', product.category.name) //CHANGED FOR TEST
     template.find('.add-to-cart').attr('productAmount', 1)
     template.find('.product-image').attr('product-id',product.id)
-    resizeObject(template.find('.product-image'))
+    reactOnMouseOver(template.find('.product-image'))
     appendTo.append(template);
     
 
