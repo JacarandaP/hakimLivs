@@ -107,23 +107,24 @@
     -->
         <button type="button" class="btn btn-primary float-right" id="confirmbtn">Bekräfta</button>
 
-         <!--Visa kundens adress-->
-
-         <div class="d-flex justify-content-center pt-5">
-            <table class="text-center">
-                <th class="text-center py-3 px-4" style="min-width: 100px;">Leveransadress</th>
-                <tr id="user-all-names"></tr>
-                <tr id="user-address"></tr>
-                <tr id="user-city"></tr>
-                <tr id="user-zip"></tr>
-                <tr id="user-phone-number"><br></tr>
-            </table>  
-        </div>  
-
-        <!--Visa kundens adress END-->
-
         <p></p>
         <span id="logInPromptSpace" class="float-right"></span> </div>
+
+             <!--Visa kundens adress-->
+
+             <div class="d-flex justify-content-center pt-5" id="customer-info">
+             <!--   <table class="text-center">
+                    <th class="text-center py-3 px-4" style="min-width: 100px;">Leveransadress</th>
+                    <tr id="user-all-names"></tr>
+                    <tr id="user-address"></tr>
+                    <tr id="user-city"></tr>
+                    <tr id="user-zip"></tr>
+                    <tr id="user-phone-number"><br></tr>
+                </table>  -->
+            </div>  
+    
+            <!--Visa kundens adress END-->
+
     </div>
    
     <div id="footer">
@@ -149,6 +150,7 @@
     <script>
         changeTopVarOnloggedIn();
         formValidationCheckout();
+        customerInfo();
         loadProfileToTable();   
      </script>
      
