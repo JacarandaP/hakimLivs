@@ -69,6 +69,6 @@ let getProducts=(productId,render)=>{
  * render product as list
  */
 let renderProduct=(product)=>{
-    let template=`<li class="list-group-item"><b>Produkt titel:</b> ${product.title} <b>Produkt kategori:</b> ${product.category}<b> Produkt pris:</b> ${product.price} </li>`
+    let template=`<li class="list-group-item"><b>Produkt titel:</b> ${product.title} <b>Produkt kategori:</b> ${product.category}<b> Produkt pris:</b> ${product.price.toFixed(2).replace(".", ",")} </li>`
     $('#order-list').append(template);
 }

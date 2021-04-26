@@ -30,7 +30,7 @@ function renderFinalCart(){
     +  "</tr>";
   }
   
-  $('#FinalTotalPay').html(Number(finalTotalToPay).toFixed(2)+" kr");
+  $('#FinalTotalPay').html(Number(finalTotalToPay).toFixed(2).replace(".", ",") +" kr");
     
     return finalShoppingCart;
   }

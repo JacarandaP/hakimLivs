@@ -54,7 +54,7 @@ let renderOrders=(order)=>{
     template.find('.order-id > a').text(order.orderId)
     template.find('.order-customer').text(order.customerId)
     template.find('.order-date').text(order.date)
-    template.find('.order-price').text(order.price.replace(".", ","))
+    template.find('.order-price').text(Number(order.price).toFixed(2).replace(".", ","))
    
     $('#to-append-orders').append(template);
 }

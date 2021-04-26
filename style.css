@@ -226,3 +226,7 @@ footer{
     box-sizing: border-box;
     height: 100;
 }
+
+.capitalize {
+    text-transform: capitalize;
+}
