@@ -26,7 +26,7 @@ let changeTopVarOnloggedIn=()=>{
 }
 let loggout=()=> {localStorage.removeItem("PROFILE");
 localStorage.removeItem("CREDENTIALS")
-localStorage.removeItem("shoppingCart")
+//localStorage.removeItem("shoppingCart")
 localStorage.removeItem("ORDERS")
 localStorage.removeItem("OrderDetails")
 location.href="index.html"}
