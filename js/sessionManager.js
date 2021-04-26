@@ -18,8 +18,8 @@ let changeTopVarOnloggedIn=()=>{
   
     if(profile!=null){
         $('#loggin-button').attr('href','profile.html')
-        $('#navbar').append('</br>Inloggad som:'+profile.name);
-        $('#navbar').after('<button id="logout" class="btn btn-danger float-right mt-2" style="height:30px" onClick="loggout();"><span class="badge badge-danger">Logga ut</span></button>')
+        $('#navbar  .hakimLivs-design').after('<div class="col-4 text-center  ">Inloggad som:'+profile.name+'</div>');
+        $('#navbar').append('<button id="logout" class="col-2 btn shadow float-right mt-2 " style="height:30px" onClick="loggout();"><span class="align-middle text-white">Logga ut</span></button>')
     
     }
    

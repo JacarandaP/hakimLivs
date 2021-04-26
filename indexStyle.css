@@ -1,0 +1,47 @@
+#sidebar{
+    width: 200px;
+   /* padding-top: 150px !important;*/
+    
+}
+
+#counter{
+    font-size: 15px;
+    font-style: normal;
+}
+.with-scrollbar {
+    position: relative;
+    height: 400px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
+
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 100;
+}
+.hakimLivs-design h1{
+    font-family: 'Zen Dots', cursive;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);
+    color: goldenrod;
+   
+    border-radius: 10px;
+    padding: 5px;
+    
+
+  }
+ 
+  .hakimLivs-design:hover{
+    text-decoration: none;
+    transform:scale(1.1);
+    display:inline-block;
+    transition: all 0.3s ease-in-out 0.1s;
+      
+  }
