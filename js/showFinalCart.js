@@ -120,6 +120,36 @@ function renderFinalCart(){
     }
   }
 
+/**
+ * Function to alert the user about emptying the cart
+ */
+
+ var modalConfirm = function(response){
+  
+  $("#clear").on("click", function(){
+    $("#alert").modal('show');
+  });
+
+  $("#modal-btn-yes").on("click", function(){
+    response(true);
+    $("#alert").modal('hide');
+  });
+  
+  $("#modal-btn-no").on("click", function(){
+    response(false);
+    $("#alert").modal('hide');
+  });
+};
+
+modalConfirm(function(confirm){
+  if(confirm){
+      emptyCart();
+      $('#counter').html(getTotalAmountProducts());
+      showEmptyCartMssg();
+  }
+});
+
+
   //ADDED BY BACKEND SIMULATION
   let getProfileDetails=()=>{
     if(localStorage.getItem("PROFILE")!=null){
