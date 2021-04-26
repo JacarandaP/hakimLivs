@@ -8,7 +8,7 @@
 function renderFinalCart(){
 
     showEmptyCartMssg();
-    displayMssgNotLoggedIn();
+    //displayMssgNotLoggedIn();
     let checkoutCart = shoppingCart;
     let finalShoppingCart = "";
     let finalTotalToPay = 0;
@@ -131,6 +131,9 @@ function renderFinalCart(){
       $('#clientsCity').val(profile.postort)
       $('#clientsZipCode').val(profile.postnummer)
       $('#clientsMail').val(profile.email)
+    } else {
+      $('#confirmbtn').prop('disabled', true); 
+      $('#logInPromptSpace').html("<button type=\"button\" class=\"btn btn-primary float-right\" id=\"logInBtn\"  onclick=\"document.location='loggin.html'\" >Logga in / Registrera dig </button>");
     }
   }
 getProfileDetails();
