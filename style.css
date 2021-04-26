@@ -212,17 +212,18 @@
     display: block;
     }
 
-/* Fotter for kassa.html*/    
+/* Fotter for kassa, loggin */    
 .footerFixed{
-    min-height: 100vh;
+    min-height: 100vh; /*100vh->110vh margin för iphone6/7/8 */ 
     position: relative;
     padding-bottom:100px ;
     box-sizing: border-box;
 }
 
 footer{
+    width: 100%;/*need to add*/
     position: absolute;
     bottom: 0;
     box-sizing: border-box;
-    height: 100;
+    height: 100;  
 }
