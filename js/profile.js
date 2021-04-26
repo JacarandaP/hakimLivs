@@ -43,6 +43,7 @@ const loadProfileToTable=()=>{
     let profile=JSON.parse(localStorage.getItem("PROFILE"));
     $('#user-name').text(profile.name)
     $('#user-last-name').text(profile.lastname)
+    $('#user-all-names').text(profile.name + " " + profile.lastname)
     $('#user-phone-number').text(profile.telephone)
     $('#user-address').text(profile.address)
     $('#user-city').text(profile.postort)
