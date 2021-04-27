@@ -13,7 +13,7 @@ function renderFinalCart(){
     let finalShoppingCart = "";
     let finalTotalToPay = 0;
   for(var i in checkoutCart){
-    let finalPrd = checkoutCart[i].id;
+    let finalPrdId = checkoutCart[i].id;
     let finalPrdName = checkoutCart[i].title;
     let finalPrdPrice = Number(checkoutCart[i].price).toFixed(2).replace(".", ",");
     let finalPrdAmount = checkoutCart[i].amount;
@@ -22,11 +22,11 @@ function renderFinalCart(){
     finalShoppingCart += "<tr>"
     +"<td>" + finalPrdName + "</td>"
     +"<td>" + finalPrdPrice + " kr</td>"
-    + "<td><div class='input-group'><button class='minus-prd  btn btn-primary' data-name='" + finalPrdName + "'>-</button>"
-    + "<input class='item-count form-control' data-name='" +  finalPrdName + "' value='" + finalPrdAmount + "'readonly>"
-    + "<button class='plus-prd btn btn-primary input-group-addon' data-name='" +  finalPrdName + "'>+</button></div></td>"
+    + "<td><div class='input-group'><button class='minus-prd  btn btn-primary' data-id='" + finalPrdId + "'>-</button>"
+    + "<input class='item-count form-control' data-id='" +  finalPrdId + "' value='" + finalPrdAmount + "'readonly>"
+    + "<button class='plus-prd btn btn-primary input-group-addon' data-id='" +  finalPrdId + "'>+</button></div></td>"
     + "<td>" + finalTotalPrice+ " kr</td>" 
-    + "<td><button class='delete-prd' data-name='" + finalPrdName + "'><img src='images/trash.svg' alt='remove' fill='red'></img></button></td>"
+    + "<td><button class='delete-prd' data-id='" + finalPrdId + "'><img src='images/trash.svg' alt='remove' fill='red'></img></button></td>"
     +  "</tr>";
   }
   
@@ -45,9 +45,9 @@ function renderFinalCart(){
  */
 
 
-  function removeOne(prdName) {
+  function removeOne(productId) {
     for(var product in shoppingCart){
-      if(shoppingCart[product].title === prdName){
+      if(Number(shoppingCart[product].id) === productId){
         shoppingCart[product].amount --;
         if(shoppingCart[product].amount === 0){
           shoppingCart.splice(product, 1);
@@ -61,9 +61,9 @@ function renderFinalCart(){
   
   }
   
-  function addOne(prdName){
+  function addOne(productId){
     for(var product in shoppingCart){
-      if(shoppingCart[product].title === prdName){
+      if(Number(shoppingCart[product].id) === productId){
         shoppingCart[product].amount ++;
       }
     }
@@ -72,9 +72,9 @@ function renderFinalCart(){
       $('#counter').html(getTotalAmountProducts());
   }
   
-  function discard(prdName){
+  function discard(productId){
     for(var product in shoppingCart){
-      if(shoppingCart[product].title === prdName){
+      if(Number(shoppingCart[product].id) === productId){
         shoppingCart.splice(product, 1);
         showEmptyCartMssg()
         break;
@@ -91,20 +91,20 @@ function renderFinalCart(){
     */
   
   $('#finalInfo').on("click", ".minus-prd",(function(){
-    let prdName = $(this).data('name');
+    let prdId = $(this).data('id');
     if($(this).next().val()>1)
-    removeOne(prdName);
+    removeOne(prdId);
   
   }));
   
   $('#finalInfo').on("click", ".plus-prd",(function(){
-    let prdName = $(this).data('name');
-   addOne(prdName);
+    let prdId = $(this).data('id');
+   addOne(prdId);
   }));
   
   $('#finalInfo').on("click", ".delete-prd",(function(){
-    let prdName = $(this).data('name');
-    discard(prdName);
+    let prdId = $(this).data('id');
+    discard(prdId);
   }))
 
   /**

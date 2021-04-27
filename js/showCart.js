@@ -136,7 +136,7 @@ $('#clear').click(function(){
  * @param {event} e 
  */
 let replaceButton=(e)=>{
-  let productId=e.getAttribute('productid');
+  let productId=e.getAttribute('productID');
   $.each(shoppingCart,(i,product)=>{
     if(productId===product.id){
       let newButtons=minusPlus(product)
@@ -153,20 +153,20 @@ let replaceButton=(e)=>{
  * @returns 
  */
 let minusPlus= (product)=>{
-  return "<div class='input-group'><button class='minus-prd  btn btn-primary' onclick='addOrRest(this)' data-name='" + product.title + "'>-</button>"
-+ "<input class=' text-center item-count form-control bg-white' style='border:0;' data-name='" +  product.title + "' value='" + product.amount + "'readonly>"
-+ "<button class='plus-prd btn btn-primary input-group-addon' onclick='addOrRest(this)' data-name='" +  product.title + "'>+</button></div>"}
+  return "<div class='input-group'><button class='minus-prd  btn btn-primary' onclick='addOrRest(this)' data-id='" + product.id + "'>-</button>"
++ "<input class=' text-center item-count form-control bg-white' style='border:0;' data-id='" +  product.id + "' value='" + product.amount + "'readonly>"
++ "<button class='plus-prd btn btn-primary input-group-addon' onclick='addOrRest(this)' data-id='" +  product.id + "'>+</button></div>"}
 
 /**
  * to add or rest when plus or minus buttons are clicked
  * @param {event} e 
  */
 let addOrRest=(e)=>{
-  let productTitle=e.getAttribute('data-name');
+  let productId=e.getAttribute('data-id');
   let isAdd=$(e).hasClass('plus-prd');
   console.log($(e))
   $.each(shoppingCart,(i,product)=>{
-    if(product.title==productTitle)
+    if(product.id==productId)
     if(isAdd)
       product.amount=operationAdd(product.amount);
       else product.amount=operationRest(product.amount);
