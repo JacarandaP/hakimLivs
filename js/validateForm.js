@@ -1,7 +1,7 @@
 jQuery.validator.addMethod(
   "specialChrs",
   function (value, element) {
-    return new RegExp("^[A-Za-zÀ-žÅÄÖåäö ]+$").test(value);
+    return new RegExp("^[A-Za-zÀ-žÅÄÖåäö\s\-]+$").test(value);
   },
   "Ej godkända tecken."
 );
@@ -9,15 +9,25 @@ jQuery.validator.addMethod(
 jQuery.validator.addMethod(
   "numeralsAndSpecialChars",
   function (value, element) {
-    return new RegExp("^[A-Za-z0-9À-žÅÄÖåäö ]+$").test(value);
+    return new RegExp("^[A-Za-z0-9À-žÅÄÖåäö]+$").test(value);
   },
   "Ej godkända tecken."
 );
 
+
 jQuery.validator.addMethod(
-  "postalCodeFormat",
+  "zipFormat",
   function (value, element) {
-    return new RegExp("^[0-9 ]+$").test(value);
+    return this.optional(element) || /^\d{3}(?:[\s-]\d{2})?$/.test(value);
+  },
+  "Ej godkända tecken."
+);
+
+
+jQuery.validator.addMethod(
+  "phoneFormat",
+  function (value, element) {
+    return this.optional(element) || /^[0-9\s\-\+]+$/.test(value);
   },
   "Ej godkända tecken."
 );
@@ -33,23 +43,23 @@ function registerFormValidation() {
       firstName: {
         required: true,
         specialChrs: true,
-        maxlength: 100,
+        maxlength: 50,
       },
       lastName: {
         required: true,
         specialChrs: true,
-        maxlength: 100,
+        maxlength: 50,
       },
       email: {
         required: true,
         email: true,
-        maxlength: 100,
+        maxlength: 50,
       },
       phone: {
         required: true,
-        number: true,
         minlength: 9,
         maxlength: 15,
+        phoneFormat: true,
       },
       address: {
         required: true,
@@ -63,16 +73,17 @@ function registerFormValidation() {
       },
       postalCode: {
         required: true,
-        number: true,
-        rangelength: [5, 6],
+        zipFormat: true,
       },
       password: {
         required: true,
         minlength: 8,
+        maxlength: 50,
       },
       repeatPassword: {
         required: true,
         minlength: 8,
+        maxlength: 50,
         equalTo: "#passwordBox",
       },
     },
@@ -124,16 +135,16 @@ function updateUserProfileValidation() {
       firstName: {
         required: true,
         specialChrs: true,
-        maxlength: 100,
+        maxlength: 50,
       },
       lastName: {
         required: true,
         specialChrs: true,
-        maxlength: 100,
+        maxlength: 50,
       },
       phone: {
         required: true,
-        number: true,
+        phoneFormat: true,
         minlength: 9,
         maxlength: 15,
       },
@@ -149,8 +160,7 @@ function updateUserProfileValidation() {
       },
       zip: {
         required: true,
-        postalCodeFormat: true,
-        rangelength: [5, 6],
+        zipFormat: true,
       },
     },
     messages: {
@@ -189,10 +199,12 @@ function loginFormValidation() {
       email: {
         required: true,
         email: true,
+        maxlength: 50,
       },
       password: {
         required: true,
         minlength: 8,
+        maxlength: 50,
       },
     },
     messages: {
@@ -214,32 +226,37 @@ function formValidationCheckout() {
       firstName: {
         required: true,
         specialChrs: true,
+        maxlength: 50,
       },
       lastName: {
         required: true,
         specialChrs: true,
+        maxlength: 50,
       },
       email: {
         required: true,
         email: true,
+        maxlength: 50,
       },
       phone: {
         required: true,
-        number: true,
         minlength: 9,
+        maxlength: 15,
+        phoneFormat: true,
       },
       address: {
         required: true,
         numeralsAndSpecialChars: true,
+        maxlength: 50,
       },
       city: {
         required: true,
         specialChrs: true,
+        maxlength: 50,
       },
       postalCode: {
         required: true,
-        number: true,
-        rangelength: [5, 6],
+        zipFormat: true,
       },
     },
     messages: {
@@ -270,12 +287,14 @@ function formValidationAdminLogin() {
     rules: {
       username: {
         required: true,
-        maxlength: 100,
+        maxlength: 50,
         minlength: 3,
+        email: true,
       },
       password: {
         required: true,
         minlength: 8,
+        maxlength: 50,
       },
     },
     messages: {
@@ -305,25 +324,27 @@ function formValidationAdminFooter() {
       email: {
         required: true,
         email: true,
-        maxlength: 100,
+        maxlength: 50,
       },
       address: {
         required: true,
         numeralsAndSpecialChars: true,
+        maxlength: 50,
       },
       phone: {
         required: true,
-        number: true,
         minlength: 9,
+        maxlength: 15,
+        phoneFormat: true,
       },
       zip: {
         required: true,
-        number: true,
-        rangelength: [5, 6],
+        zipFormat: true,
       },
       city: {
         required: true,
         specialChrs: true,
+        maxlength: 50,
       },
     },
     messages: {

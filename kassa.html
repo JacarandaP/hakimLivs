@@ -37,9 +37,9 @@
         <!-- Navbar end-->
         
     </div>
-    <div id="sidebar">
+    <!--<div id="sidebar">
 
-    </div>
+    </div>-->
     <div id="containerKassa" class="container">
         <h1 style="text-align: center; margin-top: 40px" >Din beställning</h1>
     <div class="table-responsive">
@@ -107,26 +107,46 @@
     -->
         <button type="button" class="btn btn-primary float-right" id="confirmbtn">Bekräfta</button>
 
-         <!--Visa kundens adress-->
+        <p></p>
+        <span id="logInPromptSpace" class="float-right"></span> </div>
 
-         <div class="d-flex justify-content-center pt-5">
-            <table class="text-center">
-                <th class="text-center py-3 px-4" style="min-width: 100px;">Leveransadress</th>
-                <tr id="user-all-names"></tr>
-                <tr id="user-address"></tr>
-                <tr id="user-city"></tr>
-                <tr id="user-zip"></tr>
-                <tr id="user-phone-number"><br></tr>
-            </table>  
-        </div>  
+             <!--Visa kundens adress-->
 
-        <!--Visa kundens adress END-->
+             <div class="d-flex justify-content-center pt-5" id="customer-info">
+             <!--   <table class="text-center">
+                    <th class="text-center py-3 px-4" style="min-width: 100px;">Leveransadress</th>
+                    <tr id="user-all-names"></tr>
+                    <tr id="user-address"></tr>
+                    <tr id="user-city"></tr>
+                    <tr id="user-zip"></tr>
+                    <tr id="user-phone-number"><br></tr>
+                </table>  -->
+            </div>  
+    
+            <!--Visa kundens adress END-->
 
     </div>
-</div>
+   
     <div id="footer">
         
     </div>
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="alertModal" aria-hidden="true" id="alert">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="alertMssg">Är du säker på att du vill tomma din varukorg?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" id="modal-btn-yes">Ja</button>
+              <button type="button" class="btn btn-primary" id="modal-btn-no">Nej</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     <script
     src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -147,6 +167,7 @@
     <script>
         changeTopVarOnloggedIn();
         formValidationCheckout();
+        customerInfo();
         loadProfileToTable();   
      </script>
      

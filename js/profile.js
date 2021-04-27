@@ -113,3 +113,20 @@ renderOrders=()=>{
   })
   }
 }
+
+function customerInfo() {
+    let profile=JSON.parse(localStorage.getItem("PROFILE"));
+    let output = "";
+    if(profile!=null){
+      output += `<table class="text-center">
+      <th class="text-center py-3 px-4" style="min-width: 100px;">Leveransadress</th>
+      <tr id="user-all-names"></tr>
+      <tr id="user-address"></tr>
+      <tr id="user-city"></tr>
+      <tr id="user-zip"></tr>
+      <tr id="user-phone-number"><br></tr>
+  </table>`
+  $('#customer-info').append(output); 
+    }
+  
+}

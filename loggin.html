@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logga in</title>
     <link rel="icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="style.css">-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css"
     />
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
    
@@ -78,6 +79,7 @@
    
     
 <body>
+  <div class="footerFixed">
     <div id="top-meny">
       <!-- Navbar -->
       <div class="w3-container w-auto w3-blue-gray sticky-top" style="padding: 20px 30px 20px 30px;" id="navbar">
@@ -108,18 +110,23 @@
         <input id="password" name="password" type="password" placeholder="Skriv in lösenord">
         <br>
 
-        <button id="loginBtn" class="button-regi-all" type="button">Logga in</button>
-        <button id="RegisterBtn"  class="button-regi-all button-regi" type="submit"  onClick="registerPage();" >Registrera konto</button>
+        <button id="loginBtn" class="button-regi-all" type="submit">Logga in</button>
+        <button id="RegisterBtn"  class="button-regi-all button-regi" type="button"  onClick="registerPage();" >Registrera konto</button>
         <div class="float-right">
           <a href="#" >Glömt ditt lösenord?</a></div>
         <div id="login-error-msg-holder" class="container" >
           <p id="errorMessage">Ogiltigt användarnamn <span id="error-msg-next-line">och/eller lösenord</span> <span id="error-msg-next-line">Om du inte har ett konto, skapa ett genom att klicka på registrera konto</span></p>
         </div>
       </form>
+      
     </div>
-    <div id="footer" class="fixed-bottom">
+  </div>   
+    <!--<footer>-->
+    <div id="footer">
 
     </div>
+  <!--</footer>-->
+
     <script
     src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -143,6 +150,6 @@
       loginFormValidation()
     </script>
     
-              
+        
 </body>
 </html>
