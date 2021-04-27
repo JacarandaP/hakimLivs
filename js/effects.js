@@ -1,9 +1,11 @@
   function openSideBar() {
         document.getElementById("sidebar").style.display = "block";
+        $('#sidebar').css("width","100%");
       }
 
       function closeSideBar() {
         document.getElementById("sidebar").style.display = "none";
+        $('#sidebar').css("width","200px");
       }
 
 
