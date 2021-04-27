@@ -115,6 +115,7 @@ function getProductsByCategory(render,appendTo, category){
  */
 $('#category-list').on('click', '.category',(function(){
 let categoryName = $(this).data('name');
+closeSideBar()
 
 $('#products').empty()
 getProductsByCategory(renderProducts, $("#products"), categoryName)
