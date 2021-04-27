@@ -37,8 +37,7 @@ loadProfileToTable();
 }
  
 function formatPhone(phoneNumber){
-  let formattedPhone = phoneNumber.substring(0,3) + "-" + phoneNumber.substring(3,6) + " " + phoneNumber.substring(6,8) + " "  + phoneNumber.substring(8);
-  return formattedPhone;
+  return phoneNumber.substring(0,3) + "-" + phoneNumber.substring(3,6) + " " + phoneNumber.substring(6,8) + " "  + phoneNumber.substring(8);
 }
 
 
