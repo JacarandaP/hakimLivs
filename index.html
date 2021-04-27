@@ -43,7 +43,7 @@
 
     <div class="w3-main " style="margin-left: 200px">
       <div id="container" class="w3-main ">
-        <div class="w3-blue-gray d-flex w-100 sticky-top" style="padding: 20px 30px 20px 30px;">
+        <div class="w3-blue-gray d-flex w-100 sticky-top" >
           <button
             class="w3-button w3-blue-gray w3-xlarge w3-hide-large w-auto"
             onclick="openSideBar()"
@@ -70,30 +70,36 @@
       
       </div>
         <div class="w3-container  mb-3 ">
+          <!--
           <div id="offering-container">
             <img
               src="https://dummyimage.com/1280x720/d61c54/fff&text=Erbjudande!"
               class="img-fluid"
             />
-          </div>
-          <div id="products" class="container mt-3 mb-5"></div>
+          </div> THIS IS THE CAMPAIGN IMAGE CONTAINER-->
+          <div id="products" class=" row mt-3 mb-5"></div>
         </div>
 
         <div id="footer" ></div> <!--class="fixed-bottom "-->
       </div>
     </div>
     <template id="product-card-template">
-      <div class="card d-inline-block shadow mh-25" style="width: 20em;">
-        <img class="card-img-top product-image" src="" alt="Product"  onclick="showProductPage(this)" />
-        <div class="card-body">
-          <h5 class="card-title product-title font-weight-bold" >Card title</h5>
-          <p class="card-text product-description " >
+      <div class="card d-inline-block shadow m-1 mb-0" style="width: 22em;">
+        <img class="card-img-top img-responsive product-image h-50" src="" alt="Product"  onclick="showProductPage(this)" />
+        <div class="card-body h-50">
+          <div class="row h-75 mb-2 d-block ">          
+            <h5 class="col-12 card-title product-title font-weight-bold" >Card title</h5>
+          <p class="col-12 card-text product-description " >
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <p class="product-price font-weight-bold font-italic display-4 text-danger"></p>
-          <p  class="card-text product-category"></p>
-          <a href="#" id="buy" class="add-to-cart btn btn-primary w-100", onclick="AddProduct(this); replaceButton(this);getTotalAmountProducts(); event.preventDefault();" >KÖP</a>
+          <h2 class=" col-12 product-price font-weight-bold font-italic display-4 d-block text-danger"></h2>
+          <p  class="card-text col-12 product-category"></p>
+        </div>
+
+        <div class="row d-block mb-1"> 
+          <a href="#" id="buy" class="col-12 add-to-cart btn btn-primary w-100 mb-5 mt-2  ", onclick="AddProduct(this); replaceButton(this);getTotalAmountProducts(); event.preventDefault();" >KÖP</a>
+        </div>
         </div>
       </div>
     </template>
