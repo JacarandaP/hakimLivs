@@ -183,7 +183,7 @@ function updateUserProfileValidation() {
       },
       zip: {
         required: "Var god ange ett postnummer.",
-        postalCode: "Var god ange giltigt postnummer.",
+        pzipFormat: "Var god ange giltigt postnummer.",
       },
     },
   });
