@@ -125,11 +125,6 @@ function Product(id, title, description, price, category, amount) {
         return totalAmountProducts;
       }
 
-$('#clear').click(function(){
-    emptyCart();
-    $('#counter').html(getTotalAmountProducts());
-  })
-
 
 /**
  * Replaces the button with minusplus buttons
