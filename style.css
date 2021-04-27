@@ -212,19 +212,23 @@
     display: block;
     }
 
-/* Fotter for kassa.html*/    
+/* Fotter for kassa, loggin, register, profile */    
 .footerFixed{
-    min-height: 100vh;
+    min-height: 100vh; /*100vh->110vh margin för iphone6/7/8 */ 
     position: relative;
-    padding-bottom:100px ;
+    padding-bottom:0px ;/*If need to use footer(css) it should be bottom*/
     box-sizing: border-box;
 }
 
+/*
+Fix with .footerFixed and create <div class="footerFixed"> <footer></footer> <div/>
+It works if you see the laptop
 footer{
+    width: 100%;
     position: absolute;
     bottom: 0;
     box-sizing: border-box;
-    height: 100;
+    height: 100;  
 }
 
 .capitalize {
