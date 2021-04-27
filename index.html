@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,shrink-to-fit=no"/>
     <title>Hakim Livs</title>
     <link rel="icon" href="/images/favicon.ico">
     <link
@@ -23,7 +23,7 @@
   <body>
     <div id="top-meny"> </div><!--top-many end-->
     <div class="w3-container w-auto w3-blue-gray d-none  d-lg-flex  w-100 sticky-top" id="navbar">
-      <a href="index.html" class="col text-center  hakimLivs-design"><h1 class="w-100" >Hakim Livs</h1></a>
+      <a href="index.html" class="col text-center hakimLivs-design"><h1 class="w-100" >Hakim Livs</h1></a>
       <!--Serch area-->
       <form class="form-inline d-inline ">
        <!-- <input class="form-control mr-sm-2 mb-2 d-sm-inline-block " type="search" placeholder="Sök"> remove d-none from class to show search field-->
@@ -31,32 +31,32 @@
       </form>
       <!--Serch area end-->
       <div class=" float-right" style="line-height: 50px;">
-      <a id="loggin-button" href="loggin.html"><i class=" bi bi-person pl-5 pr-2  display-4"></i></a>
-      <a href="kassa.html" id="showcartbtn"><i class=" bi bi-cart2 pl-2 pr-2 display-4 "><span id="counter" class="total-count"></span></i></i></a> 
+      <a id="loggin-button" href="loggin.html"><i class=" bi bi-person pl-5 pr-2  "></i></a>
+      <a href="kassa.html" id="showcartbtn"><i class=" bi bi-cart2 pl-2 pr-2"><span id="counter" class="total-count"></span></i></i></a> 
      </div>
     </div>
 
     <!--sidebar -->
     <div
       id="sidebar"
-      class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left pt-5 w-sm-100"
+      class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left pt-5 "
     >
     
       <button
-        class="w3-bar-item w3-button w3-large w3-hide-large pt-4"
+        class="w3-bar-item w3-button w3-large w3-hide-large pt-4 text-center"
         onclick="closeSideBar()"
       >
         Stäng &times;
       </button>
-      
+      <div class="row w3-large w3-hide-large pt-4 "><div class="col "> <a id="loggin-button" href="loggin.html"><i class=" bi bi-person-circle pl-5 pr-2  "></i></a></div><div class="col"><a href="kassa.html" id="showcartbtn"><i class=" bi bi-cart2 pl-2 pr-2 display-5 "><span id="counter-sidebar" class="total-count"></span></i></i></a></div></div>
       <ul id="category-list" class=" list-group components"></ul>
-      <a href="#" class="w3-bar-item w3-button">Populära produkter</a>
-      <a href="#" class="w3-bar-item w3-button">Nya produkter</a>
-      <input class="side-searching" type="search" placeholder="Sök">
+      <a href="#" class="w3-bar-item w3-button" onclick="closeSideBar()">Populära produkter</a>
+      <a href="#" class="w3-bar-item w3-button" onclick="closeSideBar()">Nya produkter</a>
+      
     </div>
 
     <div class="w3-main " style="margin-left: 200px">
-      <div id="container" class="w3-main ">
+      <div id="container" class="">
         <div class="w3-blue-gray d-flex w-100 sticky-top" >
           
           <button
