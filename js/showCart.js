@@ -116,7 +116,7 @@ function Product(id, title, description, price, category, amount) {
       
        if(totalAmountProducts===0){
        $('#counter').hide();
-            
+       $('#counter-sidebar').hide();    
        }
        else{
         $('#counter').show();
@@ -198,4 +198,8 @@ let operationRest=(a)=>{
     a--;
   return a;
 }
+/**
+ * to copy the counter to counter-sidebar (cart icon)
+ */
 $('#counter-sidebar').text($('#counter').text());
+

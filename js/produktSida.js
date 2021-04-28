@@ -19,5 +19,7 @@ let getProductInfo=()=>{
     
 }
 $(document).ready(()=>{ changeTopVarOnloggedIn();
-getProductInfo()})
+getProductInfo()
+
+})
 
