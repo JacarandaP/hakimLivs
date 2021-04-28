@@ -102,6 +102,12 @@ function profileInit(){
 //loadProfileToTable();
 
 }
+ 
+function formatPhone(phoneNumber){
+  let formattedPhone = phoneNumber.substring(0,3) + "-" + phoneNumber.substring(3,6) + " " + phoneNumber.substring(6,8) + " "  + phoneNumber.substring(8);
+  return formattedPhone;
+}
+
 
 /**
  * Load profile data and show
@@ -112,7 +118,7 @@ const loadProfileToTable=()=>{
     $('#user-name').text(profile.name)
     $('#user-last-name').text(profile.lastname)
     $('#user-all-names').text(profile.name + " " + profile.lastname)
-    $('#user-phone-number').text(profile.telephone)
+    $('#user-phone-number').text(formatPhone(profile.telephone))
     $('#user-address').text(profile.address)
     $('#user-city').text(profile.postort)
     $('#user-zip').text(profile.postnummer)

@@ -1,7 +1,7 @@
 jQuery.validator.addMethod(
   "specialChrs",
   function (value, element) {
-    return new RegExp("^[A-Za-zÀ-žÅÄÖåäö\s\-]+$").test(value);
+    return this.optional(element) || /^[A-Za-zÀ-žÅÄÖåäö\s\-]+$/.test(value);
   },
   "Ej godkända tecken."
 );
@@ -9,7 +9,7 @@ jQuery.validator.addMethod(
 jQuery.validator.addMethod(
   "numeralsAndSpecialChars",
   function (value, element) {
-    return new RegExp("^[A-Za-z0-9À-žÅÄÖåäö]+$").test(value);
+    return this.optional(element) || /^[A-Za-z0-9À-žÅÄÖåäö\s\-]+$/.test(value);
   },
   "Ej godkända tecken."
 );
@@ -18,7 +18,7 @@ jQuery.validator.addMethod(
 jQuery.validator.addMethod(
   "zipFormat",
   function (value, element) {
-    return this.optional(element) || /^\d{3}(?:[\s-]\d{2})?$/.test(value);
+    return this.optional(element) || /^\d{3}(?:[\s-]\d{2})?$/.test(value) || /^\d{5}$/.test(value);
   },
   "Ej godkända tecken."
 );
@@ -50,7 +50,7 @@ function registerFormValidation() {
         specialChrs: true,
         maxlength: 50,
       },
-      email: {
+      emailAdress: {
         required: true,
         email: true,
         maxlength: 50,
@@ -90,15 +90,16 @@ function registerFormValidation() {
     messages: {
       firstName: {
         required: "Var god ange förnamn.",
-        maxlength: "Namnet du har angivit är för långt.",
+        maxlength: "Namnet du har angivit är för långt.", 
       },
       lastName: {
         required: "Var god ange efternamn.",
         maxlength: "Namnet du har angivit är för långt.",
       },
-      email: {
+      emailAdress: {
         required: "Var god ange e-postadress.",
         maxlength: "E-postadressen du har angivit är för lång.",
+        email: "Var god ange giltig e-postadress."
       },
       phone: "Var god ange ett giltigt telefonnummer",
       address: {
@@ -183,7 +184,7 @@ function updateUserProfileValidation() {
       },
       zip: {
         required: "Var god ange ett postnummer.",
-        postalCode: "Var god ange giltigt postnummer.",
+        pzipFormat: "Var god ange giltigt postnummer.",
       },
     },
   });
