@@ -144,6 +144,7 @@ function formatZip(zip){
 
  const loadProfileToTable=()=>{
     let profile=JSON.parse(localStorage.getItem("PROFILE"));
+    if(profile!=null){
     $('#user-name').text(formatNameSimple(profile.name))
     $('#user-last-name').text(formatNameSimple(profile.lastname))
     $('#user-all-names').text(formatNameSimple(profile.name + " " + profile.lastname))
@@ -151,7 +152,7 @@ function formatZip(zip){
     $('#user-address').text(formatNameSimple(profile.address))
     $('#user-city').text(formatNameSimple(profile.postort))
     $('#user-zip').text(formatZip(profile.postnummer))
-
+  }
 }
 
 /*
