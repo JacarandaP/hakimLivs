@@ -1,4 +1,3 @@
-
 /**
  * function to present the products in the shopping cart 
  * @returns {final shopping cart med html elements}
