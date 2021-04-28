@@ -48,7 +48,7 @@
       >
         Stäng &times;
       </button>
-      <div class="row w3-large w3-hide-large pt-4 "><div class="col text-center"> <a id="loggin-button-sidebar" href="loggin.html"><i class=" bi bi-person-circle pl-5 pr-2  "></i></a></div><div class="col text-center"><a href="kassa.html" id="showcartbtn"><i class=" bi bi-cart2 pl-2 pr-2 display-5 "><span id="counter-sidebar" class="total-count"></span></i></i></a></div></div>
+      <div class="row w-100 w3-large w3-hide-large pt-4 "><div class="col text-center"> <a id="loggin-button-sidebar" href="loggin.html"><i class=" bi bi-person-circle pl-5 pr-2  "></i></a></div><div class="col text-center"><a href="kassa.html" id="showcartbtn"><i class=" bi bi-cart2 pl-2 pr-2 display-5 "><span id="counter-sidebar" class="total-count"></span></i></i></a></div></div>
       <ul id="category-list" class=" list-group components"></ul>
       <a href="#" class="w3-bar-item w3-button" onclick="closeSideBar()">Populära produkter</a>
       <a href="#" class="w3-bar-item w3-button" onclick="closeSideBar()">Nya produkter</a>
@@ -88,8 +88,8 @@
       </div>
     </div>
     <template id="product-card-template">
-      <div class="card d-inline-block shadow m-1 mb-0" style="width: 22em;">
-        <img class="card-img-top img-responsive product-image h-50" src="" alt="Product"  onclick="showProductPage(this)" />
+      <div class="card d-inline-block shadow col-xs-12 col-sm-6 bg-light col-md-4 col-lg-4" >
+        <img class="card-img-top img-responsive rounded mt-3 product-image h-50" src="" alt="Product"  onclick="showProductPage(this)" />
         <div class="card-body h-50">
           <div class="row h-75 mb-2 d-block ">          
             <h5 class="col-12 card-title product-title font-weight-bold" >Card title</h5>
