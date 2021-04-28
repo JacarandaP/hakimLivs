@@ -117,7 +117,7 @@ renderOrders=()=>{
 function customerInfo() {
     let profile=JSON.parse(localStorage.getItem("PROFILE"));
     let output = "";
-    if(profile!=null & shoppingCart.length != 0){
+    if(profile!=null){
       output += `<table class="text-center">
       <th class="text-center py-3 px-4" style="min-width: 100px;">Leveransadress</th>
       <tr id="user-all-names"></tr>
@@ -126,9 +126,16 @@ function customerInfo() {
       <tr id="user-zip"></tr>
       <tr id="user-phone-number"><br></tr>
   </table>`
-  $('#customer-info').append(output); 
+  $('#customer-info').html(output); 
     }
   
+}
+
+function showDeliveryAddress(){
+  if(shoppingCart.length !=0){
+    customerInfo();
+    loadProfileToTable();
+  }
 }
 
 

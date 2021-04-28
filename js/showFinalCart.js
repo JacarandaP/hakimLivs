@@ -114,8 +114,10 @@ function renderFinalCart(){
       '<h3><strong>Din varukorg är tom</strong></h3>'+
       '<a href="index.html" class="btn btn-primary cart-btn-transform m-3">Fortsätt handla</a>'+
       '</div>');
+      $('#customer-info').html('');
     }
   }
+
 
 /**
  * Function to alert the user about emptying the cart
