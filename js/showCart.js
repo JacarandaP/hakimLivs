@@ -176,6 +176,7 @@ let addOrRest=(e)=>{
      
       $('#finalInfo').html(renderFinalCart());
       $('#counter').html(getTotalAmountProducts());
+      $('#counter-sidebar').html(getTotalAmountProducts());
       saveCart()
 }
 /**
@@ -197,3 +198,4 @@ let operationRest=(a)=>{
     a--;
   return a;
 }
+$('#counter-sidebar').text($('#counter').text());
