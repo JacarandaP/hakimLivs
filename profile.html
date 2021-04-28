@@ -36,26 +36,44 @@
   </div>
     
     <!--<div id="sidebar"></div>-->
+
+    <!--Show data-->
     <div id="container" class="container">
       <h3>MIN PROFIL</h3>
       <div id="show-data" class="shadow p-4 bg-light rounded">
-        <div class="row">
-          <div class="col mt-b font-weight-bold">Förnamn</div>
-          <div id="user-name" class="col">"fake name"</div>
-          <div class="col font-weight-bold">Efternamn</div>
-          <div id="user-last-name" class="col">"fake last name"</div>
+        <div class="form-row"> <!--row -> form-row-->
+          <div class="form-group col-md-6">
+           <div class="col mt-b font-weight-bold">Förnamn</div>
+           <div id="user-name" class="col">"fake name"</div>
+          </div>
+          <div class="form-group col-md-6">
+           <div class="col font-weight-bold">Efternamn</div>
+           <div id="user-last-name" class="col">"fake last name"</div>
+          </div>
         </div>
-        <div class="row mt-5">
-          <div class="col font-weight-bold">Telefonnummer</div>
-          <div id="user-phone-number" class="col">"fake phone"</div>
-          <div class="col font-weight-bold">Adress</div>
-          <div id="user-address" class="col">"fake address"</div>
+
+        <div class="form-row"> <!--row-mt-5 -> form-row-->
+          <div class="form-group col-md-6">
+           <div class="col font-weight-bold">Telefonnummer</div>
+           <div id="user-phone-number" class="col">"fake phone"</div>
+          </div>
         </div>
-        <div class="row mt-5">
-          <div class="col font-weight-bold">Ort</div>
-          <div id="user-city" class="col">"fake city"</div>
-          <div class="col font-weight-bold">Postnummer</div>
-          <div id="user-zip" class="col">"fake zip"</div>
+          <div class="form-group">
+           <div class="col font-weight-bold">Adress</div>
+           <div id="user-address" class="col">"fake address"</div>
+          </div>       
+         
+
+        <div class="form-row"> <!--row-mt-5 -> form-row-->
+          <div class="form-group col-md-6">
+            <div class="col font-weight-bold">Postnummer</div>
+            <div id="user-zip" class="col">"fake zip"</div>
+
+          </div>
+          <div class="form-group col-md-6">
+            <div class="col font-weight-bold">Postort</div>
+            <div id="user-city" class="col">"fake city"</div>
+          </div>
         </div>
         <div class="row mt-5">
           <div class="col">
@@ -63,10 +81,13 @@
           </div>
         </div>
       </div>
+     <!--Show data end-->
+
+      <!--Update data-->
       <div id="update-data" class="shadow p-4 bg-light rounded">
         <form id="user-update-form">
           <div class="form-row">
-            <div class="col-md-4 mb-3">
+            <div class="form-group col-md-6">
               <label for="form-name" class="font-weight-bold">Förnamn</label>
               <input
                 type="text"
@@ -78,7 +99,7 @@
                 required
               />
             </div>
-            <div class="col-md-4 mb-3">
+            <div class="form-group col-md-6">
               <label for="form-last-name" class="font-weight-bold"
                 >Efternamn</label
               >
@@ -92,7 +113,10 @@
                 required
               />
             </div>
-            <div class="col-md-4 mb-3">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
               <label for="form-phone" class="font-weight-bold"
                 >Telefonnummer</label
               >
@@ -108,31 +132,22 @@
               <br>
             </div>
           </div>
+
+          <div class="form-group">
+            <label for="form-address" class="font-weight-bold">Adress</label>
+            <input
+              type="text"
+              class="form-control-plaintext"
+              id="form-address"
+              name="address"
+              placeholder="Address"
+              required
+            />
+          </div>
+          
           <br>
           <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="form-city" class="font-weight-bold">Ort</label>
-              <input
-                type="text"
-                class="form-control-plaintext"
-                id="form-city"
-                name="city"
-                placeholder="City"
-                required
-              />
-            </div>
-            <div class="col-md-3 mb-3">
-              <label for="form-address" class="font-weight-bold">Adress</label>
-              <input
-                type="text"
-                class="form-control-plaintext"
-                id="form-address"
-                name="address"
-                placeholder="Address"
-                required
-              />
-            </div>
-            <div class="col-md-3 mb-3">
+            <div class="form-group col-md-6">
               <label for="form-zip" class="font-weight-bold">Postnummer</label>
               <input
                 type="text"
@@ -140,6 +155,18 @@
                 id="form-zip"
                 name="zip"
                 placeholder="Zip"
+                required
+              />
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="form-city" class="font-weight-bold">Postort</label>
+              <input
+                type="text"
+                class="form-control-plaintext"
+                id="form-city"
+                name="city"
+                placeholder="City"
                 required
               />
             </div>
@@ -154,6 +181,8 @@
           </button>
         </form>
       </div>
+      <!--Update data end-->
+      
       <div id="order-history" class="mt-5 shadow bg-light rounded">
         <h3>Beställnings historik</h3>
 
