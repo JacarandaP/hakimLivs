@@ -1,7 +1,71 @@
-const profileAPI = "./mockupdata/myProfile.json";
-const ordersAPI = "./mockupdata/myOrders.json";
+const profileAPI =(email,pass)=>{ return "https://hakimssuperserver.herokuapp.com/customer/checkcustomer/"+email+"/"+pass}
+const ordersAPI = "https://hakimssuperserver.herokuapp.com/orders/getbycustomer";
+const postUpdateProfile="https://hakimssuperserver.herokuapp.com/customer/update"
+const credentials=JSON.parse(localStorage.getItem('CREDENTIALS'));
 let renderOrders;
 
+let fetchProfile=(credentials,render) => {
+
+  fetch(profileAPI(credentials.email,credentials.password))
+  .then((res) => res.json())
+  .then((profile)=>{
+   render(profile)
+  })
+}
+let updateProfile=(profile,render)=>{
+fetch(postUpdateProfile,
+{ method:"POST",
+headers: {
+    'Accept': '*/*',
+    'Content-Type': 'application/json'},
+  body:JSON.stringify(profile)}).
+  then(resp=>resp.json()).
+  then(updatedProfile=>{render(updatedProfile)})
+}
+/**
+ * Load profile data and show
+ */
+ const renderProfileTable=(profile)=>{
+ // let profile=JSON.parse(localStorage.getItem("PROFILE"));
+  $('#user-name').text(profile.firstname)
+  $('#user-last-name').text(profile.lastname)
+  $('#user-all-names').text(profile.firstname + " " + profile.lastname)
+  $('#user-phone-number').text(profile.telephone)
+  $('#user-address').text(profile.address)
+  $('#user-city').text(profile.city)
+  $('#user-zip').text(profile.zip)
+
+}
+const renderProfileToForm=(profile)=>{
+ // let profile=JSON.parse(localStorage.getItem("PROFILE"));
+  $('#form-name').val(profile.firstname)
+  $('#form-last-name').val(profile.lastname)
+  $('#form-phone').val(profile.telephone)
+  $('#form-city').val(profile.city)
+  $('#form-address').val(profile.address)
+  $('#form-zip').val(profile.zip)
+
+}
+$('#submit-profile-changes').click((e)=>{
+  e.preventDefault()
+  //let savedProfile=JSON.parse(localStorage.getItem("PROFILE"));
+  let profile={
+    email:credentials.email,
+    address: $('#form-address').val(),
+    firstname:$('#form-name').val(),
+lastname: $('#form-last-name').val(),
+zip: $('#form-zip').val(),
+city: $('#form-city').val(),
+telephone: $('#form-phone').val()
+  }
+  updateProfile(profile,renderProfileTable)
+  $("#update-data").hide();
+  $("#show-data").show();
+//post it to BACKEND, if succeed save to local storage !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//saveProfileLocalStorages(profile)
+//localStorage.setItem(profileStorage, JSON.stringify(profile));
+//ADD A FANCY ALERT! for user?????
+})
 /**
  * saves profile data to local storage ONLY FOR TESTING
  *  has to be changed to a get request like: /api/user
@@ -19,6 +83,7 @@ function saveProfile() {
  * saves order data to local storage ONLY FOR TESTING
  *  has to be changed to a get request like: /api/order
  */
+/*
 function saveMyOrders() {
   fetch(ordersAPI)
     .then((res) => res.json())
@@ -29,16 +94,19 @@ function saveMyOrders() {
 /**END OF MOCK UP SET UP */
 
 function profileInit(){
+  fetchProfile(credentials,renderProfileTable)
+  
  // saveProfile() //this is for MOCK UP data!!! needs to be commented in a near future
-  saveMyOrders() // this is for MOCK UP data!!
+ // saveMyOrders() // this is for MOCK UP data!!
  // checkLogged()
-loadProfileToTable();
+//loadProfileToTable();
 
 }
 
 /**
  * Load profile data and show
  */
+/*
 const loadProfileToTable=()=>{
     let profile=JSON.parse(localStorage.getItem("PROFILE"));
     $('#user-name').text(profile.name)
@@ -50,6 +118,8 @@ const loadProfileToTable=()=>{
     $('#user-zip').text(profile.postnummer)
 
 }
+*/
+/*
 const loadProfileToForm=()=>{
   let profile=JSON.parse(localStorage.getItem("PROFILE"));
   $('#form-name').val(profile.name)
@@ -68,12 +138,14 @@ $("#update-data").hide();
 $("#edit-profile").click(() => {
   $("#update-data").show();
   $("#show-data").hide();
-  loadProfileToForm()
+  fetchProfile(credentials,renderProfileToForm)
+  //loadProfileToForm()
 });
 
 /**
  * submit profile update and refresh local storage. TODO: NEEDS TO CALL BACKEND AND HAVE SUCCES RESPONSE
  */
+/*
 $('#submit-profile-changes').click(()=>{
   let savedProfile=JSON.parse(localStorage.getItem("PROFILE"));
   let profile={
@@ -92,6 +164,8 @@ saveProfileLocalStorages(profile)
 localStorage.setItem(profileStorage, JSON.stringify(profile));
 //ADD A FANCY ALERT! for user?????
 })
+
+*/
 renderOrders=()=>{
   let orders=JSON.parse(localStorage.getItem(ordersStorage))
   if(orders!==null){
