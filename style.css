@@ -21,14 +21,7 @@
     
 
 
-/*
-footer{
-    position: absolute;
-    bottom: 0;
-    box-sizing: border-box;
-    height: 100;
-}
-*/
+
 
 .hakimLivs-design h1{
     font-family: 'Zen Dots', cursive;
@@ -70,8 +63,17 @@ footer{
   }
   /* Fotter for kassa, loggin, register, profile */    
 .footerFixed{
-    min-height: 100vh; /*100vh->110vh margin för iphone6/7/8 */ 
+    min-height: 100vh;
     position: relative;
-    padding-bottom:0px ;/*If need to use footer(css) it should be bottom*/
+    padding-bottom:200px ;/*Need to think about the hight of footer for mobile,adjust to product.html Galaxy Fold*/
     box-sizing: border-box;
+}
+
+
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    /*height: 100;*/
 }
