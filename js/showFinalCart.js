@@ -5,9 +5,7 @@
  */
 
 function renderFinalCart(){
-
     showEmptyCartMssg();
-    //displayMssgNotLoggedIn();
     let checkoutCart = shoppingCart;
     let finalShoppingCart = "";
     let finalTotalToPay = 0;
@@ -40,7 +38,7 @@ function renderFinalCart(){
 
 /**
  * Functions to add or eliminate products in the cart
- * @param {string product name} prdName 
+ * @param {int productID} prdId 
  */
 
 
@@ -75,7 +73,7 @@ function renderFinalCart(){
     for(var product in shoppingCart){
       if(Number(shoppingCart[product].id) === productId){
         shoppingCart.splice(product, 1);
-        showEmptyCartMssg()
+        showEmptyCartMssg();
         break;
         }
      }
@@ -115,7 +113,7 @@ function renderFinalCart(){
       $('#containerKassa').html('<div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3"> '+
       '<h3><strong>Din varukorg är tom</strong></h3>'+
       '<a href="index.html" class="btn btn-primary cart-btn-transform m-3">Fortsätt handla</a>'+
-  '</div>')
+      '</div>');
     }
   }
 
@@ -178,6 +176,7 @@ function displayMssgNotLoggedIn(){
     '</div>')
   }
 }
+
 
 /**
  * Function to inform the user that the order has been sent. 

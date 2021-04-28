@@ -39,7 +39,7 @@ loadProfileToTable();
 /**
  * Load profile data and show
  */
-const loadProfileToTable=()=>{
+ const loadProfileToTable=()=>{
     let profile=JSON.parse(localStorage.getItem("PROFILE"));
     $('#user-name').text(profile.name)
     $('#user-last-name').text(profile.lastname)
@@ -117,8 +117,8 @@ renderOrders=()=>{
 function customerInfo() {
     let profile=JSON.parse(localStorage.getItem("PROFILE"));
     let output = "";
-    if(profile!=null){
-      output += `<table class="text-center">
+    if(profile!=null & shoppingCart.length != 0){
+      output += `<table class="text-center" id="sss">
       <th class="text-center py-3 px-4" style="min-width: 100px;">Leveransadress</th>
       <tr id="user-all-names"></tr>
       <tr id="user-address"></tr>
@@ -130,3 +130,5 @@ function customerInfo() {
     }
   
 }
+
+
