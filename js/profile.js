@@ -35,15 +35,32 @@ function profileInit(){
 loadProfileToTable();
 
 }
+
+/**
+ * Three functions to format phone number, names and zip according to presentation standard
+ */
  
 function formatPhone(phoneNumber){
   return phoneNumber.substring(0,3) + "-" + phoneNumber.substring(3,6) + " " + phoneNumber.substring(6,8) + " "  + phoneNumber.substring(8);
 }
 
 function formatNameSimple(name){
-  return name.substring(0,1).toUpperCase() + name.substring(1);
+  let newName = name.substring(0,1).toUpperCase();
+  for (let i = 0; i < name.length-1; i++) {
+    if(name[i] == ' ' || name[i] == '-'){
+      if(name[+1] != ' ' ){
+        newName += name[i+1].toUpperCase();
+      }
+    } else {
+      newName += name[i+1].toLowerCase();
+    }
+  }
+  return newName;
 }
 
+function formatZip(zip){
+  return zip.substring(0,3) + " " + zip.substring(3);
+}
 
 
 /**
@@ -51,13 +68,13 @@ function formatNameSimple(name){
  */
 const loadProfileToTable=()=>{
     let profile=JSON.parse(localStorage.getItem("PROFILE"));
-    $('#user-name').text(profile.name)
-    $('#user-last-name').text(profile.lastname)
-    $('#user-all-names').text(profile.name + " " + profile.lastname)
+    $('#user-name').text(formatNameSimple(profile.name))
+    $('#user-last-name').text(formatNameSimple(profile.lastname))
+    $('#user-all-names').text(formatNameSimple(profile.name + " " + profile.lastname))
     $('#user-phone-number').text(formatPhone(profile.telephone))
     $('#user-address').text(formatNameSimple(profile.address))
     $('#user-city').text(formatNameSimple(profile.postort))
-    $('#user-zip').text(profile.postnummer)
+    $('#user-zip').text(formatZip(profile.postnummer))
 
 }
 const loadProfileToForm=()=>{
