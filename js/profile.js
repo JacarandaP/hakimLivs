@@ -20,20 +20,26 @@ headers: {
     'Content-Type': 'application/json'},
   body:JSON.stringify(profile)}).
   then(resp=>resp.json()).
-  then(updatedProfile=>{render(updatedProfile)})
+  then(updatedProfile=>{
+    
+    render(updatedProfile)
+    //save to local storage
+    let newProfile={customerID: updatedProfile.id,name:updatedProfile.firstname,lastname:updatedProfile.lastname,address:updatedProfile.address,email:updatedProfile.email,telephone:updatedProfile.telephone,postort:updatedProfile.city,postnummer:updatedProfile.zip}
+    localStorage.setItem('PROFILE', JSON.stringify(newProfile));
+  })
 }
 /**
  * Load profile data and show
  */
  const renderProfileTable=(profile)=>{
  // let profile=JSON.parse(localStorage.getItem("PROFILE"));
-  $('#user-name').text(profile.firstname)
-  $('#user-last-name').text(profile.lastname)
-  $('#user-all-names').text(profile.firstname + " " + profile.lastname)
-  $('#user-phone-number').text(profile.telephone)
-  $('#user-address').text(profile.address)
-  $('#user-city').text(profile.city)
-  $('#user-zip').text(profile.zip)
+  $('#user-name').text(formatNameSimple(profile.firstname))
+  $('#user-last-name').text(formatNameSimple(profile.lastname))
+  $('#user-all-names').text(formatNameSimple(profile.name + " " + profile.lastname))
+  $('#user-phone-number').text(formatPhone(profile.telephone))
+  $('#user-address').text(formatNameSimple(profile.address))
+  $('#user-city').text(formatNameSimple(profile.city))
+  $('#user-zip').text(formatZip(profile.zip))
 
 }
 const renderProfileToForm=(profile)=>{
@@ -61,6 +67,8 @@ telephone: $('#form-phone').val()
   updateProfile(profile,renderProfileTable)
   $("#update-data").hide();
   $("#show-data").show();
+
+ 
 //post it to BACKEND, if succeed save to local storage !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //saveProfileLocalStorages(profile)
 //localStorage.setItem(profileStorage, JSON.stringify(profile));
@@ -133,8 +141,8 @@ function formatZip(zip){
 /**
  * Load profile data and show
  */
-/*
-const loadProfileToTable=()=>{
+
+ const loadProfileToTable=()=>{
     let profile=JSON.parse(localStorage.getItem("PROFILE"));
     $('#user-name').text(formatNameSimple(profile.name))
     $('#user-last-name').text(formatNameSimple(profile.lastname))
@@ -145,7 +153,7 @@ const loadProfileToTable=()=>{
     $('#user-zip').text(formatZip(profile.postnummer))
 
 }
-*/
+
 /*
 const loadProfileToForm=()=>{
   let profile=JSON.parse(localStorage.getItem("PROFILE"));
@@ -227,7 +235,16 @@ function customerInfo() {
       <tr id="user-zip"></tr>
       <tr id="user-phone-number"><br></tr>
   </table>`
-  $('#customer-info').append(output); 
+  $('#customer-info').html(output); 
     }
   
 }
+
+function showDeliveryAddress(){
+  if(shoppingCart.length !=0){
+    customerInfo();
+    loadProfileToTable();
+  }
+}
+
+
