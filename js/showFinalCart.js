@@ -17,7 +17,7 @@ function renderFinalCart(){
     let finalTotalPrice = Number(checkoutCart[i].price * checkoutCart[i].amount).toFixed(2).replace(".", ",");
     finalTotalToPay += checkoutCart[i].price * checkoutCart[i].amount;
     finalShoppingCart += "<tr>"
-    +"<td>" + finalPrdName + "</td>"
+    +"<td>" + upperCaseInitialLetter(finalPrdName) + "</td>"
     +"<td>" + finalPrdPrice + " kr</td>"
     + "<td><div class='input-group'><button class='minus-prd  btn btn-primary' data-id='" + finalPrdId + "'>-</button>"
     + "<input class='item-count form-control' data-id='" +  finalPrdId + "' value='" + finalPrdAmount + "'readonly>"

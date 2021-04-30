@@ -24,3 +24,7 @@
     return zip.substring(0,3) + " " + zip.substring(3);
   }
   
+
+  function upperCaseInitialLetter(word){
+    return word.substring(0,1).toUpperCase() + word.substring(1);
+  }
