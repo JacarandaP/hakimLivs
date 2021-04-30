@@ -116,6 +116,7 @@ function Product(id, title, description, price, category, amount) {
       
        if(totalAmountProducts===0){
        $('#counter').hide();
+       $('#counter-kassa-sida').hide();
             
        }
        else{
@@ -199,3 +200,4 @@ let operationRest=(a)=>{
   return a;
 }
 $('#counter-sidebar').text($('#counter').text());
+$('#counter-kassa-sida').text($('#counter').text());
