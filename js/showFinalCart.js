@@ -20,7 +20,7 @@ function renderFinalCart(){
     +"<td>" + finalPrdName + "</td>"
     +"<td class='text-center'>" + finalPrdPrice + " kr</td>"
     + "<td><div class='input-group'><button class='minus-prd  btn btn-primary' data-id='" + finalPrdId + "'>-</button>"
-    + "<input class='item-count form-control' data-id='" +  finalPrdId + "' value='" + finalPrdAmount + "'readonly>"
+    + "<input class='item-count form-control text-center' data-id='" +  finalPrdId + "' value='" + finalPrdAmount + "'readonly>"
     + "<button class='plus-prd btn btn-primary input-group-addon' data-id='" +  finalPrdId + "'>+</button></div></td>"
     + "<td class='text-center'>" + finalTotalPrice+ " kr</td>" 
     + "<td><i class='delete-prd bi bi-trash row justify-content-center' data-id='" + finalPrdId + "'></i></td>"
@@ -161,8 +161,9 @@ modalConfirm(function(confirm){
       $('#clientsZipCode').val(profile.postnummer)
       $('#clientsMail').val(profile.email)
     } else {
-      $('#confirmbtn').prop('disabled', true); 
-      $('#logInPromptSpace').html("<button type=\"button\" class=\"btn btn-primary float-right\" id=\"logInBtn\"  onclick=\"document.location='loggin.html'\" >Logga in / Registrera dig </button>");
+      $('#confirmbtn').prop('disabled', true);
+      $('#confirmbtn').css('background-color', 'grey') 
+      $('#logInPromptSpace').html("<button type=\"button\" class=\"btn btn-primary w-100\" id=\"logInBtn\"  onclick=\"document.location='loggin.html'\" >Logga in / Registrera dig för att bekräfta</button>");
     }
   }
 getProfileDetails();

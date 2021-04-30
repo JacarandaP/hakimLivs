@@ -42,8 +42,8 @@
     </div>-->
     <div id="containerKassa" class="container">
         <h1 style="text-align: center; margin-top: 40px" >Din beställning</h1>
-    <div class="table-responsive w-100">
-        <table class="table-borderless m-auto" id="table2" > 
+     <div class="table-responsive-md w-100">
+        <table class="table-borderless mx-auto w-100" id="table2" > 
         <thead>
             <tr class="table-secondary">
                 <th class="text-center py-3 px-4" style="min-width: 100px;">Produkt</th>
@@ -55,22 +55,29 @@
         </thead>
              <tbody id="finalInfo">
              </tbody>
-        <tfoot>
+      <!--  <tfoot>
             <tr>
             <td colspan="3"><br><h4 class="d-flex justify-content-start font-weight-bold">Totalt pris: </h4></td>
             <td><h5 class="font-weight-bold text-center" id="FinalTotalPay"></h5></td>
         </tr>
         <tr><td><br><button id="clear" class="clear-cart btn btn-danger">Töm varukorgen</button></td></tr>
     
-        </tfoot>           
+        </tfoot>   -->
+                
         </table>
-        <button type="button" class="btn btn-primary float-right" id="confirmbtn">Bekräfta</button>
+     </div> 
+        <div class="d-flex justify-content-start">
+          <h4 class="font-weight-bold">Totalt pris: <span id="FinalTotalPay" class="text-large"></span></h4>
+        </div>
+        <button id="clear" class="clear-cart btn btn-danger">Töm varukorgen</button>
+       <!-- <button type="button" class="btn btn-primary float-right" id="confirmbtn">Bekräfta</button> -->
 
         <p></p>
-        <span id="logInPromptSpace" class="float-right"></span> </div>
-
+        <span id="logInPromptSpace"></span> 
+     
+    
              <!--Visa kundens adress-->
-
+             <div class="container">
              <div id="customer-info" class="d-flex justify-content-center pt-5">
              <!--   <table class="text-center">
                     <th class="text-center py-3 px-4" style="min-width: 100px;">Leveransadress</th>
@@ -79,12 +86,18 @@
                     <tr id="user-city"></tr>
                     <tr id="user-zip"></tr>
                     <tr id="user-phone-number"><br></tr>
-                </table>  -->
-            </div>  
-    
+                </table>  --> 
+            </div>
+        </div>
             <!--Visa kundens adress END-->
 
-    
+      <!--Bekräfta Btn-->        
+      <div>
+        <p></p>
+            <button type="button" class="btn btn-primary w-100" id="confirmbtn">Bekräfta</button>
+        </div>
+      <!--Bekräfta Btn END-->   
+</div>
    <footer>
     <div id="footer">
         
