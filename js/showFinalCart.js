@@ -23,7 +23,7 @@ function renderFinalCart(){
     + "<input class='item-count form-control' data-id='" +  finalPrdId + "' value='" + finalPrdAmount + "'readonly>"
     + "<button class='plus-prd btn btn-primary input-group-addon' data-id='" +  finalPrdId + "'>+</button></div></td>"
     + "<td>" + finalTotalPrice+ " kr</td>" 
-    + "<td><button class='delete-prd' data-id='" + finalPrdId + "'><img src='images/trash.svg' alt='remove' fill='red'></img></button></td>"
+    + "<td><i class='delete-prd bi bi-trash row justify-content-center' data-id='" + finalPrdId + "'></i></td>"
     +  "</tr>";
   }
   
