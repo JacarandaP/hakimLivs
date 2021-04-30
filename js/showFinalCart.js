@@ -18,11 +18,11 @@ function renderFinalCart(){
     finalTotalToPay += checkoutCart[i].price * checkoutCart[i].amount;
     finalShoppingCart += "<tr>"
     +"<td>" + finalPrdName + "</td>"
-    +"<td>" + finalPrdPrice + " kr</td>"
+    +"<td class='text-center'>" + finalPrdPrice + " kr</td>"
     + "<td><div class='input-group'><button class='minus-prd  btn btn-primary' data-id='" + finalPrdId + "'>-</button>"
     + "<input class='item-count form-control' data-id='" +  finalPrdId + "' value='" + finalPrdAmount + "'readonly>"
     + "<button class='plus-prd btn btn-primary input-group-addon' data-id='" +  finalPrdId + "'>+</button></div></td>"
-    + "<td>" + finalTotalPrice+ " kr</td>" 
+    + "<td class='text-center'>" + finalTotalPrice+ " kr</td>" 
     + "<td><i class='delete-prd bi bi-trash row justify-content-center' data-id='" + finalPrdId + "'></i></td>"
     +  "</tr>";
   }
