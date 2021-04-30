@@ -159,7 +159,6 @@ let minusPlus= (product)=>{
 let addOrRest=(e)=>{
   let productId=e.getAttribute('data-id');
   let isAdd=$(e).hasClass('plus-prd');
-  console.log($(e))
   $.each(shoppingCart,(i,product)=>{
     if(product.id==productId)
     if(isAdd)
