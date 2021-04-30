@@ -21,7 +21,7 @@ let changeTopVarOnloggedIn=()=>{
         $('#loggin-button-sidebar').attr('href','profile.html')
         //$('#navbar  .hakimLivs-design').after('<div class="col-4 text-center  ">Inloggad som:'+profile.name+'</div>');
        // $('#navbar').append('<button id="logout" class="col-2 btn shadow float-right mt-2 " style="height:30px" onClick="loggout();"><span class="align-middle text-white">Logga ut</span></button>')
-        $('#navbar').append('<div class="row d-block ml-5 mr-1 ">Inloggad som:'+profile.name+'<button id="logout" class=" d-block btn shadow mt-1  " style="height:30px" onClick="loggout();"><span class=" text-white">Logga ut</span></button></div>')
+        $('#navbar').append('<div class="row d-block ml-5 mr-1 w3-text-amber">Inloggad som:'+profile.name+'<button id="logout" class=" d-block btn shadow mt-1  " style="height:30px" onClick="loggout();"><span class=" w3-text-amber">Logga ut</span></button></div>')
         $('#sidebar').append('<div class="d-block mb-0 pt-4 w3-hide-large text-center  bg-light">Inloggad som:'+profile.name+'<button id="logout" class=" d-block btn w3-gray shadow w-100" onClick="loggout();"><span class=" text-white">Logga ut</span></button></div>')
     }
    

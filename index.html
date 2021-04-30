@@ -22,7 +22,7 @@
   </head>
   <body>
     <div id="top-meny"> </div><!--top-many end-->
-    <div class="w3-container w-auto w3-blue-gray d-none  d-lg-flex  w-100 sticky-top" id="navbar">
+    <div class="w3-container w-auto d-none  d-lg-flex  w-100 sticky-top" id="navbar">
       <a href="index.html" class="col text-center hakimLivs-design"><h1 class="w-100" >Hakim Livs</h1></a>
       <!--Serch area-->
       <form class="form-inline d-inline ">
@@ -48,7 +48,7 @@
       >
         Stäng &times;
       </button>
-      <div class="row w-100 w3-large w3-hide-large pt-4 "><div class="col text-center"> <a id="loggin-button-sidebar" href="loggin.html"><i class=" bi bi-person-circle pl-5 pr-2  "></i></a></div><div class="col text-center"><a href="kassa.html" id="showcartbtn"><i class=" bi bi-cart2 pl-2 pr-2 display-5 "><span id="counter-sidebar" class="total-count"></span></i></i></a></div></div>
+      <div class="row w-100 w3-large w3-hide-large pt-4"><div class="col text-center"> <a id="loggin-button-sidebar" href="loggin.html"><i class="sidebar-icon bi bi-person-circle pl-5 pr-2  "></i></a></div><div class="col text-center"><a href="kassa.html" id="showcartbtn"><i class="sidebar-icon bi bi-cart2 pl-2 pr-2 display-5 "><span id="counter-sidebar" class="total-count"></span></i></i></a></div></div>
       <ul id="category-list" class=" list-group components"></ul>
       <a href="#" class="w3-bar-item w3-button" onclick="closeSideBar()">Populära produkter</a>
       <a href="#" class="w3-bar-item w3-button" onclick="closeSideBar()">Nya produkter</a>
@@ -57,10 +57,10 @@
 
     <div class="w3-main " style="margin-left: 200px">
       <div id="container" class="">
-        <div class="w3-blue-gray d-flex w-100 sticky-top" >
+        <div class="d-flex w-100 sticky-top" id="navbar">
           
           <button
-            class="w3-button w3-blue-gray w3-xlarge w3-hide-large w-auto"
+            class="w3-button w3-hover-none w3-hover-none w3-hover-text-amber w3-xlarge w3-hide-large w-auto menu-btn"
             onclick="openSideBar()"
           >
             &#9776;
@@ -84,7 +84,7 @@
           <div id="products" class=" row mt-3 mb-5"></div>
         </div>
 
-        <div id="footer" ></div> <!--class="fixed-bottom "-->
+        <div id="footer"></div> <!--class="fixed-bottom "-->
       </div>
     </div>
     <template id="product-card-template">
@@ -97,7 +97,7 @@
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <h2 class=" col-12 product-price font-weight-bold font-italic display-4 d-block text-danger"></h2>
+          <h2 class=" col-12 product-price font-weight-bold font-italic display-4 d-block price"></h2>
           <p  class="card-text col-12 product-category"></p>
         </div>
 
