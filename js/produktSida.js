@@ -4,10 +4,10 @@
  */
 let getProductInfo=()=>{
     let productInfo=JSON.parse(sessionStorage.getItem('PRODUCT_INFO'));
-    $('#product-info-title').text(productInfo.title)
-    $('#product-info-description').text(productInfo.description)
+    $('#product-info-title').text(upperCaseInitialLetter(productInfo.title))
+    $('#product-info-description').text(upperCaseInitialLetter(productInfo.description))
     $('#product-info-price').text(productInfo.price.toFixed(2).replace(".", ",") + " kr")
-    $('#product-info-category').text(productInfo.category.name)
+    $('#product-info-category').text(upperCaseInitialLetter(productInfo.category.name))
     $('#product-info-img').attr('src',productInfo.image)
     $('#buy').attr('productID',productInfo.id)
     $('#buy').attr('productTitle',productInfo.title)

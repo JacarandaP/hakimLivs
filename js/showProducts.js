@@ -34,7 +34,7 @@ var categories=new Array();
  */
 function renderCategories(category,appendTo){
   
-    let categoryItem="<li><button id='category' data-name='"+category+"' class='category list-group-item list-group-item-action'>"+category+"</button></li>"
+    let categoryItem="<li><button id='category' data-name='"+category+"' class='category list-group-item list-group-item-action'>"+upperCaseInitialLetter(category)+"</button></li>"
     appendTo.append(categoryItem)
 }
 
@@ -63,11 +63,11 @@ fetch(productsAPI)
  */
  renderProducts=(product,appendTo)=>{
     let template=$('#product-card-template').contents().clone()
-    template.find('.product-title').text(product.title)
-    template.find('.product-description').text(product.description.substring(0,50))//TODO: an accordion or popup to extend info (in HTML template)
+    template.find('.product-title').text(upperCaseInitialLetter(product.title))
+    template.find('.product-description').text(upperCaseInitialLetter(product.description.substring(0,50)))//TODO: an accordion or popup to extend info (in HTML template)
     template.find('.product-image').attr('src', product.image)
     template.find('.product-price').text(product.price.toFixed(2).replace(".", ",") + " kr")
-    template.find('.product-category').text(product.category.name)
+    template.find('.product-category').text(upperCaseInitialLetter(product.category.name))
     template.find('.card').attr('data-category',product.category)
     template.find('.add-to-cart').attr('productID',product.id)
     template.find('.add-to-cart').attr('productTitle', product.title)
@@ -79,7 +79,7 @@ fetch(productsAPI)
     refreshButton(template.find('a'),'productid')
     reactOnMouseOver(template.find('.product-image'))
     appendTo.append(template);
-    
+
 
 }
 /**
