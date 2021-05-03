@@ -3,7 +3,13 @@
  * gets the product info and
  */
 let getProductInfo=()=>{
-    let productInfo=JSON.parse(localStorage.getItem('PRODUCT_INFO'));
+    let productId=location.href.split('=')[1]
+    
+    fetch(`https://hakimssuperserver.herokuapp.com/product/getbyid/${productId}`)
+.then((res)=>res.json())
+.then((productInfo)=>{
+    
+  //  let productInfo=JSON.parse(localStorage.getItem('PRODUCT_INFO'));
     $('#product-info-title').text(upperCaseInitialLetter(productInfo.title))
     $('#product-info-description').text(upperCaseInitialLetter(productInfo.description))
     $('#product-info-price').text(productInfo.price.toFixed(2).replace(".", ",") + " kr")
@@ -16,7 +22,8 @@ let getProductInfo=()=>{
     $('#buy').attr('productCategory',productInfo.category)
     $('#buy').attr('productAmount',1)
    refreshButton($('#buy'),'productID')
- 
+}
+)
     
 }
 $(document).ready(()=>{ changeTopVarOnloggedIn();

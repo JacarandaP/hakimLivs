@@ -128,6 +128,8 @@ getProductsByCategory(renderProducts, $("#products"), categoryName)
 let showProductPage=(e)=>{
   
     let productId=e.getAttribute('product-id');
+    location.href='produkt.html?product='+productId+''
+    /*
     fetch(`https://hakimssuperserver.herokuapp.com/product/getbyid/${productId}`)
 .then((res)=>res.json())
 .then((json)=>{
@@ -135,6 +137,7 @@ let showProductPage=(e)=>{
     location.href='produkt.html'
     }
     )
+    */
 }
 /**
  *  checks if a product is in shopping cart and changes the button to plus/minus
