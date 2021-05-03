@@ -123,4 +123,13 @@ footer{
     background-color:transparent;
 }
 
+.close-sidebar{
+    background-color:transparent;
+}
+
+.close-sidebar:hover{
+    color:#ff6739;
+    background-color:transparent;
+}
+
 
