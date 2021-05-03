@@ -73,7 +73,7 @@
 .footerFixed{
     min-height: 100vh;
     position: relative;
-    padding-bottom:200px ;/*Need to think about the hight of footer for mobile,adjust to product.html Galaxy Fold*/
+    padding-bottom:220px ;/*Need to think about the hight of footer for mobile,adjust to product.html, kassa.html Galaxy Fold*/
     box-sizing: border-box;
 }
 
