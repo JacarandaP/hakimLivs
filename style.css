@@ -28,8 +28,7 @@
     font-weight: bold;
     font-style: italic;
     text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);
-    color: goldenrod;
-   
+    color:  #ffb342;
     border-radius: 10px;
     padding: 5px;
     
@@ -39,9 +38,8 @@
     font-family: 'Zen Dots', cursive;
     font-weight: bold;
     font-style: italic;
-    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);
-    color: goldenrod;
-   
+    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);  
+    color: #ffb342;
     border-radius: 10px;
     padding: 5px;
     
@@ -55,9 +53,19 @@
     transition: all 0.3s ease-in-out 0.1s;
       
   }
+  
   .bi{
       font-size:2.1em;
   }
+
+  .bi:hover, .go-back:hover{
+    color:  #ffcf4a;
+  }
+
+  a:hover, a:visited, a:link, a:active{
+      text-decoration: none;
+  }
+
   #counter-sidebar{
       font-size:0.5em;
   }
@@ -93,3 +101,54 @@ footer{
     background-color:rgba(156, 152, 152, 0.308) !important;
     box-shadow: border;
 }
+    
+
+
+.price {
+    color:#ff6e42;
+}
+
+#navbar {
+    background-color: #edede8;
+    color:#ffb342;
+}
+
+.footer {
+    background-color: #edede8;
+    color:#bbbbb7;
+}
+
+.btn-primary, .button-regi, #confirmbtn {
+    background-color: #ffb342;
+    border-color: transparent;
+}
+
+.btn-primary:hover{
+    background-color: #ffcd42;
+    border-color: transparent;
+}
+
+#clear, .logout-btn {
+    background-color:#ff6739;
+    border-color: transparent;
+}
+#clear:hover, .logout-btn:hover{
+    background-color:#ff8f6d;
+    border-color: transparent;
+}
+
+.sidebar-icon:hover{
+    color:#ffb342;
+    background-color:transparent;
+}
+
+.close-sidebar{
+    background-color:transparent;
+}
+
+.close-sidebar:hover{
+    color:#ff6739;
+    background-color:transparent;
+}
+
+
