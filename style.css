@@ -65,7 +65,7 @@ footer{
       font-size:2.1em;
   }
 
-  .bi:hover, .sidebar-icon:hover, .go-back:hover{
+  .bi:hover, .go-back:hover{
     color:  #ffcf4a;
   }
 
@@ -109,11 +109,18 @@ footer{
     border-color: transparent;
 }
 
-#clear {
+#clear, .logout-btn {
     background-color:#ff6739;
     border-color: transparent;
 }
-#clear:hover {
+#clear:hover, .logout-btn:hover{
     background-color:#ff8f6d;
     border-color: transparent;
 }
+
+.sidebar-icon:hover{
+    color:#ffb342;
+    background-color:transparent;
+}
+
+
