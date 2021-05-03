@@ -55,6 +55,7 @@ function renderFinalCart(){
       saveCart();  
       $('#finalInfo').html(renderFinalCart());
       $('#counter').html(getTotalAmountProducts());
+      $('#counter-kassa-sida').html(getTotalAmountProducts());
   
   }
   
@@ -67,6 +68,7 @@ function renderFinalCart(){
       saveCart();
       $('#finalInfo').html(renderFinalCart());
       $('#counter').html(getTotalAmountProducts());
+      $('#counter-kassa-sida').html(getTotalAmountProducts())
   }
   
   function discard(productId){
@@ -80,6 +82,7 @@ function renderFinalCart(){
     saveCart();
     $('#finalInfo').html(renderFinalCart());
     $('#counter').html(getTotalAmountProducts());
+    $('#counter-kassa-sida').html(getTotalAmountProducts())
    }
   
 
@@ -144,6 +147,7 @@ modalConfirm(function(confirm){
   if(confirm){
       emptyCart();
       $('#counter').html(getTotalAmountProducts());
+      $('#counter-kassa-sida').html(getTotalAmountProducts())
       showEmptyCartMssg();
   }
 });
