@@ -69,7 +69,7 @@
   #counter-sidebar{
       font-size:0.5em;
   }
-  /* Fotter for kassa, loggin, register, profile */    
+  /* Fotter for kassa, loggin, register, profile, produkt (index doesn´t have this setting)*/    
 .footerFixed{
     min-height: 100vh;
     position: relative;
