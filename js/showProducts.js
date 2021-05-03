@@ -131,7 +131,7 @@ let showProductPage=(e)=>{
     fetch(`https://hakimssuperserver.herokuapp.com/product/getbyid/${productId}`)
 .then((res)=>res.json())
 .then((json)=>{
-    sessionStorage.setItem('PRODUCT_INFO',JSON.stringify(json))
+    localStorage.setItem('PRODUCT_INFO',JSON.stringify(json))
     location.href='produkt.html'
     }
     )

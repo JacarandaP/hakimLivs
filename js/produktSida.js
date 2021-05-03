@@ -3,7 +3,7 @@
  * gets the product info and
  */
 let getProductInfo=()=>{
-    let productInfo=JSON.parse(sessionStorage.getItem('PRODUCT_INFO'));
+    let productInfo=JSON.parse(localStorage.getItem('PRODUCT_INFO'));
     $('#product-info-title').text(upperCaseInitialLetter(productInfo.title))
     $('#product-info-description').text(upperCaseInitialLetter(productInfo.description))
     $('#product-info-price').text(productInfo.price.toFixed(2).replace(".", ",") + " kr")
