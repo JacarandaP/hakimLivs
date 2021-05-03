@@ -81,15 +81,15 @@
               class="img-fluid"
             />
           </div> THIS IS THE CAMPAIGN IMAGE CONTAINER-->
-          <div id="products" class=" row mt-3 mb-5"></div>
+          <div id="products" class=" row mt-3 mb-5 justify-content-center"></div>
         </div>
 
         <div id="footer" ></div> <!--class="fixed-bottom "-->
       </div>
     </div>
     <template id="product-card-template">
-      <div class="card d-inline-block shadow col-xs-12 col-sm-6 bg-light col-md-4 col-lg-4" >
-        <img class="card-img-top img-responsive rounded mt-3 product-image h-50" src="" alt="Product"  onclick="showProductPage(this)" />
+      <div class="card d-inline-block shadow m-3 bg-white " style="width:24em"> <!--alternative use columns col-xs-12 col-sm-6  col-md-4 col-lg-3-->
+        <img class="card-img-top img-responsive rounded img-thumbnail product-image h-50" src="" alt="Product"  onclick="showProductPage(this)" />
         <div class="card-body h-50">
           <div class="row h-75 mb-2 d-block ">          
             <h5 class="col-12 card-title product-title font-weight-bold" >Card title</h5>
@@ -130,6 +130,8 @@
         getCategories(renderCategories, $("#category-list"))
         //BACKEND SIMULATION
         changeTopVarOnloggedIn();
+       
+        
     </script>
   </body>
 </html>

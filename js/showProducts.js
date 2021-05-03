@@ -76,6 +76,7 @@ fetch(productsAPI)
     template.find('.add-to-cart').attr('productCategory', product.category.name) //CHANGED FOR TEST
     template.find('.add-to-cart').attr('productAmount', 1)
     template.find('.product-image').attr('product-id',product.id)
+    refreshButton(template.find('a'),'productid')
     reactOnMouseOver(template.find('.product-image'))
     appendTo.append(template);
     
@@ -134,6 +135,21 @@ let showProductPage=(e)=>{
     location.href='produkt.html'
     }
     )
+}
+/**
+ *  checks if a product is in shopping cart and changes the button to plus/minus
+ * @param {the button to refresh} element 
+ */
+let refreshButton=(element,attributeName)=>{
+    let productId=element.attr(attributeName);
+    $.each(shoppingCart,(i,product)=>{
+      if(productId===product.id){
+        let newButtons=minusPlus(product)
+        $(element).replaceWith(newButtons)
+
+        
+    }
+})
 }
 
 

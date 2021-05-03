@@ -15,9 +15,12 @@ let getProductInfo=()=>{
     $('#buy').attr('productPrice',productInfo.price)
     $('#buy').attr('productCategory',productInfo.category)
     $('#buy').attr('productAmount',1)
-   
+   refreshButton($('#buy'),'productID')
     
 }
 $(document).ready(()=>{ changeTopVarOnloggedIn();
-getProductInfo()})
+getProductInfo()
+
+})
+
 
