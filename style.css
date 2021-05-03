@@ -27,7 +27,7 @@
     font-family: 'Zen Dots', cursive;
     font-weight: bold;
     font-style: italic;
-    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);
+   /* text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);*/
     color:  #ffb342;
     border-radius: 10px;
     padding: 5px;
@@ -38,7 +38,7 @@
     font-family: 'Zen Dots', cursive;
     font-weight: bold;
     font-style: italic;
-    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);  
+    /*text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);  */
     color: #ffb342;
     border-radius: 10px;
     padding: 5px;
@@ -98,8 +98,9 @@ footer{
 }
 .log-container > div > button{
    
-    background-color:rgba(156, 152, 152, 0.308) !important;
+  /*  background-color:rgba(156, 152, 152, 0.308) !important;*/
     box-shadow: border;
+  
 }
     
 
@@ -150,5 +151,12 @@ footer{
     color:#ff6739;
     background-color:transparent;
 }
+.orange-background{
+    background-color:#ff6739;
+}
+.yellow-background{
+    background-color:#ffb342;;
+}
+
 
 

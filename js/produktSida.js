@@ -16,6 +16,7 @@ let getProductInfo=()=>{
     $('#buy').attr('productCategory',productInfo.category)
     $('#buy').attr('productAmount',1)
    refreshButton($('#buy'),'productID')
+ 
     
 }
 $(document).ready(()=>{ changeTopVarOnloggedIn();

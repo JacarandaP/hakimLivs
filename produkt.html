@@ -28,7 +28,7 @@
             <div class="float-right">
             <a href="loggin.html" id="loggin-button" ><i class="bi bi-person "></i></a>
             <a href="kassa.html"><i class="bi bi-cart2 pl-5 pr-5"><span id="counter" class="total-count"></span></i></i></a> 
-            <a href="index.html" class="back go-back"><img src="images/arrow.svg" alt="arrow"></img>Tillbaka till butiken</a> 
+          
 
             </div>
         </div>
@@ -44,7 +44,7 @@
                 <p id="product-info-category"></p>
                 <p id="product-info-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium iure accusantium sint adipisci aspernatur magni. Architecto, aliquid hic veniam maxime accusantium aspernatur asperiores repudiandae ab nostrum ad ipsam nesciunt facilis!</p>
                 <h1 id="product-info-price" class="price font-weight-bolder font-italic">25,00 kr</h1>
-                <button  id="buy" class="add-to-cart btn btn-primary w-100", onclick="AddProduct(this); getTotalAmountProducts(); event.preventDefault()" class="">KÖP</button>
+                <button  id="buy" class="add-to-cart btn btn-primary w-100", onclick="AddProduct(this); getTotalAmountProducts(); event.preventDefault();replaceButton(this);" class="">KÖP</button>
             </div>
         </div>
 
