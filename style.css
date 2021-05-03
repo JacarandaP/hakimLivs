@@ -77,3 +77,7 @@ footer{
     box-sizing: border-box;
     /*height: 100;*/
 }
+
+#finalInfo{
+    border-bottom: solid 1px black;
+}

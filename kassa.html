@@ -43,9 +43,9 @@
     <div id="containerKassa" class="container">
         <h1 style="text-align: center; margin-top: 40px" >Din beställning</h1>
     <div class="table-responsive w-100">
-        <table class="table-bordered m-auto" id="table2" > 
+        <table class="table-borderless m-auto" id="table2" > 
         <thead>
-            <tr>
+            <tr class="table-secondary">
                 <th class="text-center py-3 px-4" style="min-width: 100px;">Produkt</th>
                 <th class="text-center py-3 px-4" style="min-width: 80px;">Pris</th>
                 <th class="text-center py-3 px-4" style="width: 150px;">Kvantitet</th>
@@ -54,57 +54,16 @@
             </tr>
         </thead>
              <tbody id="finalInfo">
-             </tbody>   
+             </tbody>
+        <tfoot>
+            <tr>
+            <td colspan="3"><br><h4 class="d-flex justify-content-start font-weight-bold">Totalt pris: </h4></td>
+            <td><h5 class="font-weight-bold text-center" id="FinalTotalPay"></h5></td>
+        </tr>
+        <tr><td><br><button id="clear" class="clear-cart btn btn-danger">Töm varukorgen</button></td></tr>
+    
+        </tfoot>           
         </table>
-    </div>
-    <div class="d-flex justify-content-start">
-        <h4 class="font-weight-bold">Totalt pris: <span id="FinalTotalPay" class="text-large"></span></h4>
-    </div>
-    <button id="clear" class="clear-cart btn btn-danger">Töm varukorgen</button>
-   <!--<div class="form-field" id="formdiv">
-        <h3 style="text-align: center;" >Var god fyll i din information för att lägga din beställning</h3>
-        <form name="confirmForm" action="" id="checkoutForm"  type="actionForm" >
-            <fieldset>
-            <p>
-                <label for="firstName">Förnamn: </label> 
-            </p>
-            <input type="text" size="75" id="clientsFirstName" name="firstName">
-           
-            <p>
-                <label for="lastName">Efternamn: </label> 
-            </p>
-            <input type="text" size="75" id="clientsLastName" name="lastName">
-          
-            <p>
-                <label for="email">E-mail:</label>
-            </p>
-            <input type="text" size="75" id="clientsMail" name="email">
-            <p>
-                <label for="phone">Telefonnummer: </label>
-            </p>
-            <input type="text" size="75" id="clientsPhone" name="phone">
-            <p>
-                <label for="street">Adress: </label>
-            </p>
-            <input type="text"size="75" id="clientsStreet" name="address"> 
-            <p>
-                <label for="city">Ort: </label>
-            </p>
-            <input type="text"size="75" id="clientsCity" name="city"> 
-            <p>
-                <label for="postalCode">Postnummer: </label>
-            </p>
-            <input type="text"size="75" id="clientsZipCode" name="postalCode"> 
-            <br>
-            <br>
-        <p>
-            <input type="submit" class="submit" value="Submit" name="submit" id="confirmbtn">
-        </p>
-    </fieldset>
-        </form>
-        
-        </div>
-    -->
         <button type="button" class="btn btn-primary float-right" id="confirmbtn">Bekräfta</button>
 
         <p></p>
