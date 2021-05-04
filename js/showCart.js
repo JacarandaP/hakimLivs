@@ -150,9 +150,9 @@ let replaceButton=(e)=>{
  * @returns 
  */
 let minusPlus= (product)=>{
-  return "<div class='input-group'><button class='minus-prd  btn btn-primary' onclick='addOrRest(this)' data-id='" + product.id + "'>-</button>"
+  return "<div class='input-group'><button class='minus-prd  btn buy-btn' onclick='addOrRest(this)' data-id='" + product.id + "'>-</button>"
 + "<input class=' text-center item-count form-control bg-white' style='border:0;' data-id='" +  product.id + "' value='" + product.amount + "'readonly>"
-+ "<button class='plus-prd btn btn-primary input-group-addon' onclick='addOrRest(this)' data-id='" +  product.id + "'>+</button></div>"}
++ "<button class='plus-prd btn buy-btn input-group-addon' onclick='addOrRest(this)' data-id='" +  product.id + "'>+</button></div>"}
 
 /**
  * to add or rest when plus or minus buttons are clicked

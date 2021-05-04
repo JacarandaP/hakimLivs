@@ -42,11 +42,11 @@ let frontendReacts=(profile)=>{
         
     
     $(document).ready(()=>{
-        $('#loginBtn').css('background-color', '#ff6739')
+        $('#loginBtn').css('background-color', '#ffb342')
         $('#usernameEmail, #password').keyup(()=>{
         if( password.value.length >0 && usernameEmail.value.length>0)
-        $('#loginBtn').css('background-color', ' #ff8f6d') 
-         else  $('#loginBtn').css('background-color', '#ff6739')
+        $('#loginBtn').css('background-color', ' #ffcd42') 
+         else  $('#loginBtn').css('background-color', '#ffb342')
         })
        
 })
