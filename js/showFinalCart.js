@@ -19,11 +19,11 @@ function renderFinalCart(){
     finalShoppingCart += "<tr>"
     +"<td>" + upperCaseInitialLetter(finalPrdName) + "</td>"
     +"<td class='text-center'>" + finalPrdPrice + " kr</td>"
-    + "<td><div class='input-group'><button class='minus-prd  btn btn-primary' data-id='" + finalPrdId + "'>-</button>"
+    + "<td><div class='input-group'><button class='minus-prd  btn buy-btn' data-id='" + finalPrdId + "'>-</button>"
     + "<input class='item-count form-control text-center' data-id='" +  finalPrdId + "' value='" + finalPrdAmount + "'readonly>"
-    + "<button class='plus-prd btn btn-primary input-group-addon' data-id='" +  finalPrdId + "'>+</button></div></td>"
+    + "<button class='plus-prd btn buy-btn input-group-addon' data-id='" +  finalPrdId + "'>+</button></div></td>"
     + "<td class='text-center'>" + finalTotalPrice+ " kr</td>" 
-    + "<td><i class='delete-prd bi bi-trash row justify-content-center' data-id='" + finalPrdId + "'></i></td>"
+    + "<td><i class='delete-prd bi bi-trash trash-icon row justify-content-center' data-id='" + finalPrdId + "'></i></td>"
     +  "</tr>";
   }
   
@@ -115,7 +115,7 @@ function renderFinalCart(){
     if(shoppingCart.length === 0){
       $('#containerKassa').html('<div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3"> '+
       '<h3><strong>Din varukorg är tom</strong></h3>'+
-      '<a href="index.html" class="btn btn-primary cart-btn-transform m-3">Fortsätt handla</a>'+
+      '<a href="index.html" class="btn keep-shopping-btn cart-btn-transform m-3">Fortsätt handla</a>'+
       '</div>');
       $('#customer-info').html('');
     }
@@ -167,7 +167,7 @@ modalConfirm(function(confirm){
     } else {
       $('#confirmbtn').prop('disabled', true);
       $('#confirmbtn').css('background-color', 'grey') 
-      $('#logInPromptSpace').html("<button type=\"button\" class=\"btn btn-primary w-100\" id=\"logInBtn\"  onclick=\"document.location='loggin.html'\" >Logga in / Registrera dig för att bekräfta</button>");
+      $('#logInPromptSpace').html("<button type=\"button\" class=\"btn btn-primary w-100 login-btn\" id=\"logInBtn\"  onclick=\"document.location='loggin.html'\" >Logga in / Registrera dig för att bekräfta</button>");
     }
   }
 getProfileDetails();
@@ -192,7 +192,7 @@ function displayMssgNotLoggedIn(){
 function displayConfirmationMsgg(){
 $('#containerKassa').html('<div class="col-sm-12 empty-cart-cls text-center">' +
 '<h3><strong>Din beställning har skickats. Tack för ditt köp!</strong></strong></h3>'+
-'<a href="index.html" class="btn btn-primary cart-btn-transform m-3">Fortsätt handla</a>'+
+'<a href="index.html" class="btn keep-shopping-btn cart-btn-transform m-3">Fortsätt handla</a>'+
 '</div>');
 
 }

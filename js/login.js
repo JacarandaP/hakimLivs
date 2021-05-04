@@ -43,16 +43,15 @@ let frontendReacts=(profile)=>{
     
     $(document).ready(()=>{
         $('#loginBtn').prop('disabled', true);
-        $('#loginBtn').css('background-color', 'grey')
+        $('#loginBtn').css('background-color', '#ffb342')
         $('#usernameEmail, #password').keyup(()=>{
         if( password.value.length >0 && usernameEmail.value.length>0)
         {
           $('#loginBtn').prop('disabled', false);
-          $('#loginBtn').css('background-color', ' #ff8f6d')
+          $('#loginBtn').css('background-color', ' #ffcd42')
         }
          else if ( password.value.length ==0 || usernameEmail.value.length==0)
-         $('#loginBtn').prop('disabled', true).css('background-color', 'grey');
-         
+         $('#loginBtn').prop('disabled', true).css('background-color', '#ffb342');
         })
        
 })
@@ -109,3 +108,4 @@ function storeInloggedUser(user){
   localStorage.setItem("PROFILE", JSON.stringify(profile));
   return profile;
 }
+    

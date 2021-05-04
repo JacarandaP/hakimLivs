@@ -27,8 +27,8 @@
     font-family: 'Zen Dots', cursive;
     font-weight: bold;
     font-style: italic;
-   /* text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);*/
-    color:  #ffb342;
+    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);
+    color:  #fff;
     border-radius: 10px;
     padding: 5px;
     
@@ -38,8 +38,8 @@
     font-family: 'Zen Dots', cursive;
     font-weight: bold;
     font-style: italic;
-    /*text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);  */
-    color: #ffb342;
+    text-shadow: 0px 0px 2px #FFF,4px 4px 2px rgba(0,0,0,0.3);  
+    color: #fff;
     border-radius: 10px;
     padding: 5px;
     
@@ -110,32 +110,41 @@ footer{
 }
 
 #navbar {
-    background-color: #edede8;
+    background-color: #353535;
     color:#ffb342;
 }
 
-.footer {
-    background-color: #edede8;
-    color:#bbbbb7;
+.footer{
+    background-color: #353535;
+    color:#fff;
 }
 
-.btn-primary, .button-regi, #confirmbtn {
+.buy-btn, .edit-btn, .login-btn, #confirmbtn,
+.no-btn, .keep-shopping-btn, .register-btn{
     background-color: #ffb342;
     border-color: transparent;
+    color:#fff;
 }
 
-.btn-primary:hover{
+.buy-btn:hover, .edit-btn:hover, .no-btn:hover, #confirmbtn:hover,
+.keep-shopping-btn:hover, .register-btn:hover, .login-btn:hover{
     background-color: #ffcd42;
     border-color: transparent;
+    color:#fff;
+    
 }
 
-#clear, .logout-btn {
+.logout-btn, .yes-btn, .update-btn, 
+.button-regi, #clear, #logout-sidebar{
     background-color:#ff6739;
     border-color: transparent;
+    color:#fff;
 }
-#clear:hover, .logout-btn:hover{
+.logout-btn:hover, .yes-btn:hover, .update-btn:hover,
+#clear:hover, #logout-sidebar:hover{
     background-color:#ff8f6d;
     border-color: transparent;
+    color:#fff;
 }
 
 .sidebar-icon:hover{
@@ -147,7 +156,7 @@ footer{
     background-color:transparent;
 }
 
-.close-sidebar:hover{
+.close-sidebar:hover, .trash-icon:hover{
     color:#ff6739;
     background-color:transparent;
 }
@@ -158,5 +167,15 @@ footer{
     background-color:#ffb342;;
 }
 
+
+/*#clear{
+    background-color:#404247;
+    border-color: transparent;
+}
+
+#clear:hover{
+    background-color:#585c63;
+    border-color: transparent;
+}*/
 
 
