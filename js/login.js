@@ -48,7 +48,7 @@ let frontendReacts=(profile)=>{
         if( password.value.length >0 && usernameEmail.value.length>0)
         {
           $('#loginBtn').prop('disabled', false);
-          $('#loginBtn').css('background-color', ' #ffcd42')
+          $('#loginBtn').css('background-color', ' #ffb342')
         }
          else if ( password.value.length ==0 || usernameEmail.value.length==0)
          $('#loginBtn').prop('disabled', true).css('background-color', '#D0C4B2');

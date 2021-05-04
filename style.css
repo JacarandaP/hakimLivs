@@ -167,7 +167,9 @@ footer{
     background-color:#ffb342;;
 }
 
-
+#footer .bi:hover{
+    color:white;
+}
 /*#clear{
     background-color:#404247;
     border-color: transparent;
