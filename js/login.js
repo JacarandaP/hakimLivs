@@ -60,8 +60,8 @@ let frontendReacts=(profile)=>{
 function logIn(){
   let username = $("#usernameEmail").val();
   let password = $("#password").val();
-
-  console.log(username);
+  let goTo=location.href.split('=')[1]
+ 
 
   fetch("https://hakimssuperserver.herokuapp.com/customer/checkcustomer/"+username+"/"+password+"",
     { method:"POST",
@@ -78,6 +78,10 @@ function logIn(){
         } else {
           userJ = JSON.parse(user);
           let profile = storeInloggedUser(userJ);
+
+          if(goTo!=null)
+            location.href='kassa.html';
+          else
           location.href='index.html';
         }
       })
