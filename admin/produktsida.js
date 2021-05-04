@@ -12,7 +12,7 @@ $("#show-image").on("click",()=>{
 let renderCombobox=(category)=>{
     let template=`<option value="${category.id}">${category.name}</option>`
     $('#category-combobox').append(template)
-    console.log($('#titleBox').attr('productid'))
+  //  console.log($('#titleBox').attr('productid'))
 }
 
 getCategories(renderCombobox);
@@ -31,8 +31,9 @@ let printProduct=()=>{
                 $('#descriptionBox').val(product.description);
                 $('#priceBox').val(product.price);
                 $('#imageBox').val(product.image);
-               $("option[value='"+product.category+"'").attr("selected",true)
+               $("option[value='"+product.category.id+"'").attr("selected",true)
                 printImage();
+
             }
        }
         )
