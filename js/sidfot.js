@@ -10,7 +10,7 @@ let footerData=()=>{
     fetch(footerAddress).then(resp=>resp.json()).then(json=> $('#footer').append(footerTemplate(json)))
 }
 let footerTemplate=(footer)=>
-`<div class="w3-container bg-light">
+`<div id= footer-color class="w3-container ">
 <div class="row pt-4 pl-2 pr-2 text-center footer">
 <div class="col-12 col-sm-6 bi bi-envelope-fill" style="font-size:1rem">
 <b></b> 
