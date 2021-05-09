@@ -83,7 +83,6 @@ function Product(id, title, description, price, category, amount) {
    */
 
  function AddProduct(e){
-
     let productID =  (e.getAttribute('productID'));
     let productTitle = (e.getAttribute('productTitle'));
     let productDes = (e.getAttribute('productDescription'));
@@ -100,6 +99,7 @@ function Product(id, title, description, price, category, amount) {
     let newProductInCart = new Product(productID, productTitle, productDes, productPrice, productCat, productAmount);
     shoppingCart.push(newProductInCart);
     saveCart();
+    $('#counter-sidebar').text(Number($('#counter').text()) + 1); //for the icon in the sidebar, add one when clicking köp
     }
 
 /**
