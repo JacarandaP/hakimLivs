@@ -121,6 +121,7 @@ function Product(id, title, description, price, category, amount) {
             
        }
        else{
+        $('#counter-sidebar').show(); 
         $('#counter').show();
         $('#counter').html(totalAmountProducts);
        }
