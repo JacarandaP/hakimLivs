@@ -62,7 +62,17 @@ function logIn(){
   let password = $("#password").val();
   let goTo=location.href.split('=')[1]
  
-  getAuth(username, password);
+  const tokenPayload = getAuth(username, password);
+  // returnerar bara payload nu
+
+  // spara token i localstorage
+  localStorage.setItem(
+    "TOKEN",
+    JSON.stringify({ email: user.email}) // 
+  );
+
+
+  // skicka med token för att hämta användardata
 
   getUserData(username, password);
 
@@ -102,10 +112,7 @@ function getAuth(email, password){
 }
 
 
-function parseJwtToken(token){
- // bearer före token
-  //const token = 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aWxtYSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiIsImlhdCI6MTYzMTUyNjIzNSwiZXhwIjoxNjMxNTI2ODM1fQ.6TbqBx1rydPsuKIsikp5WOQ1bCfyuCsgvlMNmpJRIZ7d4wsnjKiMqvFHL41LqT5OWFz0rTUGM163HXNZ4r5p9g';
-    
+function parseJwtToken(token){  
   var base64Url = token.split('.')[1];
   var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
   var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
@@ -118,7 +125,6 @@ function parseJwtToken(token){
 }
 
 function getUserData(username, password){
-
   fetch("https://hakimssuperserver.herokuapp.com/customer/checkcustomer/"+username+"/"+password+"",
     { method:"POST",
     headers: {
