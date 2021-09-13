@@ -53,6 +53,7 @@ let frontendReacts=(profile)=>{
          else if ( password.value.length ==0 || usernameEmail.value.length==0)
          $('#loginBtn').prop('disabled', true).css('background-color', '#D0C4B2');
         })
+
        
 })
 
@@ -61,6 +62,62 @@ function logIn(){
   let password = $("#password").val();
   let goTo=location.href.split('=')[1]
  
+  getAuth(username, password);
+
+  getUserData(username, password);
+
+
+
+
+    
+}
+
+/*
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aWxtYSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiIsImlhdCI6MTYzMTUyNjIzNSwiZXhwIjoxNjMxNTI2ODM1fQ.6TbqBx1rydPsuKIsikp5WOQ1bCfyuCsgvlMNmpJRIZ7d4wsnjKiMqvFHL41LqT5OWFz0rTUGM163HXNZ4r5p9g
+
+{sub: "vilma", authorities: "ROLE_ADMIN", iat: 1631526235, exp: 1631526835}
+authorities: "ROLE_ADMIN"
+exp: 1631526835
+iat: 1631526235
+sub: "vilma"
+*/
+
+function getAuth(email, password){
+
+  const response = fetch("https://hakimssuperserver.herokuapp.com/customer/checkcustomer/"+username+"/"+password+"",
+    { method : 'POST',
+    headers: {
+      'Content-Type' : 'application/json'
+    }, 
+    body : body
+    });
+
+    const tokenJ;
+
+  response.then( resp => resp.text()).then((token) => {
+    tokenJ = parseJwtToken(token);
+  });  
+
+  return tokenJ;
+}
+
+
+function parseJwtToken(token){
+ // bearer före token
+  //const token = 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aWxtYSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiIsImlhdCI6MTYzMTUyNjIzNSwiZXhwIjoxNjMxNTI2ODM1fQ.6TbqBx1rydPsuKIsikp5WOQ1bCfyuCsgvlMNmpJRIZ7d4wsnjKiMqvFHL41LqT5OWFz0rTUGM163HXNZ4r5p9g';
+    
+  var base64Url = token.split('.')[1];
+  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  //console.log(JSON.parse(jsonPayload));
+
+  return JSON.parse(jsonPayload);
+}
+
+function getUserData(username, password){
 
   fetch("https://hakimssuperserver.herokuapp.com/customer/checkcustomer/"+username+"/"+password+"",
     { method:"POST",
@@ -84,14 +141,14 @@ function logIn(){
           location.href='index.html';
         }
       })
-    
+
 }
 
 function storeInloggedUser(user){
 
   localStorage.setItem(
     "CREDENTIALS",
-    JSON.stringify({ email: user.email, password: user.password })
+    JSON.stringify({ email: user.email, password: user.password, token: user.token })
   );
 
   profile = {
