@@ -5,7 +5,7 @@ var obj = {
   password: 'test'
 };
 */
-const loginaddress= "https://localhost:8082/login"
+const loginaddress= "http://localhost:8082/login"
 //const  loginForm  =  document.getElementById("loginForm");
 const usernameEmail = document.getElementById("usernameEmail");
 const password = document.getElementById("password");
