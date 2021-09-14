@@ -66,11 +66,11 @@ function logIn(){
   // returnerar bara payload nu
 
   // spara token i localstorage
-  localStorage.setItem(
-    "TOKEN",
-    tokenPayload
+ // localStorage.setItem(
+   // "TOKEN",
+ //   tokenPayload
     //JSON.stringify({ email: user.email}) // 
-  );
+//  );
 
 
   // skicka med token för att hämta användardata
@@ -83,21 +83,23 @@ function logIn(){
     
 }
 function getAuth(email, password){
-let tokenJ;
+//let tokenJ;
   const response = fetch(loginaddress,
     { method : 'POST',
     headers: {
       'Accept': '*/*',
       'Content-Type' : 'application/json'
     }, 
-    body : {email:email,password:password}
+    body : JSON.stringify({email:email,password:password})
     });
-  response.then( resp => resp.json()).then((token) => {
-    console.log(JSON.stringify(token)+"the token")
-    tokenJ = token;
+  response.then( resp => resp.text()).then((token) => {
+    
+    localStorage.setItem(
+      "TOKEN",token)
+  //  tokenJ = JSON.stringify(token);
   });  
 
-  return tokenJ;
+ // return tokenJ;
 }
 
 /*
