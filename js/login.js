@@ -5,7 +5,7 @@ var obj = {
   password: 'test'
 };
 */
-
+const loginaddress= "https://localhost:8082/login"
 //const  loginForm  =  document.getElementById("loginForm");
 const usernameEmail = document.getElementById("usernameEmail");
 const password = document.getElementById("password");
@@ -68,7 +68,8 @@ function logIn(){
   // spara token i localstorage
   localStorage.setItem(
     "TOKEN",
-    JSON.stringify({ email: user.email}) // 
+    tokenPayload
+    //JSON.stringify({ email: user.email}) // 
   );
 
 
@@ -81,9 +82,28 @@ function logIn(){
 
     
 }
+function getAuth(email, password){
+let tokenJ;
+  const response = fetch(loginaddress,
+    { method : 'POST',
+    headers: {
+      'Accept': '*/*',
+      'Content-Type' : 'application/json'
+    }, 
+    body : {email:email,password:password}
+    });
 
+  
 
+  response.then( resp => resp.json()).then((token) => {
+    console.log(JSON.stringify(token)+"the token")
+    tokenJ = token;
+  });  
 
+  return tokenJ;
+}
+
+/*
 function getAuth(email, password){
 
   const response = fetch("https://hakimssuperserver.herokuapp.com/customer/checkcustomer/"+username+"/"+password+"",
@@ -102,7 +122,7 @@ function getAuth(email, password){
 
   return tokenJ;
 }
-
+*/
 
 function parseJwtToken(token){  
   var base64Url = token.split('.')[1];
