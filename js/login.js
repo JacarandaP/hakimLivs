@@ -82,15 +82,7 @@ function logIn(){
     
 }
 
-/*
-eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aWxtYSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiIsImlhdCI6MTYzMTUyNjIzNSwiZXhwIjoxNjMxNTI2ODM1fQ.6TbqBx1rydPsuKIsikp5WOQ1bCfyuCsgvlMNmpJRIZ7d4wsnjKiMqvFHL41LqT5OWFz0rTUGM163HXNZ4r5p9g
 
-{sub: "vilma", authorities: "ROLE_ADMIN", iat: 1631526235, exp: 1631526835}
-authorities: "ROLE_ADMIN"
-exp: 1631526835
-iat: 1631526235
-sub: "vilma"
-*/
 
 function getAuth(email, password){
 
