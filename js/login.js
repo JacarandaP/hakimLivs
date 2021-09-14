@@ -92,9 +92,6 @@ let tokenJ;
     }, 
     body : {email:email,password:password}
     });
-
-  
-
   response.then( resp => resp.json()).then((token) => {
     console.log(JSON.stringify(token)+"the token")
     tokenJ = token;
