@@ -6,6 +6,8 @@ var obj = {
 };
 */
 const loginaddress= "http://localhost:8082/login"
+const detailsAddress = "http://localhost:8082/customer/getmydetails/"
+//const detailsAddress = "https://hakimssuperserver.herokuapp.com/customer/getmydetails/"
 //const  loginForm  =  document.getElementById("loginForm");
 const usernameEmail = document.getElementById("usernameEmail");
 const password = document.getElementById("password");
@@ -75,7 +77,7 @@ function logIn(){
 
   // skicka med token för att hämta användardata
 
-  getUserData(username, password);
+  getUserData();
 
 
 
@@ -135,13 +137,16 @@ function parseJwtToken(token){
   return JSON.parse(jsonPayload);
 }
 
-function getUserData(username, password){
-  fetch("https://hakimssuperserver.herokuapp.com/customer/checkcustomer/"+username+"/"+password+"",
+function getUserData(){
+  const token = localStorage.getItem("TOKEN");
+  console.log(token);
+  fetch(detailsAddress,
     { method:"POST",
     headers: {
         'Accept': '*/*',
-        'Content-Type': 'application/json'}}).
-      then(resp=>resp.text()).
+        'Content-Type': 'application/json',
+        'Authorization' : token}}).
+      then(resp=>resp.body.text()).
       then(function (user){
 
         if(!user){
@@ -162,11 +167,12 @@ function getUserData(username, password){
 }
 
 function storeInloggedUser(user){
-
+/*
   localStorage.setItem(
     "CREDENTIALS",
     JSON.stringify({ email: user.email, password: user.password, token: user.token })
   );
+  */
 
   profile = {
     customerID: user.id,
