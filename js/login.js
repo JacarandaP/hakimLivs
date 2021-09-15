@@ -119,7 +119,7 @@ function getAuth(email, password){
 
 
 function getUserData(){
-  const token = localStorage.getItem("TOKEN");
+  const token = localStorage.getItem('TOKEN');
   console.log(token);
   fetch(detailsAddress,
     { method:"POST",
@@ -127,9 +127,10 @@ function getUserData(){
         'Accept': '*/*',
         'Content-Type': 'application/json',
         'Authorization' : token}})
-        .then(resp=>resp.body.text())
-        .then()
-      // skicka parsad customer till storeInloggedCustomer
+        .then(res=>res.json())
+        .then(user=> {
+          userJ = JSON.parse(user);
+          let profile = storeInloggedUser(userJ);})
       
       /*
       then(function (user){
@@ -153,12 +154,6 @@ function getUserData(){
 }
 
 function storeInloggedUser(user){
-/*
-  localStorage.setItem(
-    "CREDENTIALS",
-    JSON.stringify({ email: user.email, password: user.password, token: user.token })
-  );
-  */
 
   profile = {
     customerID: user.id,
