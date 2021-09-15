@@ -22,14 +22,37 @@
         
 
         <form class="form-group" id="loginForm" >
-        <label for="username" >Adminnamn</label>
-        <input id="username" name= "username" class="form-control" type="text" placeholder="Skriv in registrerad namn" oninvalid="this.setCustomValidity('fyll i det här fältet med ditt adminsnamn')"  oninput="setCustomValidity('')" required><br>
+        <label for="emailLogin" >Adminnamn</label>
+        <input id="emailLogin" name= "email" class="form-control" type="text" placeholder="Skriv in registrerad namn" oninvalid="this.setCustomValidity('fyll i det här fältet med ditt adminsnamn')"  oninput="setCustomValidity('')" required><br>
         <label for="password" >Lösenord</label>
         <input id="password" name="password" class="form-control" type="password" placeholder="Skriv in lösenord" oninvalid="this.setCustomValidity('fyll i det här fältet med din lösenord')"  oninput="setCustomValidity('')" required>
         <button id="loginBtn" class="mt-4 btn btn-primary w-100" type="submit">Logga in</button>
         <div id="login-error-msg-holder" class="container pt-5 text-center" >
-            <p id="errorMessage">Ogiltigt Adminnamn <span id="error-msg-next-line">och / eller Lösenord</span></p>
+            <p id="errorMessage">Ogiltigt email <span id="error-msg-next-line">och / eller Lösenord</span></p>
           </div>
+      </form>
+
+      <h3 style="text-align: center">Registrera konto</h3>
+
+        <form class="form-group" id="signupForm" >
+            <div id="signup-error-msg-holder" class="container pt-5 text-center" >
+                <p id="errorMessage2">Ogiltigt Adminnamn <span id="error-msg-next-line">och / eller Lösenord</span></p>
+              </div>
+        <label for="emailsignup" >Email</label>
+        <input id="emailsignup" name= "email" class="form-control" type="email" placeholder="Skriv in din email" oninvalid="this.setCustomValidity('fyll i det här fältet med ditt email')"  oninput="setCustomValidity('')" required><br>
+        <label for="usernamesignup" >Namn</label>
+        <input id="usernamesignup" name= "firstname" class="form-control" type="text" placeholder="Skriv in ditt namn" oninvalid="this.setCustomValidity('fyll i det här fältet med ditt namn')"  oninput="setCustomValidity('')" required><br>
+        <label for="lastnamesignup" >Efternamn</label>
+        <input id="lastnamesignup" name= "lastname" class="form-control" type="text" placeholder="Skriv in ditt efternamn" oninvalid="this.setCustomValidity('fyll i det här fältet med ditt efternamn')"  oninput="setCustomValidity('')" required><br>
+       
+        <label for="passwordsignup" >Lösenord</label>
+        <input id="passwordsignup" name="password" class="form-control" type="password" placeholder="Skriv in din lösenord" oninvalid="this.setCustomValidity('fyll i det här fältet med din lösenord')"  oninput="setCustomValidity('')" required><br>
+       
+        <label for="accesstoken" >Åtkomsttoken</label>
+        <input id="accesstoken" name= "secretToken" class="form-control" type="text" placeholder="Skriv in Åtkomsttoken" oninvalid="this.setCustomValidity('fyll i det här fältet med ditt åtkomsttoken')"  oninput="setCustomValidity('')" required><br>
+       
+        <button id="signUpBtn" class="mt-4 btn btn-primary w-100" type="submit">Registrera</button>
+        
       </form>
     </div>
     <div id="footer">
