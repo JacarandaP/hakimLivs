@@ -90,7 +90,7 @@ function getAuth(email, password){
       if(resp.status == 200){
         return resp.json()
       } else {
-        return res
+        return resp
       }
     }).then(resp => frontendReacts(resp))
 /*
