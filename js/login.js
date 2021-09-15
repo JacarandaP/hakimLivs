@@ -64,26 +64,14 @@ function logIn(){
   let password = $("#password").val();
   let goTo=location.href.split('=')[1]
  
-  const tokenPayload = getAuth(username, password);
-  // returnerar bara payload nu
-
-  // spara token i localstorage
- // localStorage.setItem(
-   // "TOKEN",
- //   tokenPayload
-    //JSON.stringify({ email: user.email}) // 
-//  );
-
-
-  // skicka med token för att hämta användardata
-
-  getUserData();
+  getAuth(username, password);
 
 
 
-
+  //getUserData();
     
 }
+
 function getAuth(email, password){
 //let tokenJ;
   const response = fetch(loginaddress,
@@ -94,48 +82,41 @@ function getAuth(email, password){
     }, 
     body : JSON.stringify({email:email,password:password})
     });
-  response.then( resp => resp.text()).then((token) => {
-    
-    localStorage.setItem(
-      "TOKEN",token)
-  //  tokenJ = JSON.stringify(token);
-  });  
 
- // return tokenJ;
-}
-
+    response.then (resp => {
+      if(resp.status == 200){
+        return resp.json()
+      } else {
+        return res
+      }
+    }).then(resp => frontendReacts(resp))
 /*
-function getAuth(email, password){
-
-  const response = fetch("https://hakimssuperserver.herokuapp.com/customer/checkcustomer/"+username+"/"+password+"",
-    { method : 'POST',
-    headers: {
-      'Content-Type' : 'application/json'
-    }, 
-    body : body
-    });
-
-    const tokenJ;
-
   response.then( resp => resp.text()).then((token) => {
-    tokenJ = parseJwtToken(token);
-  });  
+    localStorage.setItem("TOKEN",token)});  */
 
-  return tokenJ;
 }
-*/
 
-function parseJwtToken(token){  
-  var base64Url = token.split('.')[1];
-  var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-  }).join(''));
+/**
+ *  the reaction of frontend when gets the message from backend
+ * @param {a json response from backend} response 
+ */
 
-  //console.log(JSON.parse(jsonPayload));
+ let frontendReacts=(response)=>{
+  if(response.status!=400){
+      sessionStorage.setItem('TOKEN',response.token)
+      getUserData();
 
-  return JSON.parse(jsonPayload);
-}
+      location.href="index.html"
+      
+  }
+      else{
+        console.log("Lösen eller användarnamn blev fel");
+        loginErrorMsg.style.opacity = 1;
+        $('#errorMessage').html("Användarnamnet eller lösenordet stämmer inte, försök igen!");
+      }
+     
+  }
+
 
 function getUserData(){
   const token = localStorage.getItem("TOKEN");
@@ -145,8 +126,12 @@ function getUserData(){
     headers: {
         'Accept': '*/*',
         'Content-Type': 'application/json',
-        'Authorization' : token}}).
-      then(resp=>resp.body.text()).
+        'Authorization' : token}})
+        .then(resp=>resp.body.text())
+        .then()
+      // skicka parsad customer till storeInloggedCustomer
+      
+      /*
       then(function (user){
 
         if(!user){
@@ -163,6 +148,7 @@ function getUserData(){
           location.href='index.html';
         }
       })
+      */
 
 }
 
