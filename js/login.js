@@ -117,10 +117,6 @@ function getAuth(email, password){
       }
      
 
-      if(localStorage.getItem("PROFILE") != null){
-        //console.log("nåt i session profile")
-        location.href='index.html';
-      }
          
       //await new Promise(r => setTimeout(r, 2000));
       //location.href="index.html"
