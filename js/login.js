@@ -5,9 +5,12 @@ var obj = {
   password: 'test'
 };
 */
-const loginaddress= "http://localhost:8082/login"
-const detailsAddress = "http://localhost:8082/customer/getmydetails/"
-//const detailsAddress = "https://hakimssuperserver.herokuapp.com/customer/getmydetails/"
+// changed urls for deplyment
+
+//const loginaddress= "http://localhost:8082/login"
+const loginaddress= "https://hakimssuperserver.herokuapp.com/login"
+//const detailsAddress = "http://localhost:8082/customer/getmydetails/"
+const detailsAddress = "https://hakimssuperserver.herokuapp.com/customer/getmydetails/"
 //const  loginForm  =  document.getElementById("loginForm");
 const usernameEmail = document.getElementById("usernameEmail");
 const password = document.getElementById("password");
