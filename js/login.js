@@ -125,7 +125,7 @@ function getUserData(){
   const token = sessionStorage.getItem('TOKEN');
   console.log(token);
   fetch(detailsAddress,
-    { method:"POST",
+    { method:"GET",
     headers: {
         'Accept': '*/*',
         'Content-Type': 'application/json',
