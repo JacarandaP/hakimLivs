@@ -126,7 +126,7 @@ function getUserData(){
     headers: {
         'Accept': '*/*',
         'Content-Type': 'application/json',
-        'Authorization' : token}})
+        'Authorization': ''+token+''}})
         .then(res=>res.json())
         .then(user=> {
           userJ = JSON.parse(user);
