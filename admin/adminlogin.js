@@ -1,5 +1,5 @@
-const signupaddres="http://localhost:8080/signup"
-const loginaddres="http://localhost:8080/login"
+const signupaddres="http://hakimssuperserver.herokuapp.com/signup"
+const loginaddres="http://hakimssuperserver.herokuapp.com/login"
 let loginButton=$('#loginBtn')
 const signUpButton=$('#signUpBtn')
 
