@@ -122,7 +122,7 @@ function getAuth(email, password){
 
 
 function getUserData(){
-  const token = localStorage.getItem('TOKEN');
+  const token = sessionStorage.getItem('TOKEN');
   console.log(token);
   fetch(detailsAddress,
     { method:"POST",
