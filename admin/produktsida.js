@@ -59,11 +59,11 @@ product={id:$('#titleBox').attr('productid'),title:$('#titleBox').val(),descript
 
 let sendProductToDB=(product)=>{
 
-    fetch('https://hakimssuperserver.herokuapp.com/product/add',
+    fetch(addProductAddress,
     { method:"POST",
     headers: {
         'Accept': '*/*',
-        'Content-Type': 'application/json'},
+        'Content-Type': 'application/json','Authorization': ''+token+''},
       body:JSON.stringify(product)}).
       then(resp=>resp.json()).
       then(json=>console.log(json))
