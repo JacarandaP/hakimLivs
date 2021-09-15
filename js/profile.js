@@ -5,27 +5,34 @@ const credentials=JSON.parse(localStorage.getItem('CREDENTIALS'));
 let renderOrders;
 
 let fetchProfile=(credentials,render) => {
-
-  fetch(profileAPI(credentials.email,credentials.password))
-  .then((res) => res.json())
-  .then((profile)=>{
+const profile=JSON.parse(localStorage.getItem("PROFILE"));
+ // fetch(profileAPI(credentials.email,credentials.password),{headers: {
+  //  'Accept': '*/*',
+ 
+ // 'Content-Type': 'application/json',
+ //     'Authorization': ''+token+''}})
+ // .then((res) => res.json())
+ // .then((profile)=>{
    render(profile)
-  })
+//  })
 }
 let updateProfile=(profile,render)=>{
 fetch(postUpdateProfile,
 { method:"POST",
 headers: {
     'Accept': '*/*',
-    'Content-Type': 'application/json'},
+    'Content-Type': 'application/json',
+      'Authorization': ''+token+''},
   body:JSON.stringify(profile)}).
   then(resp=>resp.json()).
   then(updatedProfile=>{
-    
-    render(updatedProfile)
+    console.log(updatedProfile)
+   // render(updatedProfile)
     //save to local storage
     let newProfile={customerID: updatedProfile.id,name:updatedProfile.firstname,lastname:updatedProfile.lastname,address:updatedProfile.address,email:updatedProfile.email,telephone:updatedProfile.telephone,postort:updatedProfile.city,postnummer:updatedProfile.zip}
     localStorage.setItem('PROFILE', JSON.stringify(newProfile));
+    render(updatedProfile)
+    loadProfileTable(updatedProfile)
   })
 }
 /**
@@ -33,23 +40,23 @@ headers: {
  */
  const renderProfileTable=(profile)=>{
  // let profile=JSON.parse(localStorage.getItem("PROFILE"));
-  $('#user-name').text(formatNameSimple(profile.firstname))
+  $('#user-name').text(formatNameSimple(profile.name))
   $('#user-last-name').text(formatNameSimple(profile.lastname))
   $('#user-all-names').text(formatNameSimple(profile.name + " " + profile.lastname))
   $('#user-phone-number').text(formatPhone(profile.telephone))
   $('#user-address').text(formatNameSimple(profile.address))
-  $('#user-city').text(formatNameSimple(profile.city))
-  $('#user-zip').text(formatZip(profile.zip))
+  $('#user-city').text(formatNameSimple(profile.postort))
+  $('#user-zip').text(formatZip(profile.postnummer))
 
 }
 const renderProfileToForm=(profile)=>{
- // let profile=JSON.parse(localStorage.getItem("PROFILE"));
-  $('#form-name').val(profile.firstname)
+ //let profile=JSON.parse(localStorage.getItem("PROFILE"));
+  $('#form-name').val(profile.name)
   $('#form-last-name').val(profile.lastname)
   $('#form-phone').val(profile.telephone)
-  $('#form-city').val(profile.city)
+  $('#form-city').val(profile.postort)
   $('#form-address').val(profile.address)
-  $('#form-zip').val(profile.zip)
+  $('#form-zip').val(profile.postnummer)
 
 }
 $('#submit-profile-changes').click((e)=>{
@@ -102,7 +109,9 @@ function saveMyOrders() {
 /**END OF MOCK UP SET UP */
 
 function profileInit(){
-  fetchProfile(credentials,renderProfileTable)
+  console.log(JSON.parse(localStorage.getItem("PROFILE")))
+  renderProfileTable(JSON.parse(localStorage.getItem("PROFILE")))
+ // fetchProfile(credentials,renderProfileTable)
   
  // saveProfile() //this is for MOCK UP data!!! needs to be commented in a near future
  // saveMyOrders() // this is for MOCK UP data!!

@@ -214,7 +214,7 @@ console.log(orderDetails);
     { method:"POST",
     headers: {
         'Accept': '*/*',
-        'Content-Type': 'application/json'},
+        'Content-Type': 'application/json','Authorization': ''+token+''},
       body:JSON.stringify(orderDetails)}).
       then(resp=>resp.json()).
       then(json=>console.log(json))

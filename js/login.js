@@ -104,11 +104,11 @@ function getAuth(email, password){
  * @param {a json response from backend} response 
  */
 
- let frontendReacts=(response)=>{
+ let frontendReacts= async (response)=>{
   if(response.status!=400){
       sessionStorage.setItem('TOKEN',response.token)
       getUserData();
-
+      await new Promise(r => setTimeout(r, 2000));
       location.href="index.html"
       
   }
@@ -122,7 +122,7 @@ function getAuth(email, password){
 
 
 function getUserData(){
-  const token = sessionStorage.getItem('TOKEN');
+ // const token = sessionStorage.getItem('TOKEN');
   console.log(token);
   fetch(detailsAddress,
     { method:"GET",
@@ -132,8 +132,10 @@ function getUserData(){
         'Authorization': ''+token+''}})
         .then(res=>res.json())
         .then(user=> {
-          //userJ = JSON.parse(user);
-          let profile = storeInloggedUser(user);})
+         // console.log(user)
+       // userJ = JSON.parse(user);
+          storeInloggedUser(user);
+        })
       
       /*
       then(function (user){
@@ -170,6 +172,11 @@ function storeInloggedUser(user){
     password: user.password,
   };
   localStorage.setItem("PROFILE", JSON.stringify(profile));
+  localStorage.setItem(
+    "CREDENTIALS",
+    JSON.stringify({ email: user.email, password: user.password })
+  );
   return profile;
 }
+
     
