@@ -7,7 +7,7 @@
 async function sendUserToDB(user){
 const response = await fetch(signupAddress,{
   method: "POST",
-    headers: { Accept: "*/*", "Content-Type": "application/json" },
+    headers: { 'Accept': "*/*", "Content-Type": "application/json" },
     body: JSON.stringify(user),
 })
 if(response.status==200){

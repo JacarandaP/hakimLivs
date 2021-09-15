@@ -74,10 +74,11 @@ function logIn(){
   //getUserData();
     
 }
-
-function getAuth(email, password){
+//if response status 200 all good
+//if response status bad request teknisk fel
+async function getAuth(email, password){
 //let tokenJ;
-  const response = fetch(loginaddress,
+  const response =await fetch(loginaddress,
     { method : 'POST',
     headers: {
       'Accept': '*/*',
@@ -85,7 +86,20 @@ function getAuth(email, password){
     }, 
     body : JSON.stringify({email:email,password:password})
     });
-
+if (response.status!=200){
+console.log("Lösen eller användarnamn blev fel");
+        loginErrorMsg.style.opacity = 1;
+        $('#errorMessage').html("Användarnamnet eller lösenordet stämmer inte, försök igen!");
+      }
+else{
+const object=await response.json();
+sessionStorage.setItem('TOKEN',object.token)
+      profile = getUserData(object.token);
+      Swal.fire('Du är loggad i!').then((result)=>{if(result.isConfirmed)window.location.href = "index.html";})
+}
+//sessionStorage.setItem('TOKEN',object.token)
+ //     profile = getUserData();
+/*
     response.then (resp => {
       console.log(resp.text());
       if(resp.status == 200){
@@ -132,9 +146,9 @@ function getAuth(email, password){
   }
 
 
-function getUserData(){
+function getUserData(token){
  //const token = sessionStorage.getItem('TOKEN');
-  console.log(token);
+  //console.log(token);
   fetch(detailsAddress,
     { method:"GET",
     headers: {
