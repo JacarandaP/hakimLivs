@@ -132,8 +132,8 @@ function getUserData(){
         'Authorization': ''+token+''}})
         .then(res=>res.json())
         .then(user=> {
-          userJ = JSON.parse(user);
-          let profile = storeInloggedUser(userJ);})
+          //userJ = JSON.parse(user);
+          let profile = storeInloggedUser(user);})
       
       /*
       then(function (user){
