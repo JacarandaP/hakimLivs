@@ -18,17 +18,18 @@ $('#errorMessage2').css('color','red');
  * @param {a json response from backend} response 
  */
 let frontendReacts=(response)=>{
-    if(response==200){
-        //go to admin page
-        //let credentials={name:$('#username').val(),password:$('#password').val()}
-        sessionStorage.setItem('TOKEN',JSON.stringify(response.body))
+    if(response.status!=400){
+        sessionStorage.setItem('TOKEN',response.token)
         location.href="adminHome.html"
     }
-    else
-  $('#errorMessage').fadeIn("slow")
-  $('#errorMessage').fadeOut(5000)
-    //ERRROR
-}
+        else{
+        $('#errorMessage').text(response.status + " error");
+        $('#errorMessage').fadeIn("slow")
+        $('#errorMessage').fadeOut(5000)
+        }
+       // "
+    }
+
 loginButton.on('click',(e)=>{
     e.preventDefault();
     const login={
@@ -41,8 +42,12 @@ loginButton.on('click',(e)=>{
         headers:{'Accept':'application/json, text/plain, */*',
         'Content-Type': 'application/json' },
         body:JSON.stringify(login)})
-        .then(res=>res)
-        .then(res=>frontendReacts(res.status))
+        .then(res=>{
+            if(res.status==200)
+            return res.json()
+        else
+            return res}) //promise -> som body-text
+        .then(res=>frontendReacts(res))
 
     })
 
