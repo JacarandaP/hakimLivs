@@ -66,7 +66,7 @@ function logIn(){
   let username = $("#usernameEmail").val();
   let password = $("#password").val();
   let goTo=location.href.split('=')[1]
- 
+  
   getAuth(username, password);
 
 
@@ -87,6 +87,7 @@ function getAuth(email, password){
     });
 
     response.then (resp => {
+      console.log(resp.text());
       if(resp.status == 200){
         return resp.json()
       } else {
