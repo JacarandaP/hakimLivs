@@ -54,9 +54,9 @@ $('#show-footer-update').hide();
 let renderOrders=(order)=>{
     let template=$('#order-katalog-item').contents().clone()
     template.find('.order-id > a').text(order.id)
-    template.find('.order-customer').text(order.customer)
+    template.find('.order-customer').text(order.customer.id)
     template.find('.order-date').text(order.createDate)
-    template.find('.order-price').text(Number(order.price).toFixed(2).replace(".", ","))
+    template.find('.order-price').text(Number(order.orderDetails.forEach(product=>++product.price)).toFixed(2).replace(".", ","))
    
     $('#to-append-orders').append(template);
 }
