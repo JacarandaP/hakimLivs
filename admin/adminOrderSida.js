@@ -1,5 +1,6 @@
 const customerData='../mockupdata/fakeUsers.json';
-const customersOrders='../mockupdata/adminorders.json';
+const customersOrders='https://hakimssuperserver.herokuapp.com/orders/all';
+//const customersOrders='../mockupdata/adminorders.json';
 const productsAPI='../mockupdata/products.json'
 let orderId;
 
@@ -24,12 +25,12 @@ fetch(customerData)
  * get order data
  */
 let getOrderData=(render,orderId)=>{
-    fetch(customersOrders).then(resp=>resp.json()).then(json=>{
-     
+    fetch(customersOrders,{headers:{'Accept':'*/*','Content-Type': 'application/json','Authorization':token}}).then(resp=>resp.json()).then(json=>{
         json.forEach((orders)=>{
             if(orders.orderId==orderId){
              render(orders)
-            setCustomerData(renderCustomerData,orders.customerId)}
+          //  setCustomerData(renderCustomerData,orders.customerId)
+        }
             })
         })
 }

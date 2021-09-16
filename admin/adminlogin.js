@@ -1,5 +1,5 @@
-const signupaddres="http://hakimssuperserver.herokuapp.com/signup"
-const loginaddres="http://hakimssuperserver.herokuapp.com/login"
+const signupaddres="https://hakimssuperserver.herokuapp.com/signup"
+const loginaddres="https://hakimssuperserver.herokuapp.com/login"
 let loginButton=$('#loginBtn')
 const signUpButton=$('#signUpBtn')
 

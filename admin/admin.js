@@ -1,7 +1,7 @@
 //const toCategoriesAddress='../mockupdata/categories.json'
 const toCategoriesAddress='https://hakimssuperserver.herokuapp.com/category/all'
 //const toProductsAddress='../mockupdata/products.json'
-const toProductsAddress='http://localhost:8080/product'
+const toProductsAddress='https://hakimssuperserver.herokuapp.com/product'
 const toOrdersAddress='../mockupdata/adminorders.json'
 const toFooterData='../mockupdata/adminfooter.json'
 //const sendNewProduct='localhost:8080/product/add'
