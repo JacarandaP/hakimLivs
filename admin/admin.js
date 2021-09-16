@@ -2,7 +2,9 @@
 const toCategoriesAddress='https://hakimssuperserver.herokuapp.com/category/all'
 //const toProductsAddress='../mockupdata/products.json'
 const toProductsAddress='https://hakimssuperserver.herokuapp.com/product'
-const toOrdersAddress='../mockupdata/adminorders.json'
+
+const toOrdersAddress='https://hakimssuperserver.herokuapp.com/orders/all'
+//const toOrdersAddress='../mockupdata/adminorders.json'
 const toFooterData='../mockupdata/adminfooter.json'
 //const sendNewProduct='localhost:8080/product/add'
 
@@ -40,7 +42,7 @@ $('#show-footer-update').hide();
     fetch(toOrdersAddress)
     .then(resp=>resp.json())
     .then((json)=>{
-        json.forEach((order)=>{
+        json.forEach((order)=>{ console.log(order)
         render(order)}
         )
     })
@@ -51,9 +53,9 @@ $('#show-footer-update').hide();
  */
 let renderOrders=(order)=>{
     let template=$('#order-katalog-item').contents().clone()
-    template.find('.order-id > a').text(order.orderId)
-    template.find('.order-customer').text(order.customerId)
-    template.find('.order-date').text(order.date)
+    template.find('.order-id > a').text(order.id)
+    template.find('.order-customer').text(order.customer)
+    template.find('.order-date').text(order.createDate)
     template.find('.order-price').text(Number(order.price).toFixed(2).replace(".", ","))
    
     $('#to-append-orders').append(template);
