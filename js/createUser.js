@@ -12,7 +12,7 @@ const response = await fetch(signupAddress,{
 })
 if(response.status==200){
 $("#registerForm").append(`<div class="text-success text-center">Registrering lyckades med ${user.email} email address,<a href="loggin.html">klicka här för att logga in</a></div>`)
-Swal.fire('Registrering lyckades med '+user.email+' email address').then((result)=>{if(result.isConfirmed)window.location.href = "loggin.html";}) 
+Swal.fire('Registrering lyckades med '+user.email+' emejl-address').then((result)=>{if(result.isConfirmed)window.location.href = "loggin.html";}) 
 }
 else if(response.status==208){
 $("#emailAvailableMsg").html(
