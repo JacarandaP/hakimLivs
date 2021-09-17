@@ -66,9 +66,6 @@ function logIn(){
   let username = $("#usernameEmail").val().toLowerCase();
   let password = $("#password").val();
   let goTo=location.href.split('=')[1]
-
-  console.log($("#usernameEmail").val());
-  console.log($("#usernameEmail").val().toLowerCase());
   
   getAuth(username, password);
 
