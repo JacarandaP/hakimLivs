@@ -63,9 +63,12 @@ let frontendReacts=(profile)=>{
 })
 
 function logIn(){
-  let username = $("#usernameEmail").val();
+  let username = $("#usernameEmail").val().toLowerCase();
   let password = $("#password").val();
   let goTo=location.href.split('=')[1]
+
+  console.log($("#usernameEmail").val());
+  console.log($("#usernameEmail").val().toLowerCase());
   
   getAuth(username, password);
 
@@ -95,7 +98,7 @@ else{
 const object=await response.json();
 sessionStorage.setItem('TOKEN',object.token)
       profile = getUserData(object.token);
-      Swal.fire('Du är loggad i!').then((result)=>{if(result.isConfirmed)window.location.href = "index.html";})
+      Swal.fire('Du är inloggad!').then((result)=>{if(result.isConfirmed)window.location.href = "index.html";})
 }
 //sessionStorage.setItem('TOKEN',object.token)
  //     profile = getUserData();

@@ -48,7 +48,7 @@ $("#registerForm").append('<div class="text-danger text-center">tekniska fel</di
 function createUser() {
   let inputName = $("#firstNameBox").val();
   let inputLastname = $("#lastNameBox").val();
-  let inputEmail = $("#emailBox").val();
+  let inputEmail = $("#emailBox").val().toLowerCase();
   let inputPhone = $("#phoneBox").val();
   let inputAddress = $("#addressBox").val();
   let inputPostort = $("#cityBox").val();
