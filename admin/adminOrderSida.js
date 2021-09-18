@@ -1,13 +1,13 @@
 const customerData='../mockupdata/fakeUsers.json';
 const customersOrders='https://hakimssuperserver.herokuapp.com/orders/all';
 //const customersOrders='../mockupdata/adminorders.json';
-const productsAPI='../mockupdata/products.json'
-let orderId;
+const productsAPI='https://hakimssuperserver.herokuapp.com/product'
+
 
 /**
  *  get the orderId from the other page
  */
-orderId=sessionStorage.getItem('ORDER_ID')
+ const orderId=sessionStorage.getItem('ORDER_ID')
 
 /**
  * get customers data
@@ -27,8 +27,10 @@ fetch(customerData)
 let getOrderData=(render,orderId)=>{
     fetch(customersOrders,{headers:{'Accept':'*/*','Content-Type': 'application/json','Authorization':token}}).then(resp=>resp.json()).then(json=>{
         json.forEach((orders)=>{
-            if(orders.orderId==orderId){
+            if(orders.id==orderId){
              render(orders)
+            
+                
           //  setCustomerData(renderCustomerData,orders.customerId)
         }
             })
@@ -39,18 +41,20 @@ let getOrderData=(render,orderId)=>{
  * render customer data
  */
 let renderCustomerData=(customer)=>{
-    $('#customer-name').text(customer.name + " " + customer.lastname + " ");
+    $('#customer-name').text("Kund id: "+ customer.id);
     $('#customer-address').text(customer.address + " " + customer.postort + " "+ customer.postnummer)
 }
 /**
  * render order data
  */
 let renderOrderData=(order)=>{
-    $('#order-number').text(order.orderId)
-    console.log(order)
+    $('#order-number').text(order.id)
+   
+    renderCustomerData(order.customer)
     
-    order.products.forEach(productId=>{
-        getProducts(productId,renderProduct)
+    order.orderDetails.forEach(orderDetails=>{
+        renderProduct(orderDetails.product)
+        //getProducts(orderDetails.productID,renderProduct)
 })
 }
 /**
@@ -60,6 +64,7 @@ let renderOrderData=(order)=>{
  */
 let getProducts=(productId,render)=>{
     fetch(productsAPI).then(resp=>resp.json()).then(json=>{
+        console.log(json)
         json.forEach(product=>{
             if(product.id==productId)
             render(product)
@@ -70,6 +75,8 @@ let getProducts=(productId,render)=>{
  * render product as list
  */
 let renderProduct=(product)=>{
-    let template=`<li class="list-group-item"><b>Produkt titel:</b> ${product.title} <b>Produkt kategori:</b> ${product.category}<b> Produkt pris:</b> ${product.price.toFixed(2).replace(".", ",")} </li>`
+    let template=`<li class="list-group-item"><b>Produkt titel:</b> ${product.title} <b>Produkt kategori:</b> ${product.category.name}<b> Produkt pris:</b> ${product.price.toFixed(2).replace(".", ",")} </li>`
     $('#order-list').append(template);
 }
+
+getOrderData(renderOrderData,orderId);

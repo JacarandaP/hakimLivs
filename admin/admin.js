@@ -39,10 +39,12 @@ $('#show-footer-update').hide();
  * get orders and render
  */
  let getOrders=(render)=>{
-    fetch(toOrdersAddress)
+    fetch(toOrdersAddress,{
+        headers:{'Accept':'*/*','Content-Type': 'application/json','Authorization':token}
+    })
     .then(resp=>resp.json())
     .then((json)=>{
-        json.forEach((order)=>{ console.log(order)
+        json.forEach((order)=>{order
         render(order)}
         )
     })
@@ -55,8 +57,8 @@ let renderOrders=(order)=>{
     let template=$('#order-katalog-item').contents().clone()
     template.find('.order-id > a').text(order.id)
     template.find('.order-customer').text(order.customer.id)
-    template.find('.order-date').text(order.createDate)
-    template.find('.order-price').text(order.orderDetails.map(product=>product.productPrice).reduce((a,b)=>a+b))
+    template.find('.order-date').text(new Date(Date.parse(order.createDate)).toLocaleDateString())
+    template.find('.order-price').text(order.orderDetails.map(product=>product.productPrice).reduce((a,b)=>a+b).toFixed(2))
     //template.find('.order-price').text(Number(order.orderDetails.map(product=>product.price)).toFixed(2).replace(".", ","))
 
     $('#to-append-orders').append(template);

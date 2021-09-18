@@ -13,14 +13,22 @@ $('#errorMessage2').css('display','none');
 $('#errorMessage2').css('color','red');
 
 
+
+
+
 /**
  *  the reaction of frontend when gets the message from backend
  * @param {a json response from backend} response 
  */
 let frontendReacts=(response)=>{
     if(response.status!=400){
+        if(parseJwt(response.token).authorities[0].authority=="ROLE_ADMIN"){
         sessionStorage.setItem('TOKEN',response.token)
         location.href="adminHome.html"
+        }
+        else{
+            alert("you have no admin credentials")
+        }
     }
         else{
         $('#errorMessage').text(response.status + " error");
